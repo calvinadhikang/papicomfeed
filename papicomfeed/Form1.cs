@@ -8,32 +8,34 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using MySql.Data.MySqlClient;
 using papicomfeed.Database;
+using papicomfeed.Model;
+using papicomfeed.Forms.Master;
 
 namespace papicomfeed
 {
     public partial class Form1 : Form
     {
-        MySqlConnection conn;
-        MySqlCommand cmd;
-
         public Form1()
         {
             InitializeComponent();
+            openConnectionDatabase();
 
+            FormMasterKaryawan f = new FormMasterKaryawan();
+            f.Show();
+        }
+
+        //untuk membuka koneksi ke database saat
+        //program pertama kali jalan
+        void openConnectionDatabase()
+        {
             try
             {
-                conn = new MySqlConnection(Connection.connString);
-                conn.Open();
-
-                cmd = new MySqlCommand("select count(*) from karyawan", conn);
-                string data = cmd.ExecuteScalar().ToString();
-                MessageBox.Show(data);
+                DB.Open();
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error :" + e.Message.ToString());
+                MessageBox.Show("Error DB Connection :" + e.Message.ToString());
             }
         }
     }
