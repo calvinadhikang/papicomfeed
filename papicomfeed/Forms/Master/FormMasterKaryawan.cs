@@ -17,8 +17,22 @@ namespace papicomfeed.Forms.Master
         public FormMasterKaryawan()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
+            displayData();
+        }
+
+        public void displayData()
+        {
             dataGridView1.DataSource = Karyawan.getAll();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+            DataTable dt = (DataTable)dataGridView1.DataSource;
+            int karyawanId = int.Parse(dt.Rows[row][0].ToString());
+
+            FormMasterKaryawanDetail f = new FormMasterKaryawanDetail(karyawanId, this);
+            f.Show();
         }
     }
 }

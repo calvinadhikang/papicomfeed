@@ -20,9 +20,6 @@ namespace papicomfeed
         {
             InitializeComponent();
             openConnectionDatabase();
-
-            FormMasterKaryawan f = new FormMasterKaryawan();
-            f.Show();
         }
 
         //untuk membuka koneksi ke database saat
@@ -36,6 +33,25 @@ namespace papicomfeed
             catch (Exception e)
             {
                 MessageBox.Show("Error DB Connection :" + e.Message.ToString());
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string username = textBox1.Text;
+
+            Karyawan k = Karyawan.get(username);
+            if (k == null)
+            {
+                MessageBox.Show("Username tidak ditemukan");
+                return;
+            }
+            //cek role
+            else if (k.role == 0)
+            {
+                FormMasterMDI f = new FormMasterMDI();
+                f.Show();
+                this.Hide();
             }
         }
     }

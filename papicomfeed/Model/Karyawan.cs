@@ -10,21 +10,20 @@ using papicomfeed.Database;
 
 namespace papicomfeed.Model
 {
-    class Karyawan
+    public class Karyawan
     {
         MySqlCommand cmd;
-        MySqlDataAdapter adp;
 
         public int id;
         public string nama;
         public string username;
-        public int telp;
+        public string telp;
         public int role;
         public int status;
 
         //constructor 1
         //untuk menginsert data karyawan baru ke Database
-        public Karyawan(string nama, string username, int telp, int role, int status)
+        public Karyawan(string nama, string username, string telp, int role, int status)
         {
             this.nama = nama;
             this.username = username;
@@ -32,7 +31,7 @@ namespace papicomfeed.Model
             this.role = role;
             this.status = status;
 
-            string query = $"INSERT INTO KARYAWAN (NAMA, USERNAME, TELP, ROLE, STATUS)VALUES ('{nama}', '{username}', {telp}, {role}, {status})";
+            string query = $"INSERT INTO KARYAWAN (NAMA, USERNAME, TELP, ROLE, STATUS)VALUES ('{nama}', '{username}', '{telp}', {role}, {status})";
             cmd = new MySqlCommand(query, DB.conn);
             cmd.ExecuteNonQuery();
 
@@ -41,7 +40,7 @@ namespace papicomfeed.Model
         
         //constructor 2
         //untuk membuat class karyawan yang sudah ada
-        public Karyawan(int id, string nama, string username, int telp, int role, int status)
+        private Karyawan(int id, string nama, string username, string telp, int role, int status)
         {
             this.id = id;
             this.nama = nama;
@@ -53,14 +52,14 @@ namespace papicomfeed.Model
 
         //untuk update karyawan sesuai dengan
         //properti class
-        public void update()
+        public void save()
         {
             string query = $"UPDATE KARYAWAN SET " +
                 $"NAMA='{this.nama}', " +
                 $"USERNAME='{this.username}', " +
-                $"TELP={this.telp}, " +
-                $"ROLE={this.role}," +
-                $"STATUS={this.status}" +
+                $"TELP='{this.telp}', " +
+                $"ROLE={this.role}, " +
+                $"STATUS={this.status} " +
                 $"WHERE ID={this.id}";
             cmd = new MySqlCommand(query, DB.conn);
             cmd.ExecuteNonQuery();
@@ -80,9 +79,37 @@ namespace papicomfeed.Model
             adpt.SelectCommand = cmd;
             adpt.FillAsync(dt);
 
+            if (dt.Rows.Count <= 0)
+            {
+                return null;
+            }
+
             string nama = dt.Rows[0][1].ToString();
             string username = dt.Rows[0][2].ToString();
-            int telp = int.Parse(dt.Rows[0][3].ToString());
+            string telp = dt.Rows[0][3].ToString();
+            int role = int.Parse(dt.Rows[0][4].ToString());
+            int status = int.Parse(dt.Rows[0][5].ToString());
+
+            return new Karyawan(id, nama, username, telp, role, status);
+        }
+        
+        public static Karyawan get(string user)
+        {
+            DataTable dt = new DataTable();
+            MySqlCommand cmd = new MySqlCommand($"SELECT * FROM KARYAWAN WHERE USERNAME = '{user}'", DB.conn);
+            MySqlDataAdapter adpt = new MySqlDataAdapter();
+            adpt.SelectCommand = cmd;
+            adpt.FillAsync(dt);
+
+            if (dt.Rows.Count <= 0)
+            {
+                return null;
+            }
+
+            int id = int.Parse(dt.Rows[0][0].ToString());
+            string nama = dt.Rows[0][1].ToString();
+            string username = dt.Rows[0][2].ToString();
+            string telp = dt.Rows[0][3].ToString();
             int role = int.Parse(dt.Rows[0][4].ToString());
             int status = int.Parse(dt.Rows[0][5].ToString());
 

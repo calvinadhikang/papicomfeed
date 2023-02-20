@@ -58,6 +58,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Master\FormMasterIkan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterIkan.Designer.cs">
+      <DependentUpon>FormMasterIkan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterIkanDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterIkanDetail.Designer.cs">
+      <DependentUpon>FormMasterIkanDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Master\FormMasterKaryawan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,17 +82,32 @@
     <Compile Include="Forms\Master\FormMasterKaryawanDetail.Designer.cs">
       <DependentUpon>FormMasterKaryawanDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Master\FormMasterMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterMDI.Designer.cs">
+      <DependentUpon>FormMasterMDI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Karyawan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormMasterIkan.resx">
+      <DependentUpon>FormMasterIkan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormMasterIkanDetail.resx">
+      <DependentUpon>FormMasterIkanDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master\FormMasterKaryawan.resx">
       <DependentUpon>FormMasterKaryawan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master\FormMasterKaryawanDetail.resx">
       <DependentUpon>FormMasterKaryawanDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormMasterMDI.resx">
+      <DependentUpon>FormMasterMDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
