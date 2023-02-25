@@ -42,7 +42,9 @@ namespace papicomfeed.Forms.Master
             // menuStrip1
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.masterToolStripMenuItem,
             this.transaksiToolStripMenuItem,
@@ -50,7 +52,7 @@ namespace papicomfeed.Forms.Master
             this.logoutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(784, 53);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -60,43 +62,44 @@ namespace papicomfeed.Forms.Master
             this.karyawanToolStripMenuItem,
             this.ikanToolStripMenuItem});
             this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
-            this.masterToolStripMenuItem.Size = new System.Drawing.Size(89, 34);
+            this.masterToolStripMenuItem.Size = new System.Drawing.Size(134, 49);
             this.masterToolStripMenuItem.Text = "Master";
             // 
             // karyawanToolStripMenuItem
             // 
             this.karyawanToolStripMenuItem.Name = "karyawanToolStripMenuItem";
-            this.karyawanToolStripMenuItem.Size = new System.Drawing.Size(180, 34);
+            this.karyawanToolStripMenuItem.Size = new System.Drawing.Size(264, 54);
             this.karyawanToolStripMenuItem.Text = "Karyawan";
             this.karyawanToolStripMenuItem.Click += new System.EventHandler(this.karyawanToolStripMenuItem_Click);
             // 
             // ikanToolStripMenuItem
             // 
             this.ikanToolStripMenuItem.Name = "ikanToolStripMenuItem";
-            this.ikanToolStripMenuItem.Size = new System.Drawing.Size(180, 34);
+            this.ikanToolStripMenuItem.Size = new System.Drawing.Size(264, 54);
             this.ikanToolStripMenuItem.Text = "Ikan";
+            this.ikanToolStripMenuItem.Click += new System.EventHandler(this.ikanToolStripMenuItem_Click);
             // 
             // transaksiToolStripMenuItem
             // 
             this.transaksiToolStripMenuItem.Name = "transaksiToolStripMenuItem";
-            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(108, 34);
+            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(163, 49);
             this.transaksiToolStripMenuItem.Text = "Transaksi";
             // 
             // kolamToolStripMenuItem
             // 
             this.kolamToolStripMenuItem.Name = "kolamToolStripMenuItem";
-            this.kolamToolStripMenuItem.Size = new System.Drawing.Size(82, 34);
+            this.kolamToolStripMenuItem.Size = new System.Drawing.Size(125, 49);
             this.kolamToolStripMenuItem.Text = "Kolam";
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(90, 34);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(137, 49);
             this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // FormMasterMDI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.menuStrip1);
