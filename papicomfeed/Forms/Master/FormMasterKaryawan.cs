@@ -34,5 +34,10 @@ namespace papicomfeed.Forms.Master
             FormMasterKaryawanDetail f = new FormMasterKaryawanDetail(karyawanId, this);
             f.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

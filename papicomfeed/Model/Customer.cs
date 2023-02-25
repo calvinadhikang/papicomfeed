@@ -48,11 +48,39 @@ namespace papicomfeed.Model
         public static DataTable getAll() {
             DataTable dt = new DataTable();
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM customer", DB.conn);
-            MySqlDataAdapter adapt = new MySqlDataAdapter;
+            MySqlDataAdapter adapt = new MySqlDataAdapter();
             adapt.SelectCommand = cmd;
             adapt.FillAsync(dt);
 
             return dt;
+        }
+
+        public static Customer get(int id) {
+            DataTable dt = new DataTable();
+            MySqlCommand cmd = new MySqlCommand($"SELECT * FROM customer where id = {id}", DB.conn);
+            MySqlDataAdapter adapt = new MySqlDataAdapter();
+            adapt.SelectCommand = cmd;
+            adapt.FillAsync(dt);
+
+            if (dt.Rows.Count <= 0) {
+                return null;
+            }
+
+            string nama = dt.Rows[0][1].ToString();
+            string alamat = dt.Rows[0][2].ToString();
+            string telpon = dt.Rows[0][3].ToString();
+
+            return new Customer(id, nama, alamat, telpon);
+        }
+
+        public void save() {
+            string query = $"UPDATE customer SET " +
+                $"nama ='{this.nama}'," +
+                $"alamat ='{this.alamat}'," +
+                $"telp ='{this.telpon}'" +
+                $"where id ='{this.id}'";
+            cmd = new MySqlCommand(query, DB.conn);
+            cmd.ExecuteNonQuery();
         }
     }
 }

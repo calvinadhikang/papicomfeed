@@ -16,5 +16,10 @@ namespace papicomfeed.Forms.Master
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

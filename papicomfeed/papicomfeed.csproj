@@ -118,6 +118,7 @@
     <Compile Include="Forms\Master\FormMasterMDI.Designer.cs">
       <DependentUpon>FormMasterMDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Ikan.cs" />
     <Compile Include="Model\Karyawan.cs" />
     <Compile Include="Program.cs" />
