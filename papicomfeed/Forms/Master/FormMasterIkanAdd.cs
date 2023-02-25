@@ -32,6 +32,13 @@ namespace papicomfeed.Forms.Master
             string nama = tbNama.Text;
             int waktu = int.Parse(tbWaktu.Text);
 
+            //cek duplicate
+            if (Ikan.checkDuplicate(nama))
+            {
+                MessageBox.Show("Ikan sudah ada");
+                return;
+            }
+
             Ikan k = new Ikan(nama, waktu);
             MessageBox.Show("Berhasil Tambah Ikan " + nama);
             parent.displayData();

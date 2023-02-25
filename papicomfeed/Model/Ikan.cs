@@ -42,6 +42,14 @@ namespace papicomfeed.Model
             this.waktu = waktu;
         }
 
+        public static bool checkDuplicate(string nama)
+        {
+            MySqlCommand cmd = new MySqlCommand($"SELECT COUNT(*) FROM IKAN WHERE NAMA='{nama}'", DB.conn);
+            int count = int.Parse(cmd.ExecuteScalar().ToString());
+
+            return (count > 0) ? true : false ;
+        }
+
         public static Ikan get(int id)
         {
             DataTable dt = new DataTable();
