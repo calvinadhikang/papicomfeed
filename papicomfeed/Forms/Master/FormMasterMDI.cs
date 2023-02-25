@@ -31,5 +31,12 @@ namespace papicomfeed.Forms.Master
             fi.MdiParent = this;
             fi.Show();
         }
+
+        private void customerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormMasterCustomer fc = new FormMasterCustomer();
+            fc.MdiParent = this;
+            fc.Show();
+        }
     }
 }
