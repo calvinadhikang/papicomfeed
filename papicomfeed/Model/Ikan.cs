@@ -42,6 +42,16 @@ namespace papicomfeed.Model
             this.waktu = waktu;
         }
 
+        public void save()
+        {
+            string query = $"UPDATE IKAN SET " +
+                $"NAMA='{this.nama}', " +
+                $"waktu={this.waktu} " +               
+                $"WHERE ID={this.id}";
+            cmd = new MySqlCommand(query, DB.conn);
+            cmd.ExecuteNonQuery();
+        }
+
         public static bool checkDuplicate(string nama)
         {
             MySqlCommand cmd = new MySqlCommand($"SELECT COUNT(*) FROM IKAN WHERE NAMA='{nama}'", DB.conn);

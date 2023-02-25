@@ -43,5 +43,10 @@ namespace papicomfeed.Forms.Master
             MessageBox.Show("Berhasil Tambah Ikan " + nama);
             parent.displayData();
         }
+
+        private void btnBackTambahIkan_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
+        }
     }
 }

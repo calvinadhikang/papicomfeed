@@ -36,8 +36,8 @@ namespace papicomfeed.Forms.Master
             this.txtDetailIdIkan = new System.Windows.Forms.TextBox();
             this.txtDetailNamaIkan = new System.Windows.Forms.TextBox();
             this.txtDetailWaktuIkan = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnsaveikan = new System.Windows.Forms.Button();
+            this.btnbackikan = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -99,23 +99,25 @@ namespace papicomfeed.Forms.Master
             this.txtDetailWaktuIkan.Size = new System.Drawing.Size(225, 43);
             this.txtDetailWaktuIkan.TabIndex = 1;
             // 
-            // button1
+            // btnsaveikan
             // 
-            this.button1.Location = new System.Drawing.Point(312, 160);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 35);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnsaveikan.Location = new System.Drawing.Point(312, 160);
+            this.btnsaveikan.Name = "btnsaveikan";
+            this.btnsaveikan.Size = new System.Drawing.Size(89, 35);
+            this.btnsaveikan.TabIndex = 2;
+            this.btnsaveikan.Text = "Save";
+            this.btnsaveikan.UseVisualStyleBackColor = true;
+            this.btnsaveikan.Click += new System.EventHandler(this.btnsaveikan_Click);
             // 
-            // button2
+            // btnbackikan
             // 
-            this.button2.Location = new System.Drawing.Point(312, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 35);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Back";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnbackikan.Location = new System.Drawing.Point(312, 4);
+            this.btnbackikan.Name = "btnbackikan";
+            this.btnbackikan.Size = new System.Drawing.Size(89, 35);
+            this.btnbackikan.TabIndex = 2;
+            this.btnbackikan.Text = "Back";
+            this.btnbackikan.UseVisualStyleBackColor = true;
+            this.btnbackikan.Click += new System.EventHandler(this.btnbackikan_Click);
             // 
             // label5
             // 
@@ -131,8 +133,8 @@ namespace papicomfeed.Forms.Master
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(453, 229);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnbackikan);
+            this.Controls.Add(this.btnsaveikan);
             this.Controls.Add(this.txtDetailWaktuIkan);
             this.Controls.Add(this.txtDetailNamaIkan);
             this.Controls.Add(this.txtDetailIdIkan);
@@ -159,8 +161,8 @@ namespace papicomfeed.Forms.Master
         private System.Windows.Forms.TextBox txtDetailIdIkan;
         private System.Windows.Forms.TextBox txtDetailNamaIkan;
         private System.Windows.Forms.TextBox txtDetailWaktuIkan;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnsaveikan;
+        private System.Windows.Forms.Button btnbackikan;
         private System.Windows.Forms.Label label5;
     }
 }

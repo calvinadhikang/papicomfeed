@@ -30,5 +30,21 @@ namespace papicomfeed.Forms.Master
             txtDetailNamaIkan.Text = i.nama.ToString();
             txtDetailWaktuIkan.Text = i.waktu.ToString();
         }
+
+        private void btnsaveikan_Click(object sender, EventArgs e)
+        {
+            i.nama = txtDetailNamaIkan.Text;
+            i.waktu = int.Parse(txtDetailWaktuIkan.Text);
+
+            i.save();
+
+            parent.displayData();
+            MessageBox.Show("Berhasil Update");
+        }
+
+        private void btnbackikan_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
