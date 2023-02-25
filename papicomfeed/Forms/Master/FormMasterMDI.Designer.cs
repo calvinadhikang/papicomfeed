@@ -36,13 +36,13 @@ namespace papicomfeed.Forms.Master
             this.transaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kolamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -52,7 +52,7 @@ namespace papicomfeed.Forms.Master
             this.logoutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 53);
+            this.menuStrip1.Size = new System.Drawing.Size(784, 45);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -60,46 +60,54 @@ namespace papicomfeed.Forms.Master
             // 
             this.masterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.karyawanToolStripMenuItem,
-            this.ikanToolStripMenuItem});
+            this.ikanToolStripMenuItem,
+            this.customerToolStripMenuItem});
             this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
-            this.masterToolStripMenuItem.Size = new System.Drawing.Size(134, 49);
+            this.masterToolStripMenuItem.Size = new System.Drawing.Size(112, 41);
             this.masterToolStripMenuItem.Text = "Master";
             // 
             // karyawanToolStripMenuItem
             // 
             this.karyawanToolStripMenuItem.Name = "karyawanToolStripMenuItem";
-            this.karyawanToolStripMenuItem.Size = new System.Drawing.Size(264, 54);
+            this.karyawanToolStripMenuItem.Size = new System.Drawing.Size(224, 42);
             this.karyawanToolStripMenuItem.Text = "Karyawan";
             this.karyawanToolStripMenuItem.Click += new System.EventHandler(this.karyawanToolStripMenuItem_Click);
             // 
             // ikanToolStripMenuItem
             // 
             this.ikanToolStripMenuItem.Name = "ikanToolStripMenuItem";
-            this.ikanToolStripMenuItem.Size = new System.Drawing.Size(264, 54);
+            this.ikanToolStripMenuItem.Size = new System.Drawing.Size(224, 42);
             this.ikanToolStripMenuItem.Text = "Ikan";
             this.ikanToolStripMenuItem.Click += new System.EventHandler(this.ikanToolStripMenuItem_Click);
             // 
             // transaksiToolStripMenuItem
             // 
             this.transaksiToolStripMenuItem.Name = "transaksiToolStripMenuItem";
-            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(163, 49);
+            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(137, 41);
             this.transaksiToolStripMenuItem.Text = "Transaksi";
             // 
             // kolamToolStripMenuItem
             // 
             this.kolamToolStripMenuItem.Name = "kolamToolStripMenuItem";
-            this.kolamToolStripMenuItem.Size = new System.Drawing.Size(125, 49);
+            this.kolamToolStripMenuItem.Size = new System.Drawing.Size(106, 41);
             this.kolamToolStripMenuItem.Text = "Kolam";
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(137, 49);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 41);
             this.logoutToolStripMenuItem.Text = "Logout";
+            // 
+            // customerToolStripMenuItem
+            // 
+            this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(224, 42);
+            this.customerToolStripMenuItem.Text = "Customer";
+            this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
             // FormMasterMDI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.menuStrip1);
@@ -126,5 +134,6 @@ namespace papicomfeed.Forms.Master
         private System.Windows.Forms.ToolStripMenuItem transaksiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kolamToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
     }
 }
