@@ -88,6 +88,13 @@
     <Compile Include="Forms\Master\FormMasterMDI.Designer.cs">
       <DependentUpon>FormMasterMDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Master\TambahIkan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\TambahIkan.Designer.cs">
+      <DependentUpon>TambahIkan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Ikan.cs" />
     <Compile Include="Model\Karyawan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master\FormMasterMDI.resx">
       <DependentUpon>FormMasterMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\TambahIkan.resx">
+      <DependentUpon>TambahIkan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
