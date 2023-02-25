@@ -24,5 +24,12 @@ namespace papicomfeed.Forms.Master
             f.MdiParent = this;
             f.Show();
         }
+
+        private void ikanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormMasterIkan fi = new FormMasterIkan();
+            fi.MdiParent = this;
+            fi.Show();
+        }
     }
 }

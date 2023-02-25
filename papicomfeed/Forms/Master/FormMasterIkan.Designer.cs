@@ -29,31 +29,34 @@ namespace papicomfeed.Forms.Master
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnTambahIkan = new System.Windows.Forms.Button();
+            this.dataListIkan = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListIkan)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnTambahIkan
             // 
-            this.button1.Location = new System.Drawing.Point(601, 515);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 35);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Tambah Data";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTambahIkan.Location = new System.Drawing.Point(601, 515);
+            this.btnTambahIkan.Name = "btnTambahIkan";
+            this.btnTambahIkan.Size = new System.Drawing.Size(171, 35);
+            this.btnTambahIkan.TabIndex = 8;
+            this.btnTambahIkan.Text = "Tambah Data";
+            this.btnTambahIkan.UseVisualStyleBackColor = true;
+            this.btnTambahIkan.Click += new System.EventHandler(this.btnTambahIkan_Click);
             // 
-            // dataGridView1
+            // dataListIkan
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataListIkan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 63);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(760, 446);
-            this.dataGridView1.TabIndex = 7;
+            this.dataListIkan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataListIkan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataListIkan.Location = new System.Drawing.Point(12, 63);
+            this.dataListIkan.Name = "dataListIkan";
+            this.dataListIkan.RowHeadersWidth = 62;
+            this.dataListIkan.Size = new System.Drawing.Size(760, 446);
+            this.dataListIkan.TabIndex = 7;
+            this.dataListIkan.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListIkan_CellDoubleClick);
             // 
             // label1
             // 
@@ -68,25 +71,25 @@ namespace papicomfeed.Forms.Master
             // 
             // FormMasterIkan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnTambahIkan);
+            this.Controls.Add(this.dataListIkan);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormMasterIkan";
             this.Text = "FormMasterIkan";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListIkan)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnTambahIkan;
+        private System.Windows.Forms.DataGridView dataListIkan;
         private System.Windows.Forms.Label label1;
     }
 }

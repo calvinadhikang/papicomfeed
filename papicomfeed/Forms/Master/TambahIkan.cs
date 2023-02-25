@@ -11,24 +11,21 @@ using System.Windows.Forms;
 
 namespace papicomfeed.Forms.Master
 {
-    public partial class FormMasterIkanDetail : Form
+    public partial class TambahIkan : Form
     {
-        Ikan i;
         FormMasterIkan parent;
-        public FormMasterIkanDetail(int ikanId, FormMasterIkan parent)
+        public TambahIkan(FormMasterIkan parent)
         {
             InitializeComponent();
-            this.i = Ikan.get(ikanId);
             this.parent = parent;
-
-            isi();
         }
 
-        void isi()
+        private void BtnAddIkan_Click(object sender, EventArgs e)
         {
-            txtDetailIdIkan.Text = i.id.ToString();
-            txtDetailNamaIkan.Text = i.nama.ToString();
-            txtDetailWaktuIkan.Text = i.waktu.ToString();
+            Ikan ni = new Ikan(txtnamaikan.Text.ToString(), int.Parse(txtWaktuIkan.Text.ToString()));
+
+            parent.displayData();
+
         }
     }
 }
