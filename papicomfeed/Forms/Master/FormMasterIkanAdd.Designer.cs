@@ -30,14 +30,12 @@ namespace papicomfeed.Forms.Master
         private void InitializeComponent()
         {
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnTambah = new System.Windows.Forms.Button();
+            this.tbWaktu = new System.Windows.Forms.TextBox();
+            this.tbNama = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -50,41 +48,34 @@ namespace papicomfeed.Forms.Master
             this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnTambah
             // 
-            this.button1.Location = new System.Drawing.Point(332, 182);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 35);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTambah.Location = new System.Drawing.Point(319, 134);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.Size = new System.Drawing.Size(102, 35);
+            this.btnTambah.TabIndex = 12;
+            this.btnTambah.Text = "Tambah";
+            this.btnTambah.UseVisualStyleBackColor = true;
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
             // 
-            // textBox3
+            // tbWaktu
             // 
-            this.textBox3.Location = new System.Drawing.Point(123, 138);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(225, 31);
-            this.textBox3.TabIndex = 8;
+            this.tbWaktu.Location = new System.Drawing.Point(123, 97);
+            this.tbWaktu.Name = "tbWaktu";
+            this.tbWaktu.Size = new System.Drawing.Size(225, 31);
+            this.tbWaktu.TabIndex = 8;
             // 
-            // textBox2
+            // tbNama
             // 
-            this.textBox2.Location = new System.Drawing.Point(123, 101);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(298, 31);
-            this.textBox2.TabIndex = 9;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(123, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(298, 31);
-            this.textBox1.TabIndex = 10;
+            this.tbNama.Location = new System.Drawing.Point(123, 60);
+            this.tbNama.Name = "tbNama";
+            this.tbNama.Size = new System.Drawing.Size(298, 31);
+            this.tbNama.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(354, 141);
+            this.label5.Location = new System.Drawing.Point(354, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 25);
             this.label5.TabIndex = 3;
@@ -93,7 +84,7 @@ namespace papicomfeed.Forms.Master
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 141);
+            this.label4.Location = new System.Drawing.Point(32, 100);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 25);
             this.label4.TabIndex = 4;
@@ -102,20 +93,11 @@ namespace papicomfeed.Forms.Master
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 104);
+            this.label3.Location = new System.Drawing.Point(37, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Nama :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(73, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 25);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "ID :";
             // 
             // label1
             // 
@@ -130,19 +112,17 @@ namespace papicomfeed.Forms.Master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(453, 229);
+            this.ClientSize = new System.Drawing.Size(453, 182);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnTambah);
+            this.Controls.Add(this.tbWaktu);
+            this.Controls.Add(this.tbNama);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormMasterIkanAdd";
             this.Text = "FormMasterIkanAdd";
             this.ResumeLayout(false);
@@ -153,14 +133,12 @@ namespace papicomfeed.Forms.Master
         #endregion
 
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnTambah;
+        private System.Windows.Forms.TextBox tbWaktu;
+        private System.Windows.Forms.TextBox tbNama;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }
 }

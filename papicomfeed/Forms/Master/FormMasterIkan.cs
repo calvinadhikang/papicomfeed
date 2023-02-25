@@ -26,7 +26,7 @@ namespace papicomfeed.Forms.Master
 
         private void btnTambahIkan_Click(object sender, EventArgs e)
         {
-            TambahIkan Ti = new TambahIkan(this);
+            FormMasterIkanAdd Ti = new FormMasterIkanAdd(this);
             Ti.Show();
         }
 
@@ -38,8 +38,6 @@ namespace papicomfeed.Forms.Master
 
             FormMasterIkanDetail i = new FormMasterIkanDetail(ikanId, this);
             i.Show();
-        }
-
-        
+        }   
     }
 }

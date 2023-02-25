@@ -8,13 +8,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using papicomfeed.Model;
+
 namespace papicomfeed.Forms.Master
 {
     public partial class FormMasterIkanAdd : Form
     {
-        public FormMasterIkanAdd()
+        FormMasterIkan parent;
+        public FormMasterIkanAdd(FormMasterIkan f)
         {
             InitializeComponent();
+            parent = f;
+        }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            if (tbNama.Text == "" || tbWaktu.Text == "")
+            {
+                MessageBox.Show("Inputan tidak boleh kosong");
+                return;
+            }
+
+            string nama = tbNama.Text;
+            int waktu = int.Parse(tbWaktu.Text);
+
+            Ikan k = new Ikan(nama, waktu);
+            MessageBox.Show("Berhasil Tambah Ikan " + nama);
+            parent.displayData();
         }
     }
 }
