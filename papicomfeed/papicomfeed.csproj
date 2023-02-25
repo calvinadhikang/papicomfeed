@@ -58,11 +58,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Master\FormMasterCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterCustomer.Designer.cs">
+      <DependentUpon>FormMasterCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterCustomerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterCustomerAdd.Designer.cs">
+      <DependentUpon>FormMasterCustomerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterCustomerDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterCustomerDetail.Designer.cs">
+      <DependentUpon>FormMasterCustomerDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Master\FormMasterIkan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Master\FormMasterIkan.Designer.cs">
       <DependentUpon>FormMasterIkan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterIkanAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterIkanAdd.Designer.cs">
+      <DependentUpon>FormMasterIkanAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Master\FormMasterIkanDetail.cs">
       <SubType>Form</SubType>
@@ -75,6 +99,12 @@
     </Compile>
     <Compile Include="Forms\Master\FormMasterKaryawan.Designer.cs">
       <DependentUpon>FormMasterKaryawan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterKaryawanAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterKaryawanAdd.Designer.cs">
+      <DependentUpon>FormMasterKaryawanAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Master\FormMasterKaryawanDetail.cs">
       <SubType>Form</SubType>
@@ -101,14 +131,29 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormMasterCustomer.resx">
+      <DependentUpon>FormMasterCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormMasterCustomerAdd.resx">
+      <DependentUpon>FormMasterCustomerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormMasterCustomerDetail.resx">
+      <DependentUpon>FormMasterCustomerDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master\FormMasterIkan.resx">
       <DependentUpon>FormMasterIkan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormMasterIkanAdd.resx">
+      <DependentUpon>FormMasterIkanAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master\FormMasterIkanDetail.resx">
       <DependentUpon>FormMasterIkanDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master\FormMasterKaryawan.resx">
       <DependentUpon>FormMasterKaryawan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormMasterKaryawanAdd.resx">
+      <DependentUpon>FormMasterKaryawanAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master\FormMasterKaryawanDetail.resx">
       <DependentUpon>FormMasterKaryawanDetail.cs</DependentUpon>
