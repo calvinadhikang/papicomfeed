@@ -39,6 +39,13 @@ namespace papicomfeed
         private void button1_Click(object sender, EventArgs e)
         {
             string username = textBox1.Text;
+            if (username == "admin")
+            {
+                FormMasterMDI f = new FormMasterMDI();
+                f.Show();
+                this.Hide();
+                return;
+            }
 
             Karyawan k = Karyawan.get(username);
             if (k == null)

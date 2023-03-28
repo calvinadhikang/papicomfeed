@@ -46,7 +46,7 @@ namespace papicomfeed.Forms.Master
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(170, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 37);
+            this.label1.Size = new System.Drawing.Size(113, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Detail Ikan";
             // 
@@ -55,7 +55,7 @@ namespace papicomfeed.Forms.Master
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(53, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 37);
+            this.label2.Size = new System.Drawing.Size(44, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "ID :";
             // 
@@ -64,7 +64,7 @@ namespace papicomfeed.Forms.Master
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(17, 89);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 37);
+            this.label3.Size = new System.Drawing.Size(80, 25);
             this.label3.TabIndex = 0;
             this.label3.Text = "Nama :";
             // 
@@ -73,7 +73,7 @@ namespace papicomfeed.Forms.Master
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 126);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 37);
+            this.label4.Size = new System.Drawing.Size(85, 25);
             this.label4.TabIndex = 0;
             this.label4.Text = "Waktu :";
             // 
@@ -82,40 +82,40 @@ namespace papicomfeed.Forms.Master
             this.txtDetailIdIkan.Enabled = false;
             this.txtDetailIdIkan.Location = new System.Drawing.Point(103, 49);
             this.txtDetailIdIkan.Name = "txtDetailIdIkan";
-            this.txtDetailIdIkan.Size = new System.Drawing.Size(298, 43);
+            this.txtDetailIdIkan.Size = new System.Drawing.Size(298, 31);
             this.txtDetailIdIkan.TabIndex = 1;
             // 
             // txtDetailNamaIkan
             // 
             this.txtDetailNamaIkan.Location = new System.Drawing.Point(103, 86);
             this.txtDetailNamaIkan.Name = "txtDetailNamaIkan";
-            this.txtDetailNamaIkan.Size = new System.Drawing.Size(298, 43);
+            this.txtDetailNamaIkan.Size = new System.Drawing.Size(298, 31);
             this.txtDetailNamaIkan.TabIndex = 1;
             // 
             // txtDetailWaktuIkan
             // 
             this.txtDetailWaktuIkan.Location = new System.Drawing.Point(103, 123);
             this.txtDetailWaktuIkan.Name = "txtDetailWaktuIkan";
-            this.txtDetailWaktuIkan.Size = new System.Drawing.Size(225, 43);
+            this.txtDetailWaktuIkan.Size = new System.Drawing.Size(225, 31);
             this.txtDetailWaktuIkan.TabIndex = 1;
             // 
             // btnsaveikan
             // 
-            this.btnsaveikan.Location = new System.Drawing.Point(312, 160);
+            this.btnsaveikan.Location = new System.Drawing.Point(302, 160);
             this.btnsaveikan.Name = "btnsaveikan";
-            this.btnsaveikan.Size = new System.Drawing.Size(89, 35);
+            this.btnsaveikan.Size = new System.Drawing.Size(99, 35);
             this.btnsaveikan.TabIndex = 2;
-            this.btnsaveikan.Text = "Save";
+            this.btnsaveikan.Text = "Simpan";
             this.btnsaveikan.UseVisualStyleBackColor = true;
             this.btnsaveikan.Click += new System.EventHandler(this.btnsaveikan_Click);
             // 
             // btnbackikan
             // 
-            this.btnbackikan.Location = new System.Drawing.Point(312, 4);
+            this.btnbackikan.Location = new System.Drawing.Point(302, 4);
             this.btnbackikan.Name = "btnbackikan";
-            this.btnbackikan.Size = new System.Drawing.Size(89, 35);
+            this.btnbackikan.Size = new System.Drawing.Size(99, 35);
             this.btnbackikan.TabIndex = 2;
-            this.btnbackikan.Text = "Back";
+            this.btnbackikan.Text = "Kembali";
             this.btnbackikan.UseVisualStyleBackColor = true;
             this.btnbackikan.Click += new System.EventHandler(this.btnbackikan_Click);
             // 
@@ -124,13 +124,13 @@ namespace papicomfeed.Forms.Master
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(334, 126);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 37);
+            this.label5.Size = new System.Drawing.Size(67, 25);
             this.label5.TabIndex = 0;
             this.label5.Text = "Bulan";
             // 
             // FormMasterIkanDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(453, 229);
             this.Controls.Add(this.btnbackikan);

@@ -49,7 +49,7 @@ namespace papicomfeed.Forms.Master
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(139, 9);
+            this.label1.Location = new System.Drawing.Point(138, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 25);
             this.label1.TabIndex = 0;
@@ -58,7 +58,7 @@ namespace papicomfeed.Forms.Master
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(94, 59);
+            this.label2.Location = new System.Drawing.Point(93, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 25);
             this.label2.TabIndex = 0;
@@ -67,7 +67,7 @@ namespace papicomfeed.Forms.Master
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 96);
+            this.label3.Location = new System.Drawing.Point(57, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 25);
             this.label3.TabIndex = 0;
@@ -76,7 +76,7 @@ namespace papicomfeed.Forms.Master
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 133);
+            this.label4.Location = new System.Drawing.Point(15, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 25);
             this.label4.TabIndex = 0;
@@ -85,7 +85,7 @@ namespace papicomfeed.Forms.Master
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(72, 170);
+            this.label5.Location = new System.Drawing.Point(71, 177);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 25);
             this.label5.TabIndex = 0;
@@ -94,7 +94,7 @@ namespace papicomfeed.Forms.Master
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(70, 207);
+            this.label6.Location = new System.Drawing.Point(69, 214);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 25);
             this.label6.TabIndex = 0;
@@ -103,7 +103,7 @@ namespace papicomfeed.Forms.Master
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(53, 244);
+            this.label7.Location = new System.Drawing.Point(52, 251);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(85, 25);
             this.label7.TabIndex = 0;
@@ -111,39 +111,39 @@ namespace papicomfeed.Forms.Master
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(398, 289);
+            this.button2.Location = new System.Drawing.Point(397, 292);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 36);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Save";
+            this.button2.Text = "Simpan";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tbId
             // 
             this.tbId.Enabled = false;
-            this.tbId.Location = new System.Drawing.Point(144, 56);
+            this.tbId.Location = new System.Drawing.Point(143, 63);
             this.tbId.Name = "tbId";
             this.tbId.Size = new System.Drawing.Size(347, 31);
             this.tbId.TabIndex = 2;
             // 
             // tbNama
             // 
-            this.tbNama.Location = new System.Drawing.Point(144, 93);
+            this.tbNama.Location = new System.Drawing.Point(143, 100);
             this.tbNama.Name = "tbNama";
             this.tbNama.Size = new System.Drawing.Size(347, 31);
             this.tbNama.TabIndex = 2;
             // 
             // tbUsername
             // 
-            this.tbUsername.Location = new System.Drawing.Point(144, 130);
+            this.tbUsername.Location = new System.Drawing.Point(143, 137);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(347, 31);
             this.tbUsername.TabIndex = 2;
             // 
             // tbTelp
             // 
-            this.tbTelp.Location = new System.Drawing.Point(144, 167);
+            this.tbTelp.Location = new System.Drawing.Point(143, 174);
             this.tbTelp.Name = "tbTelp";
             this.tbTelp.Size = new System.Drawing.Size(347, 31);
             this.tbTelp.TabIndex = 2;
@@ -156,7 +156,7 @@ namespace papicomfeed.Forms.Master
             "Penjualan",
             "Pembelian",
             "Pemeliharaan"});
-            this.cmbRole.Location = new System.Drawing.Point(144, 204);
+            this.cmbRole.Location = new System.Drawing.Point(143, 211);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(347, 33);
             this.cmbRole.TabIndex = 3;
@@ -164,7 +164,7 @@ namespace papicomfeed.Forms.Master
             // cbStatus
             // 
             this.cbStatus.AutoSize = true;
-            this.cbStatus.Location = new System.Drawing.Point(144, 243);
+            this.cbStatus.Location = new System.Drawing.Point(143, 250);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(73, 29);
             this.cbStatus.TabIndex = 4;
@@ -173,13 +173,13 @@ namespace papicomfeed.Forms.Master
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(398, 3);
+            this.button1.Location = new System.Drawing.Point(385, 10);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 36);
+            this.button1.Size = new System.Drawing.Size(105, 36);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Back";
+            this.button1.Text = "Kembali";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // FormMasterKaryawanDetail
             // 

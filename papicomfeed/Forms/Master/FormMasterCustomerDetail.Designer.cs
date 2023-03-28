@@ -47,7 +47,7 @@ namespace papicomfeed.Forms.Master
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(111, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 31);
+            this.label1.Size = new System.Drawing.Size(165, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Detail Customer";
             // 
@@ -55,7 +55,7 @@ namespace papicomfeed.Forms.Master
             // 
             this.txtId.Location = new System.Drawing.Point(116, 55);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(298, 37);
+            this.txtId.Size = new System.Drawing.Size(298, 31);
             this.txtId.TabIndex = 1;
             // 
             // label2
@@ -63,7 +63,7 @@ namespace papicomfeed.Forms.Master
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(66, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 31);
+            this.label2.Size = new System.Drawing.Size(44, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "ID :";
             // 
@@ -72,7 +72,7 @@ namespace papicomfeed.Forms.Master
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(30, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 31);
+            this.label3.Size = new System.Drawing.Size(80, 25);
             this.label3.TabIndex = 0;
             this.label3.Text = "Nama :";
             // 
@@ -81,7 +81,7 @@ namespace papicomfeed.Forms.Master
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(20, 132);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 31);
+            this.label4.Size = new System.Drawing.Size(90, 25);
             this.label4.TabIndex = 0;
             this.label4.Text = "Alamat :";
             // 
@@ -90,7 +90,7 @@ namespace papicomfeed.Forms.Master
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(44, 169);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 31);
+            this.label5.Size = new System.Drawing.Size(66, 25);
             this.label5.TabIndex = 0;
             this.label5.Text = "Telp :";
             // 
@@ -98,46 +98,46 @@ namespace papicomfeed.Forms.Master
             // 
             this.txtNamaCustomer.Location = new System.Drawing.Point(116, 92);
             this.txtNamaCustomer.Name = "txtNamaCustomer";
-            this.txtNamaCustomer.Size = new System.Drawing.Size(298, 37);
+            this.txtNamaCustomer.Size = new System.Drawing.Size(298, 31);
             this.txtNamaCustomer.TabIndex = 1;
             // 
             // txtAlamatCustomer
             // 
             this.txtAlamatCustomer.Location = new System.Drawing.Point(116, 129);
             this.txtAlamatCustomer.Name = "txtAlamatCustomer";
-            this.txtAlamatCustomer.Size = new System.Drawing.Size(298, 37);
+            this.txtAlamatCustomer.Size = new System.Drawing.Size(298, 31);
             this.txtAlamatCustomer.TabIndex = 1;
             // 
             // txtTelpCustomer
             // 
             this.txtTelpCustomer.Location = new System.Drawing.Point(116, 166);
             this.txtTelpCustomer.Name = "txtTelpCustomer";
-            this.txtTelpCustomer.Size = new System.Drawing.Size(298, 37);
+            this.txtTelpCustomer.Size = new System.Drawing.Size(298, 31);
             this.txtTelpCustomer.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(325, 12);
+            this.button1.Location = new System.Drawing.Point(312, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 37);
+            this.button1.Size = new System.Drawing.Size(102, 37);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Back";
+            this.button1.Text = "Kembali";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(325, 203);
+            this.button2.Location = new System.Drawing.Point(312, 203);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 37);
+            this.button2.Size = new System.Drawing.Size(102, 37);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Save";
+            this.button2.Text = "Simpan";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormMasterCustomerDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(449, 262);
             this.Controls.Add(this.button2);
