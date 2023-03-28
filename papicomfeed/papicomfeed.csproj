@@ -112,11 +112,83 @@
     <Compile Include="Forms\Master\FormMasterKaryawanDetail.Designer.cs">
       <DependentUpon>FormMasterKaryawanDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Master\FormMasterKolam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterKolam.Designer.cs">
+      <DependentUpon>FormMasterKolam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterKolamAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterKolamAdd.Designer.cs">
+      <DependentUpon>FormMasterKolamAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterKolamDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterKolamDetail.Designer.cs">
+      <DependentUpon>FormMasterKolamDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Master\FormMasterMDI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Master\FormMasterMDI.Designer.cs">
       <DependentUpon>FormMasterMDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pembelian\DetailPembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pembelian\DetailPembelian.Designer.cs">
+      <DependentUpon>DetailPembelian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pembelian\MDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pembelian\MDI.Designer.cs">
+      <DependentUpon>MDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pembelian\Pembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pembelian\Pembelian.Designer.cs">
+      <DependentUpon>Pembelian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pembelian\Tambah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pembelian\Tambah.Designer.cs">
+      <DependentUpon>Tambah.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pemeliharaan\MDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pemeliharaan\MDI.Designer.cs">
+      <DependentUpon>MDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Penjualan\DetailPenjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Penjualan\DetailPenjualan.Designer.cs">
+      <DependentUpon>DetailPenjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Penjualan\MDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Penjualan\MDI.Designer.cs">
+      <DependentUpon>MDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Penjualan\Penjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Penjualan\Penjualan.Designer.cs">
+      <DependentUpon>Penjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Penjualan\Tambah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Penjualan\Tambah.Designer.cs">
+      <DependentUpon>Tambah.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Ikan.cs" />
@@ -153,8 +225,44 @@
     <EmbeddedResource Include="Forms\Master\FormMasterKaryawanDetail.resx">
       <DependentUpon>FormMasterKaryawanDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormMasterKolam.resx">
+      <DependentUpon>FormMasterKolam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormMasterKolamAdd.resx">
+      <DependentUpon>FormMasterKolamAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormMasterKolamDetail.resx">
+      <DependentUpon>FormMasterKolamDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master\FormMasterMDI.resx">
       <DependentUpon>FormMasterMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pembelian\DetailPembelian.resx">
+      <DependentUpon>DetailPembelian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pembelian\MDI.resx">
+      <DependentUpon>MDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pembelian\Pembelian.resx">
+      <DependentUpon>Pembelian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pembelian\Tambah.resx">
+      <DependentUpon>Tambah.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pemeliharaan\MDI.resx">
+      <DependentUpon>MDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Penjualan\DetailPenjualan.resx">
+      <DependentUpon>DetailPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Penjualan\MDI.resx">
+      <DependentUpon>MDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Penjualan\Penjualan.resx">
+      <DependentUpon>Penjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Penjualan\Tambah.resx">
+      <DependentUpon>Tambah.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -178,5 +286,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

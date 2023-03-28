@@ -76,5 +76,10 @@ namespace papicomfeed.Forms.Master
             this.parent.displayData();
             MessageBox.Show("Updated");
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

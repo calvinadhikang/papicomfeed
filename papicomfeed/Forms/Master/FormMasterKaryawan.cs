@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using papicomfeed.Model;
+using papicomfeed.Forms.Master;
 
 namespace papicomfeed.Forms.Master
 {
@@ -23,6 +24,12 @@ namespace papicomfeed.Forms.Master
         public void displayData()
         {
             dataGridView1.DataSource = Karyawan.getAll();
+            dataGridView1.Columns[0].HeaderText = "ID";
+            dataGridView1.Columns[1].HeaderText = "Nama";
+            dataGridView1.Columns[2].HeaderText = "Username";
+            dataGridView1.Columns[3].HeaderText = "Nomor Telepon";
+            dataGridView1.Columns[4].HeaderText = "Role";
+            dataGridView1.Columns[5].HeaderText = "Status";
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -37,7 +44,8 @@ namespace papicomfeed.Forms.Master
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            FormMasterKaryawanAdd f = new FormMasterKaryawanAdd(this);
+            f.Show();
         }
     }
 }
