@@ -160,6 +160,38 @@
     <Compile Include="Forms\Pembelian\Tambah.Designer.cs">
       <DependentUpon>Tambah.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="Forms\Pemeliharaan\MDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pemeliharaan\MDI.Designer.cs">
+      <DependentUpon>MDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Penjualan\DetailPenjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Penjualan\DetailPenjualan.Designer.cs">
+      <DependentUpon>DetailPenjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Penjualan\MDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Penjualan\MDI.Designer.cs">
+      <DependentUpon>MDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Penjualan\Penjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Penjualan\Penjualan.Designer.cs">
+      <DependentUpon>Penjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Penjualan\Tambah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Penjualan\Tambah.Designer.cs">
+      <DependentUpon>Tambah.cs</DependentUpon>
+    </Compile>
+
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Ikan.cs" />
     <Compile Include="Model\Karyawan.cs" />
@@ -219,6 +251,22 @@
     <EmbeddedResource Include="Forms\Pembelian\Tambah.resx">
       <DependentUpon>Tambah.cs</DependentUpon>
     </EmbeddedResource>
+
+    <EmbeddedResource Include="Forms\Pemeliharaan\MDI.resx">
+      <DependentUpon>MDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Penjualan\DetailPenjualan.resx">
+      <DependentUpon>DetailPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Penjualan\MDI.resx">
+      <DependentUpon>MDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Penjualan\Penjualan.resx">
+      <DependentUpon>Penjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Penjualan\Tambah.resx">
+      <DependentUpon>Tambah.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -241,5 +289,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
