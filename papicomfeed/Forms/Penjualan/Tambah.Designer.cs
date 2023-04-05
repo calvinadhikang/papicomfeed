@@ -35,19 +35,19 @@ namespace papicomfeed.Forms.Penjualan
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTambahJual = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblTelp = new System.Windows.Forms.Label();
+            this.lblAlamat = new System.Windows.Forms.Label();
             this.cmbCustomer = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblAlamat = new System.Windows.Forms.Label();
-            this.lblTelp = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudJumlah)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTambahJual)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,6 +79,7 @@ namespace papicomfeed.Forms.Penjualan
             this.cmbIkan.Name = "cmbIkan";
             this.cmbIkan.Size = new System.Drawing.Size(247, 38);
             this.cmbIkan.TabIndex = 4;
+            this.cmbIkan.SelectedIndexChanged += new System.EventHandler(this.cmbIkan_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -108,14 +109,15 @@ namespace papicomfeed.Forms.Penjualan
             this.label5.TabIndex = 2;
             this.label5.Text = "Ikan :";
             // 
-            // dataGridView1
+            // dgvTambahJual
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 344);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(784, 314);
-            this.dataGridView1.TabIndex = 8;
+            this.dgvTambahJual.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTambahJual.Location = new System.Drawing.Point(12, 344);
+            this.dgvTambahJual.Name = "dgvTambahJual";
+            this.dgvTambahJual.RowHeadersWidth = 51;
+            this.dgvTambahJual.Size = new System.Drawing.Size(784, 314);
+            this.dgvTambahJual.TabIndex = 8;
+            this.dgvTambahJual.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTambahJual_CellClick);
             // 
             // groupBox1
             // 
@@ -131,6 +133,23 @@ namespace papicomfeed.Forms.Penjualan
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Header Penjualan";
+            // 
+            // lblTelp
+            // 
+            this.lblTelp.AutoSize = true;
+            this.lblTelp.Location = new System.Drawing.Point(502, 89);
+            this.lblTelp.Name = "lblTelp";
+            this.lblTelp.Size = new System.Drawing.Size(94, 31);
+            this.lblTelp.TabIndex = 6;
+            this.lblTelp.Text = "lblTelp";
+            // 
+            // lblAlamat
+            // 
+            this.lblAlamat.AutoSize = true;
+            this.lblAlamat.Location = new System.Drawing.Point(147, 89);
+            this.lblAlamat.Name = "lblAlamat";
+            this.lblAlamat.Size = new System.Drawing.Size(0, 31);
+            this.lblAlamat.TabIndex = 4;
             // 
             // cmbCustomer
             // 
@@ -186,30 +205,13 @@ namespace papicomfeed.Forms.Penjualan
             this.label1.TabIndex = 6;
             this.label1.Text = "Tambah Penjualan";
             // 
-            // lblAlamat
-            // 
-            this.lblAlamat.AutoSize = true;
-            this.lblAlamat.Location = new System.Drawing.Point(147, 89);
-            this.lblAlamat.Name = "lblAlamat";
-            this.lblAlamat.Size = new System.Drawing.Size(0, 31);
-            this.lblAlamat.TabIndex = 4;
-            // 
-            // lblTelp
-            // 
-            this.lblTelp.AutoSize = true;
-            this.lblTelp.Location = new System.Drawing.Point(502, 89);
-            this.lblTelp.Name = "lblTelp";
-            this.lblTelp.Size = new System.Drawing.Size(94, 31);
-            this.lblTelp.TabIndex = 6;
-            this.lblTelp.Text = "lblTelp";
-            // 
             // Tambah
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 672);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvTambahJual);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -220,7 +222,7 @@ namespace papicomfeed.Forms.Penjualan
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudJumlah)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTambahJual)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -236,7 +238,7 @@ namespace papicomfeed.Forms.Penjualan
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTambahJual;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;

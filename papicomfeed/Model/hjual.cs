@@ -30,7 +30,7 @@ namespace papicomfeed.Model
             this.alamat = alamat;
             this.tanggal = tanggal;
 
-            string query = $"INSERT INTO HJUAL (id, karyawan_id, total, customer, alamat, tanggal) VALUES('{id}', '{karyawan_id}','{total}','{customer}','{alamat}','{tanggal}')";
+            string query = $"INSERT INTO HJUAL (karyawan_id, total, customer, alamat, tanggal) VALUES('{karyawan_id}','{total}','{customer}','{alamat}','{tanggal}')";
             cmd = new MySqlCommand(query, DB.conn);
             cmd.ExecuteNonQuery();
 
