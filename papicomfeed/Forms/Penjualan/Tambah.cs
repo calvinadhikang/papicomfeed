@@ -38,9 +38,9 @@ namespace papicomfeed.Forms.Penjualan
         {
             dt = new DataTable();
             dgvTambahJual.DataSource = dt;
-            //dgvTambahJual.Columns[0].HeaderText = "Customer";
-            //dgvTambahJual.Columns[1].HeaderText = "Jenis Ikan";
-            //dgvTambahJual.Columns[2].HeaderText = "Quantity";
+            dt.Columns.Add("Customer");
+            dt.Columns.Add("Jenis Ikan");
+            dt.Columns.Add("Quantity");
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -62,28 +62,39 @@ namespace papicomfeed.Forms.Penjualan
                     {
                         int idx = -1;
                         // untuk nambah penjualan
-                        for (int i = 0; i < dgvTambahJual.Rows.Count; i++)
-                        {
-                            if (dgvTambahJual.Rows[i].Cells[1].Value.ToString() == jenis_ikan)
-                            {
-                                idx = i;
-                            }
-                        }
+                        //for (int i = 0; i < dgvTambahJual.Rows.Count; i++)
+                        //{
+                        //    if (dgvTambahJual.Rows[i].Cells[1].Value.ToString() == null)
+                        //    {
+                        //        idx = -1;
+                        //    }
+                        //    else {
+                        //        idx = i;
+                        //    }
+                        //}
 
-                        if (idx == -1)
-                        {
-                            DataRow dtbaru = dt.NewRow();
-                            dtbaru[0] = customer;
-                            dtbaru[1] = jenis_ikan;
-                            dtbaru[2] = qty;
+                        //if (idx == -1)
+                        //{
+                        //    DataRow dtbaru = dt.NewRow();
+                        //    dtbaru["Customer"] = customer;
+                        //    dtbaru["Jenis Ikan"] = jenis_ikan;
+                        //    dtbaru["Quantity"] = qty;
 
-                            dt.Rows.Add(dtbaru);
-                            MessageBox.Show("Berhasil menambahkan item");
-                        }
-                        else {
-                            dt.Rows[idx][2] = Convert.ToInt32(dt.Rows[idx][2]) + qty;
-                            MessageBox.Show("Berhasil update quantity");
-                        }
+                        //    dt.Rows.Add(dtbaru);
+                        //    MessageBox.Show("Berhasil menambahkan item");
+                        //}
+                        //else {
+                        //    dt.Rows[idx][2] = Convert.ToInt32(dt.Rows[idx][2]) + qty;
+                        //    MessageBox.Show("Berhasil update quantity");
+                        //}
+
+                        DataRow dtbaru = dt.NewRow();
+                        dtbaru["Customer"] = customer;
+                        dtbaru["Jenis Ikan"] = jenis_ikan;
+                        dtbaru["Quantity"] = qty;
+
+                        dt.Rows.Add(dtbaru);
+                        MessageBox.Show("Berhasil menambahkan item");
                     }
 
                 }
