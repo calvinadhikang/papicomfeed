@@ -142,11 +142,11 @@
     <Compile Include="Forms\Pembelian\DetailPembelian.Designer.cs">
       <DependentUpon>DetailPembelian.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pembelian\MDI.cs">
+    <Compile Include="Forms\Pembelian\MDIPembelian.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Pembelian\MDI.Designer.cs">
-      <DependentUpon>MDI.cs</DependentUpon>
+    <Compile Include="Forms\Pembelian\MDIPembelian.Designer.cs">
+      <DependentUpon>MDIPembelian.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Pembelian\Pembelian.cs">
       <SubType>Form</SubType>
@@ -172,11 +172,11 @@
     <Compile Include="Forms\Penjualan\DetailPenjualan.Designer.cs">
       <DependentUpon>DetailPenjualan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Penjualan\MDI.cs">
+    <Compile Include="Forms\Penjualan\MDIPenjualan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Penjualan\MDI.Designer.cs">
-      <DependentUpon>MDI.cs</DependentUpon>
+    <Compile Include="Forms\Penjualan\MDIPenjualan.Designer.cs">
+      <DependentUpon>MDIPenjualan.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Penjualan\Penjualan.cs">
       <SubType>Form</SubType>
@@ -193,9 +193,10 @@
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\djual.cs" />
     <Compile Include="Model\hbeli.cs" />
-    <Compile Include="Model\hjual.cs" />
+    <Compile Include="Model\Hjual.cs" />
     <Compile Include="Model\Ikan.cs" />
     <Compile Include="Model\Karyawan.cs" />
+    <Compile Include="Model\Kolam.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -243,8 +244,8 @@
     <EmbeddedResource Include="Forms\Pembelian\DetailPembelian.resx">
       <DependentUpon>DetailPembelian.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pembelian\MDI.resx">
-      <DependentUpon>MDI.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Pembelian\MDIPembelian.resx">
+      <DependentUpon>MDIPembelian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pembelian\Pembelian.resx">
       <DependentUpon>Pembelian.cs</DependentUpon>
@@ -258,8 +259,8 @@
     <EmbeddedResource Include="Forms\Penjualan\DetailPenjualan.resx">
       <DependentUpon>DetailPenjualan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Penjualan\MDI.resx">
-      <DependentUpon>MDI.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Penjualan\MDIPenjualan.resx">
+      <DependentUpon>MDIPenjualan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Penjualan\Penjualan.resx">
       <DependentUpon>Penjualan.cs</DependentUpon>

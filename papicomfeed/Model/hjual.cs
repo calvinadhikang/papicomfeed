@@ -10,7 +10,7 @@ using papicomfeed.Database;
 
 namespace papicomfeed.Model
 {
-    public class hjual
+    public class Hjual
     {
         MySqlCommand cmd;
 
@@ -22,7 +22,7 @@ namespace papicomfeed.Model
         public string tanggal;
 
         // constructor untuk insert data hjual
-        public hjual(int karyawan_id, int total, int customer, string alamat, string tanggal)
+        public Hjual(int karyawan_id, int total, int customer, string alamat, string tanggal)
         {
             this.karyawan_id = karyawan_id;
             this.total = total;
@@ -35,12 +35,10 @@ namespace papicomfeed.Model
             cmd.ExecuteNonQuery();
 
             this.id = Convert.ToInt32(cmd.LastInsertedId);
-
-            
         }
 
         // membuat class hjual yang sudah ada
-        private hjual(int id, int karyawan_id, int total, int customer, string alamat, string tanggal)
+        private Hjual(int id, int karyawan_id, int total, int customer, string alamat, string tanggal)
         {
             this.id = id;
             this.karyawan_id = karyawan_id;

@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using papicomfeed.Model;
-using System.Data;
 using MySql.Data.MySqlClient;
 using papicomfeed.Database;
 
@@ -21,12 +20,17 @@ namespace papicomfeed.Forms.Penjualan
         MySqlDataReader reader;
 
         string alamat;
-        string jenis_ikan;
         string customer;
         int telp;
-        bool pilih_customer = false;
-        bool pilih_ikan = false;
+        int total = 0;
+
+        int selectedIkanIndex = -1;
+        Customer selectedCustomer = null;
+
+        DataTable dtIkan;
+        DataTable dtCustomer;
         DataTable dt;
+
         public Tambah()
         {
             InitializeComponent();
@@ -34,90 +38,140 @@ namespace papicomfeed.Forms.Penjualan
             isiCmbIkan();
             siap2();
         }
+
         public void siap2() 
         {
             dt = new DataTable();
             dgvTambahJual.DataSource = dt;
-            dt.Columns.Add("Customer");
+            dt.Columns.Add("ID Ikan");
             dt.Columns.Add("Jenis Ikan");
             dt.Columns.Add("Quantity");
+            dt.Columns.Add("Harga");
+            dt.Columns.Add("SubTotal");
+
+            //tambah button tambah
+            DataGridViewButtonColumn btnAdd = new DataGridViewButtonColumn();
+            btnAdd.Name = "Tambah";
+            btnAdd.Text = "Tambah";
+            if (dgvTambahJual.Columns["Tambah"] == null)
+            {
+                dgvTambahJual.Columns.Insert(5, btnAdd);
+                //5 adalah columnIndex
+            }
+            //tambah button kurangi
+            DataGridViewButtonColumn btnRemove = new DataGridViewButtonColumn();
+            btnRemove.Name = "Kurangi";
+            btnRemove.Text = "Kurangi";
+            if (dgvTambahJual.Columns["Kurangi"] == null)
+            {
+                dgvTambahJual.Columns.Insert(6, btnRemove);
+                //6 adalah columnIndex
+            }
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        void countTotal()
         {
-            int qty = Convert.ToInt32(nudJumlah.Value);
-            if (pilih_customer == false) {
-                MessageBox.Show("Pilih customer terlebih dahulu");
+            total = 0;
+            foreach (DataRow item in dt.Rows)
+            {
+                total += int.Parse(item[4].ToString());
             }
-            else {
-                if (pilih_ikan == false)
+            lbTotal.Text = total.ToString();
+        }
+
+        private void btnTambah(object sender, EventArgs e)
+        {
+            if (selectedIkanIndex != -1)
+            {
+                int id = int.Parse(dtIkan.Rows[selectedIkanIndex][0].ToString());
+                string nama = dtIkan.Rows[selectedIkanIndex][1].ToString();
+                int qty = int.Parse(nudJumlah.Value.ToString());
+                int harga = int.Parse(dtIkan.Rows[selectedIkanIndex][3].ToString());
+                int subtotal = qty * harga;
+
+                if (qty <= 0)
                 {
-                    MessageBox.Show("Pilih jenis ikan terlebih dahulu");
+                    MessageBox.Show("QTY tidak boleh kurang dari 1");
+                    return;
                 }
-                else {
-                    if (qty < 1)
-                    {
-                        MessageBox.Show("Input quantity tidak valid");
-                    }
-                    else 
-                    {
-                        int idx = -1;
-                        // untuk nambah penjualan
-                        //for (int i = 0; i < dgvTambahJual.Rows.Count; i++)
-                        //{
-                        //    if (dgvTambahJual.Rows[i].Cells[1].Value.ToString() == null)
-                        //    {
-                        //        idx = -1;
-                        //    }
-                        //    else {
-                        //        idx = i;
-                        //    }
-                        //}
 
-                        //if (idx == -1)
-                        //{
-                        //    DataRow dtbaru = dt.NewRow();
-                        //    dtbaru["Customer"] = customer;
-                        //    dtbaru["Jenis Ikan"] = jenis_ikan;
-                        //    dtbaru["Quantity"] = qty;
+                DataRow dtR = dt.NewRow();
+                dtR[0] = id;
+                dtR[1] = nama;
+                dtR[2] = qty;
+                dtR[3] = harga;
+                dtR[4] = subtotal;
+                dt.Rows.Add(dtR);
 
-                        //    dt.Rows.Add(dtbaru);
-                        //    MessageBox.Show("Berhasil menambahkan item");
-                        //}
-                        //else {
-                        //    dt.Rows[idx][2] = Convert.ToInt32(dt.Rows[idx][2]) + qty;
-                        //    MessageBox.Show("Berhasil update quantity");
-                        //}
+                selectedIkanIndex = -1;
+                countTotal();
+            }
+            else
+            {
+                MessageBox.Show("Pilih data");
+            }
+        }
 
-                        DataRow dtbaru = dt.NewRow();
-                        dtbaru["Customer"] = customer;
-                        dtbaru["Jenis Ikan"] = jenis_ikan;
-                        dtbaru["Quantity"] = qty;
+        private void dgvTambahJual_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+            int oldQty = int.Parse(dt.Rows[row][2].ToString());
 
-                        dt.Rows.Add(dtbaru);
-                        MessageBox.Show("Berhasil menambahkan item");
-                    }
-
+            if (e.ColumnIndex == 0 && row > -1)
+            {
+                //lakukan tambah qty
+                oldQty += 1;
+            }
+            else
+            {
+                //lakukan pengurangan qty
+                oldQty -= 1;
+                //kalau qty = 0
+                if (oldQty == 0)
+                {
+                    dt.Rows.RemoveAt(row);
+                    countTotal();
+                    return;
                 }
             }
+
+            int harga = int.Parse(dt.Rows[row][3].ToString());
+            int subtotal = oldQty * harga;
+
+            //set value baru
+            dt.Rows[row][2] = oldQty;
+            dt.Rows[row][4] = subtotal;
+            countTotal();
         }
 
         public void isiCmbCustomer() 
         {
             cmbCustomer.Items.Clear();
-            cmbCustomer.Items.Add("None");
             try
             {
-                MySqlCommand cmd = new MySqlCommand("select * from customer", DB.conn);
-                reader = cmd.ExecuteReader();
+                dtCustomer = Customer.getAll();
+                Dictionary<int, string> cmbCustomerSource = new Dictionary<int, string>();
 
-                if (reader.HasRows) 
+                foreach (DataRow row in dtCustomer.Rows)
                 {
-                    while (reader.Read()) 
-                    {
-                        cmbCustomer.Items.Add(reader[1].ToString());
-                    }
+                    cmbCustomerSource.Add(int.Parse(row[0].ToString()), row[1].ToString());
                 }
-                reader.Close();
+
+                cmbCustomer.DataSource = new BindingSource(cmbCustomerSource, null);
+                cmbCustomer.DisplayMember = "Value";
+                cmbCustomer.ValueMember = "Key";
+
+                //MySqlCommand cmd = new MySqlCommand("select * from customer", DB.conn);
+                //reader = cmd.ExecuteReader();
+
+                //if (reader.HasRows) 
+                //{
+                //    while (reader.Read()) 
+                //    {
+                //        cmbCustomer.Items.Add(reader[1].ToString());
+                //    }
+                //}
+                //reader.Close();
             }
             catch (Exception ex)
             {
@@ -130,16 +184,19 @@ namespace papicomfeed.Forms.Penjualan
             cmbIkan.Items.Clear();
             try
             {
-                MySqlCommand cmd = new MySqlCommand("select * from ikan", DB.conn);
-                reader = cmd.ExecuteReader();
-                if (reader.HasRows) 
+                dtIkan = Ikan.getAll();
+                Dictionary<int, string> cmbIkanSource = new Dictionary<int, string>();
+
+                int i = 0;
+                foreach (DataRow row in dtIkan.Rows)
                 {
-                    while (reader.Read()) 
-                    {
-                        cmbIkan.Items.Add(reader[1].ToString());
-                    }
+                    cmbIkanSource.Add(i, row[1].ToString());
+                    i++;
                 }
-                reader.Close();
+
+                cmbIkan.DataSource = new BindingSource(cmbIkanSource, null);
+                cmbIkan.DisplayMember = "Value";
+                cmbIkan.ValueMember = "Key";
             }
             catch (Exception ex)
             {
@@ -151,30 +208,70 @@ namespace papicomfeed.Forms.Penjualan
         {
             if (cmbCustomer.SelectedIndex > -1) 
             {
-                MySqlCommand query = new MySqlCommand("select alamat from customer where nama = '" + cmbCustomer.Text + "'",DB.conn);
-                alamat = query.ExecuteScalar().ToString();
-                lblAlamat.Text = alamat;
+                //MySqlCommand query = new MySqlCommand("select alamat from customer where nama = '" + cmbCustomer.Text + "'",DB.conn);
+                //alamat = query.ExecuteScalar().ToString();
+                //lblAlamat.Text = alamat;
 
-                MySqlCommand query2 = new MySqlCommand("select telp from customer where nama = '"+cmbCustomer.Text+"'", DB.conn);
-                telp = Convert.ToInt32(query2.ExecuteScalar());
-                lblTelp.Text = telp.ToString();
+                //MySqlCommand query2 = new MySqlCommand("select telp from customer where nama = '"+cmbCustomer.Text+"'", DB.conn);
+                //telp = Convert.ToInt32(query2.ExecuteScalar());
+                //lblTelp.Text = telp.ToString();
 
-                pilih_customer = true;
-                customer = cmbCustomer.Text;
+                //pilih_customer = true;
+                //customer = cmbCustomer.Text;
+
+                int key = ((KeyValuePair<int, string>)cmbCustomer.SelectedItem).Key;
+                selectedCustomer = Customer.get(key);
+                lblAlamat.Text = selectedCustomer.alamat;
+                lblTelp.Text = selectedCustomer.telpon;
             }
-        }
-
-        private void dgvTambahJual_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void cmbIkan_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbIkan.SelectedIndex > -1)
             {
-                jenis_ikan = cmbIkan.Text;
-                pilih_ikan = true;
+                int key = ((KeyValuePair<int, string>)cmbIkan.SelectedItem).Key;
+                string value = ((KeyValuePair<int, string>)cmbIkan.SelectedItem).Value;
+                selectedIkanIndex = key;
+            }
+        }
+
+        private void btnAddPenjualan_Click(object sender, EventArgs e)
+        {
+            MySqlTransaction trans = null;
+
+            try
+            {
+                trans = DB.conn.BeginTransaction();
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = DB.conn;
+                cmd.Transaction = trans;
+
+                //insert header
+                cmd.CommandText = $"INSERT INTO HJUAL (KARYAWAN_ID, TOTAL, CUSTOMER, ALAMAT) VALUES ({Form1.idKaryawan}, {total}, {selectedCustomer.id}, '{selectedCustomer.alamat}')";
+                cmd.ExecuteNonQuery();
+                int headerId = Convert.ToInt32(cmd.LastInsertedId);
+
+                //insert detail
+                foreach (DataRow item in dt.Rows)
+                {
+                    int ikanId = int.Parse(item[0].ToString());
+                    int qty = int.Parse(item[2].ToString());
+                    int harga = int.Parse(item[3].ToString());
+                    int subtotal = int.Parse(item[4].ToString());
+
+                    cmd.CommandText = $"INSERT INTO DJUAL (HJUAL_ID, IKAN_ID, QTY, HARGA, SUBTOTAL) VALUES ({headerId}, {ikanId}, {qty}, {harga}, {subtotal})";
+                    cmd.ExecuteNonQuery();
+                }
+
+                trans.Commit();
+                MessageBox.Show($"Berhasil Insert Penjualan {selectedCustomer.nama}");
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                trans.Rollback();
             }
         }
     }

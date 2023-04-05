@@ -12,6 +12,7 @@ using papicomfeed.Database;
 using papicomfeed.Model;
 using papicomfeed.Forms.Master;
 using papicomfeed.Forms.Penjualan;
+using papicomfeed.Forms.Pembelian;
 
 namespace papicomfeed
 {
@@ -23,6 +24,8 @@ namespace papicomfeed
             openConnectionDatabase();
         }
 
+        public static int idKaryawan = -1;
+
         //untuk membuka koneksi ke database saat
         //program pertama kali jalan
         void openConnectionDatabase()
@@ -33,7 +36,7 @@ namespace papicomfeed
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error DB Connection :" + e.Message.ToString());
+                //MessageBox.Show("Error DB Connection :" + e.Message.ToString());
             }
         }
 
@@ -54,19 +57,26 @@ namespace papicomfeed
                 MessageBox.Show("Username tidak ditemukan");
                 return;
             }
+
+            idKaryawan = k.id;
             //cek role
-            else if (k.role == 0)
+            if (k.role == 0)
             {
                 FormMasterMDI f = new FormMasterMDI();
                 f.Show();
                 this.Hide();
             }
             else if (k.role == 1) {
-                MDI m = new MDI();
+                MDIPenjualan m = new MDIPenjualan();
                 m.Show();
                 this.Hide();
             }
-            
+            else if (k.role == 2)
+            {
+                MDIPembelian f = new MDIPembelian();
+                f.Show();
+                this.Hide();
+            }
         }
     }
 }

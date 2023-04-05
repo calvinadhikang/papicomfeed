@@ -1,7 +1,7 @@
 ﻿
 namespace papicomfeed.Forms.Penjualan
 {
-    partial class MDI
+    partial class MDIPenjualan
     {
         /// <summary>
         /// Required designer variable.
@@ -46,33 +46,34 @@ namespace papicomfeed.Forms.Penjualan
             this.logOutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 45);
+            this.menuStrip1.Size = new System.Drawing.Size(784, 38);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // tambahToolStripMenuItem
             // 
             this.tambahToolStripMenuItem.Name = "tambahToolStripMenuItem";
-            this.tambahToolStripMenuItem.Size = new System.Drawing.Size(124, 41);
+            this.tambahToolStripMenuItem.Size = new System.Drawing.Size(98, 34);
             this.tambahToolStripMenuItem.Text = "Tambah";
             this.tambahToolStripMenuItem.Click += new System.EventHandler(this.tambahToolStripMenuItem_Click);
             // 
             // lihatDataToolStripMenuItem
             // 
             this.lihatDataToolStripMenuItem.Name = "lihatDataToolStripMenuItem";
-            this.lihatDataToolStripMenuItem.Size = new System.Drawing.Size(152, 41);
+            this.lihatDataToolStripMenuItem.Size = new System.Drawing.Size(120, 34);
             this.lihatDataToolStripMenuItem.Text = "Lihat Data";
             this.lihatDataToolStripMenuItem.Click += new System.EventHandler(this.lihatDataToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(127, 41);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(100, 34);
             this.logOutToolStripMenuItem.Text = "Log Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // MDI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.menuStrip1);

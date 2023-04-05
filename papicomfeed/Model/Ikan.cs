@@ -19,15 +19,15 @@ namespace papicomfeed.Model
         public int id;
         public string nama;
         public int waktu;
+        public int harga;
 
-
-        public Ikan(string nama, int waktu)
+        public Ikan(string nama, int waktu, int harga)
         {
             this.nama = nama;
             this.waktu = waktu;
-            
+            this.harga = harga;
 
-            string query = $"INSERT INTO IKAN (NAMA, WAKTU)VALUES ('{nama}', {waktu})";
+            string query = $"INSERT INTO IKAN (NAMA, WAKTU, HARGA)VALUES ('{nama}', {waktu}, {harga})";
             cmd = new MySqlCommand(query, DB.conn);
             cmd.ExecuteNonQuery();
 
@@ -35,19 +35,17 @@ namespace papicomfeed.Model
         }
 
 
-        private Ikan(int id , string nama , int waktu)
+        public Ikan(int id , string nama , int waktu, int harga)
         {
             this.id = id;
             this.nama = nama;
             this.waktu = waktu;
+            this.harga = harga;
         }
 
         public void save()
         {
-            string query = $"UPDATE IKAN SET " +
-                $"NAMA='{this.nama}', " +
-                $"waktu={this.waktu} " +               
-                $"WHERE ID={this.id}";
+            string query = $"UPDATE IKAN SET NAMA='{nama}', WAKTU={waktu}, HARGA={harga} WHERE ID={id}";
             cmd = new MySqlCommand(query, DB.conn);
             cmd.ExecuteNonQuery();
         }
@@ -75,11 +73,12 @@ namespace papicomfeed.Model
 
             string nama = dt.Rows[0][1].ToString();
             int waktu = int.Parse(dt.Rows[0][2].ToString());
+            int harga = int.Parse(dt.Rows[0][3].ToString());
             int idikan = id;
 
             //Ikan i = new Ikan(idikan, nama, waktu);
 
-            return new Ikan(idikan, nama, waktu);
+            return new Ikan(idikan, nama, waktu, harga);
         }
 
         public static DataTable getAll()

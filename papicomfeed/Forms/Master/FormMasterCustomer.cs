@@ -17,15 +17,11 @@ namespace papicomfeed.Forms.Master
         public FormMasterCustomer()
         {
             InitializeComponent();
+            displayData();
         }
 
         public void displayData() {
             dataGridView1.DataSource = Customer.getAll();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

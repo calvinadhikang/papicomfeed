@@ -23,7 +23,7 @@ namespace papicomfeed.Forms.Master
 
         private void btnTambah_Click(object sender, EventArgs e)
         {
-            if (tbNama.Text == "" || tbWaktu.Text == "")
+            if (tbNama.Text == "" || tbWaktu.Text == "" || numericUpDown1.Value == 0)
             {
                 MessageBox.Show("Inputan tidak boleh kosong");
                 return;
@@ -31,6 +31,7 @@ namespace papicomfeed.Forms.Master
 
             string nama = tbNama.Text;
             int waktu = int.Parse(tbWaktu.Text);
+            int harga = int.Parse(numericUpDown1.Value.ToString());
 
             //cek duplicate
             if (Ikan.checkDuplicate(nama))
@@ -39,7 +40,7 @@ namespace papicomfeed.Forms.Master
                 return;
             }
 
-            Ikan k = new Ikan(nama, waktu);
+            Ikan k = new Ikan(nama, waktu, harga);
             MessageBox.Show("Berhasil Tambah Ikan " + nama);
             parent.displayData();
         }

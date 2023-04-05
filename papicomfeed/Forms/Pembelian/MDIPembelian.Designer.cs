@@ -1,7 +1,7 @@
 ﻿
 namespace papicomfeed.Forms.Pembelian
 {
-    partial class MDI
+    partial class MDIPembelian
     {
         /// <summary>
         /// Required designer variable.

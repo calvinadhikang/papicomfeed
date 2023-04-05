@@ -42,20 +42,24 @@ namespace papicomfeed.Forms.Master
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form1 f = new Form1();
+            f.Show();
+            this.Hide();
         }
 
         private void transaksiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void penjualanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+        }
 
-
-            
+        private void kolamToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormMasterKolam f = new FormMasterKolam();
+            f.MdiParent = this;
+            f.Show();
         }
     }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2023 at 06:40 PM
+-- Generation Time: Apr 05, 2023 at 09:54 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -39,7 +39,8 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`id`, `nama`, `alamat`, `telp`) VALUES
-(1, 'nama1', 'alamat1', 123);
+(1, 'Customer 1', 'Surabaya Dekat ISTTS', 123123),
+(2, 'Customer 2', 'Surabaya dekat monumen pahlawan', 456456);
 
 -- --------------------------------------------------------
 
@@ -71,6 +72,14 @@ CREATE TABLE `djual` (
   `subtotal` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `djual`
+--
+
+INSERT INTO `djual` (`id`, `hjual_id`, `ikan_id`, `qty`, `harga`, `subtotal`) VALUES
+(1, 1, 3, 2, 100, 200),
+(2, 1, 2, 1, 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -101,6 +110,13 @@ CREATE TABLE `hjual` (
   `tanggal` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `hjual`
+--
+
+INSERT INTO `hjual` (`id`, `karyawan_id`, `total`, `customer`, `alamat`, `tanggal`) VALUES
+(1, 3, 200, 1, 'alamat1', '2023-04-05 19:47:59.958261');
+
 -- --------------------------------------------------------
 
 --
@@ -110,16 +126,18 @@ CREATE TABLE `hjual` (
 CREATE TABLE `ikan` (
   `id` int(10) NOT NULL,
   `nama` varchar(200) NOT NULL,
-  `waktu` int(10) NOT NULL
+  `waktu` int(10) NOT NULL,
+  `harga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `ikan`
 --
 
-INSERT INTO `ikan` (`id`, `nama`, `waktu`) VALUES
-(1, 'ikan1', 2),
-(2, 'ikan2', 12);
+INSERT INTO `ikan` (`id`, `nama`, `waktu`, `harga`) VALUES
+(1, 'Cupang Hias', 2, 1000),
+(2, 'Lele', 2, 2500),
+(3, 'Gurami', 4, 5000);
 
 -- --------------------------------------------------------
 
@@ -141,7 +159,9 @@ CREATE TABLE `karyawan` (
 --
 
 INSERT INTO `karyawan` (`id`, `nama`, `username`, `telp`, `role`, `status`) VALUES
-(1, 'Calvin Adhikang', 'calvin', '123123', 0, 0);
+(1, 'Calvin Adhikang', 'calvin', '123123', 0, 0),
+(2, 'Edward Patrick', 'ed', '456', 2, 1),
+(3, 'Jojo', 'jo', '123', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -155,6 +175,13 @@ CREATE TABLE `kolam` (
   `kapasitas` int(10) NOT NULL,
   `status` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `kolam`
+--
+
+INSERT INTO `kolam` (`id`, `nama`, `kapasitas`, `status`) VALUES
+(1, 'Kolam Utara 1', 100, 0);
 
 --
 -- Indexes for dumped tables
@@ -216,7 +243,7 @@ ALTER TABLE `kolam`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `dbeli`
@@ -228,7 +255,7 @@ ALTER TABLE `dbeli`
 -- AUTO_INCREMENT for table `djual`
 --
 ALTER TABLE `djual`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `hbeli`
@@ -240,25 +267,25 @@ ALTER TABLE `hbeli`
 -- AUTO_INCREMENT for table `hjual`
 --
 ALTER TABLE `hjual`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `ikan`
 --
 ALTER TABLE `ikan`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `kolam`
 --
 ALTER TABLE `kolam`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

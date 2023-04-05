@@ -33,10 +33,10 @@ namespace papicomfeed.Forms.Master
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numKapasitas = new System.Windows.Forms.NumericUpDown();
             this.btnBackTambahIkan = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numKapasitas)).BeginInit();
             this.SuspendLayout();
             // 
             // tbNama
@@ -73,12 +73,12 @@ namespace papicomfeed.Forms.Master
             this.label2.TabIndex = 20;
             this.label2.Text = "Kapasitas :";
             // 
-            // numericUpDown1
+            // numKapasitas
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(139, 94);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(259, 31);
-            this.numericUpDown1.TabIndex = 21;
+            this.numKapasitas.Location = new System.Drawing.Point(139, 94);
+            this.numKapasitas.Name = "numKapasitas";
+            this.numKapasitas.Size = new System.Drawing.Size(259, 31);
+            this.numKapasitas.TabIndex = 21;
             // 
             // btnBackTambahIkan
             // 
@@ -88,6 +88,7 @@ namespace papicomfeed.Forms.Master
             this.btnBackTambahIkan.TabIndex = 19;
             this.btnBackTambahIkan.Text = "Tambah";
             this.btnBackTambahIkan.UseVisualStyleBackColor = true;
+            this.btnBackTambahIkan.Click += new System.EventHandler(this.btnBackTambahIkan_Click);
             // 
             // button1
             // 
@@ -97,6 +98,7 @@ namespace papicomfeed.Forms.Master
             this.button1.TabIndex = 22;
             this.button1.Text = "Kembali";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormMasterKolamAdd
             // 
@@ -104,17 +106,17 @@ namespace papicomfeed.Forms.Master
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(427, 186);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numKapasitas);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBackTambahIkan);
             this.Controls.Add(this.tbNama);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormMasterKolamAdd";
             this.Text = "FormMasterKolamAdd";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numKapasitas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +128,7 @@ namespace papicomfeed.Forms.Master
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numKapasitas;
         private System.Windows.Forms.Button btnBackTambahIkan;
         private System.Windows.Forms.Button button1;
     }

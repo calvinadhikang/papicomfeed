@@ -45,7 +45,7 @@ namespace papicomfeed.Forms.Master
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
     }
 }

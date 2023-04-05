@@ -12,9 +12,9 @@ using papicomfeed.Model;
 
 namespace papicomfeed.Forms.Penjualan
 {
-    public partial class MDI : Form
+    public partial class MDIPenjualan : Form
     {
-        public MDI()
+        public MDIPenjualan()
         {
             InitializeComponent();
         }
@@ -31,6 +31,13 @@ namespace papicomfeed.Forms.Penjualan
             Penjualan p = new Penjualan();
             p.MdiParent = this;
             p.Show();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            f.Show();
+            this.Hide();
         }
     }
 }

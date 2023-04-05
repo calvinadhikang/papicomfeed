@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace papicomfeed.Forms.Pembelian
 {
-    public partial class MDI : Form
+    public partial class MDIPembelian : Form
     {
-        public MDI()
+        public MDIPembelian()
         {
             InitializeComponent();
         }

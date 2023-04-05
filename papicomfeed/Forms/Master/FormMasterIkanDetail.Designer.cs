@@ -39,6 +39,9 @@ namespace papicomfeed.Forms.Master
             this.btnsaveikan = new System.Windows.Forms.Button();
             this.btnbackikan = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -101,7 +104,7 @@ namespace papicomfeed.Forms.Master
             // 
             // btnsaveikan
             // 
-            this.btnsaveikan.Location = new System.Drawing.Point(302, 160);
+            this.btnsaveikan.Location = new System.Drawing.Point(302, 197);
             this.btnsaveikan.Name = "btnsaveikan";
             this.btnsaveikan.Size = new System.Drawing.Size(99, 35);
             this.btnsaveikan.TabIndex = 2;
@@ -128,11 +131,29 @@ namespace papicomfeed.Forms.Master
             this.label5.TabIndex = 0;
             this.label5.Text = "Bulan";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(15, 162);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 25);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Harga :";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(103, 160);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(298, 31);
+            this.numericUpDown1.TabIndex = 5;
+            // 
             // FormMasterIkanDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(453, 229);
+            this.ClientSize = new System.Drawing.Size(425, 243);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnbackikan);
             this.Controls.Add(this.btnsaveikan);
             this.Controls.Add(this.txtDetailWaktuIkan);
@@ -147,6 +168,7 @@ namespace papicomfeed.Forms.Master
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormMasterIkanDetail";
             this.Text = "FormMasterIkanDetail";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,5 +186,7 @@ namespace papicomfeed.Forms.Master
         private System.Windows.Forms.Button btnsaveikan;
         private System.Windows.Forms.Button btnbackikan;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

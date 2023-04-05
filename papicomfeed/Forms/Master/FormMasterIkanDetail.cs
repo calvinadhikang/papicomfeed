@@ -29,12 +29,14 @@ namespace papicomfeed.Forms.Master
             txtDetailIdIkan.Text = i.id.ToString();
             txtDetailNamaIkan.Text = i.nama.ToString();
             txtDetailWaktuIkan.Text = i.waktu.ToString();
+            numericUpDown1.Value = i.harga;
         }
 
         private void btnsaveikan_Click(object sender, EventArgs e)
         {
             i.nama = txtDetailNamaIkan.Text;
             i.waktu = int.Parse(txtDetailWaktuIkan.Text);
+            i.harga = int.Parse(numericUpDown1.Value.ToString());
 
             i.save();
 
@@ -44,7 +46,7 @@ namespace papicomfeed.Forms.Master
 
         private void btnbackikan_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
     }
 }
