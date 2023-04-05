@@ -160,7 +160,6 @@
     <Compile Include="Forms\Pembelian\Tambah.Designer.cs">
       <DependentUpon>Tambah.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Forms\Pemeliharaan\MDI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,8 +190,10 @@
     <Compile Include="Forms\Penjualan\Tambah.Designer.cs">
       <DependentUpon>Tambah.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\djual.cs" />
+    <Compile Include="Model\hbeli.cs" />
+    <Compile Include="Model\hjual.cs" />
     <Compile Include="Model\Ikan.cs" />
     <Compile Include="Model\Karyawan.cs" />
     <Compile Include="Program.cs" />
@@ -251,7 +252,6 @@
     <EmbeddedResource Include="Forms\Pembelian\Tambah.resx">
       <DependentUpon>Tambah.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Forms\Pemeliharaan\MDI.resx">
       <DependentUpon>MDI.cs</DependentUpon>
     </EmbeddedResource>

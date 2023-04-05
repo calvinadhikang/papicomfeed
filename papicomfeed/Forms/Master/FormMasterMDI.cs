@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using papicomfeed.Model;
 
+
 namespace papicomfeed.Forms.Master
 {
     public partial class FormMasterMDI : Form
@@ -37,6 +38,24 @@ namespace papicomfeed.Forms.Master
             FormMasterCustomer fc = new FormMasterCustomer();
             fc.MdiParent = this;
             fc.Show();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void transaksiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void penjualanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+
+
+            
         }
     }
 }

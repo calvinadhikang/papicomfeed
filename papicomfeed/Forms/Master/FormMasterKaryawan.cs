@@ -47,5 +47,10 @@ namespace papicomfeed.Forms.Master
             FormMasterKaryawanAdd f = new FormMasterKaryawanAdd(this);
             f.Show();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

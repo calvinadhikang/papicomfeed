@@ -44,5 +44,10 @@ namespace papicomfeed.Forms.Master
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

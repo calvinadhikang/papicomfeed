@@ -33,10 +33,11 @@ namespace papicomfeed.Forms.Master
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.karyawanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ikanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kolamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.penjualanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,22 +70,32 @@ namespace papicomfeed.Forms.Master
             // karyawanToolStripMenuItem
             // 
             this.karyawanToolStripMenuItem.Name = "karyawanToolStripMenuItem";
-            this.karyawanToolStripMenuItem.Size = new System.Drawing.Size(224, 42);
+            this.karyawanToolStripMenuItem.Size = new System.Drawing.Size(223, 42);
             this.karyawanToolStripMenuItem.Text = "Karyawan";
             this.karyawanToolStripMenuItem.Click += new System.EventHandler(this.karyawanToolStripMenuItem_Click);
             // 
             // ikanToolStripMenuItem
             // 
             this.ikanToolStripMenuItem.Name = "ikanToolStripMenuItem";
-            this.ikanToolStripMenuItem.Size = new System.Drawing.Size(224, 42);
+            this.ikanToolStripMenuItem.Size = new System.Drawing.Size(223, 42);
             this.ikanToolStripMenuItem.Text = "Ikan";
             this.ikanToolStripMenuItem.Click += new System.EventHandler(this.ikanToolStripMenuItem_Click);
             // 
+            // customerToolStripMenuItem
+            // 
+            this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(223, 42);
+            this.customerToolStripMenuItem.Text = "Customer";
+            this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
+            // 
             // transaksiToolStripMenuItem
             // 
+            this.transaksiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.penjualanToolStripMenuItem});
             this.transaksiToolStripMenuItem.Name = "transaksiToolStripMenuItem";
             this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(137, 41);
             this.transaksiToolStripMenuItem.Text = "Transaksi";
+            this.transaksiToolStripMenuItem.Click += new System.EventHandler(this.transaksiToolStripMenuItem_Click);
             // 
             // kolamToolStripMenuItem
             // 
@@ -97,13 +108,14 @@ namespace papicomfeed.Forms.Master
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 41);
             this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
-            // customerToolStripMenuItem
+            // penjualanToolStripMenuItem
             // 
-            this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(224, 42);
-            this.customerToolStripMenuItem.Text = "Customer";
-            this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
+            this.penjualanToolStripMenuItem.Name = "penjualanToolStripMenuItem";
+            this.penjualanToolStripMenuItem.Size = new System.Drawing.Size(224, 42);
+            this.penjualanToolStripMenuItem.Text = "Penjualan";
+            this.penjualanToolStripMenuItem.Click += new System.EventHandler(this.penjualanToolStripMenuItem_Click);
             // 
             // FormMasterMDI
             // 
@@ -135,5 +147,6 @@ namespace papicomfeed.Forms.Master
         private System.Windows.Forms.ToolStripMenuItem kolamToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem penjualanToolStripMenuItem;
     }
 }

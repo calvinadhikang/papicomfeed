@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using papicomfeed.Database;
 using papicomfeed.Model;
 using papicomfeed.Forms.Master;
+using papicomfeed.Forms.Penjualan;
 
 namespace papicomfeed
 {
@@ -60,6 +61,12 @@ namespace papicomfeed
                 f.Show();
                 this.Hide();
             }
+            else if (k.role == 1) {
+                MDI m = new MDI();
+                m.Show();
+                this.Hide();
+            }
+            
         }
     }
 }
