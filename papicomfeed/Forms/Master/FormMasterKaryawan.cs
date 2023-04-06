@@ -23,7 +23,46 @@ namespace papicomfeed.Forms.Master
 
         public void displayData()
         {
-            dataGridView1.DataSource = Karyawan.getAll();
+            DataTable dtKaryawan = Karyawan.getAll();
+
+
+            //untuk kostumisasi isi dari datatable
+            //1. buat datatable, lalu clone dengan sumber data
+            //2. ganti datatype columnnya
+            //3. isi Datatable Baru dengan foreach dari Datatable Lama, dan lakukan pergantian value disini
+            DataTable dt = dtKaryawan.Clone();
+            dt.Columns[4].DataType = typeof(string);
+            dt.Columns[5].DataType = typeof(string);
+         
+            foreach (DataRow item in dtKaryawan.Rows)
+            {
+                //change role text
+                //harus punya variabel untuk nampung nilai, tidak bisa langsung ganti variabel item (dataRow)
+                string role = "Pemeliharaan";
+                if (item[4].ToString() == "0")
+                {
+                    role = "Admin";
+                }
+                else if (item[4].ToString() == "1")
+                {
+                    role = "Penjualan";
+                }
+                else if (item[4].ToString() == "2")
+                {
+                    role = "Pembelian";
+                }
+
+                //change status text
+                string status = "Aktif";
+                if (item[5].ToString() == "0")
+                {
+                    status = "Non - Aktif";
+                }
+
+                dt.Rows.Add(new Object[] { item[0], item[1], item[2], item[3], role, status });
+            }
+
+            dataGridView1.DataSource = dt;
             dataGridView1.Columns[0].HeaderText = "ID";
             dataGridView1.Columns[1].HeaderText = "Nama";
             dataGridView1.Columns[2].HeaderText = "Username";
