@@ -136,6 +136,24 @@
     <Compile Include="Forms\Master\FormMasterMDI.Designer.cs">
       <DependentUpon>FormMasterMDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Master\FormMasterSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterSupplier.Designer.cs">
+      <DependentUpon>FormMasterSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterSupplierAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterSupplierAdd.Designer.cs">
+      <DependentUpon>FormMasterSupplierAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterSupplierDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormMasterSupplierDetail.Designer.cs">
+      <DependentUpon>FormMasterSupplierDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Pembelian\DetailPembelian.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,12 +209,14 @@
       <DependentUpon>Tambah.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\DBeli.cs" />
     <Compile Include="Model\Djual.cs" />
-    <Compile Include="Model\hbeli.cs" />
+    <Compile Include="Model\Hbeli.cs" />
     <Compile Include="Model\Hjual.cs" />
     <Compile Include="Model\Ikan.cs" />
     <Compile Include="Model\Karyawan.cs" />
     <Compile Include="Model\Kolam.cs" />
+    <Compile Include="Model\Supplier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -240,6 +260,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master\FormMasterMDI.resx">
       <DependentUpon>FormMasterMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormMasterSupplier.resx">
+      <DependentUpon>FormMasterSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormMasterSupplierAdd.resx">
+      <DependentUpon>FormMasterSupplierAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormMasterSupplierDetail.resx">
+      <DependentUpon>FormMasterSupplierDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pembelian\DetailPembelian.resx">
       <DependentUpon>DetailPembelian.cs</DependentUpon>

@@ -143,7 +143,8 @@ namespace papicomfeed.Forms.Pembelian
             //tambah button tambah
             DataGridViewButtonColumn btnAdd = new DataGridViewButtonColumn();
             btnAdd.Name = "Tambah";
-            btnAdd.Text = "Tambah";
+            btnAdd.Text = "+";
+            btnAdd.UseColumnTextForButtonValue = true;
             if (dgvPembelian.Columns["Tambah"] == null)
             {
                 dgvPembelian.Columns.Insert(7, btnAdd);
@@ -152,7 +153,8 @@ namespace papicomfeed.Forms.Pembelian
             //tambah button kurangi
             DataGridViewButtonColumn btnRemove = new DataGridViewButtonColumn();
             btnRemove.Name = "Kurangi";
-            btnRemove.Text = "Kurangi";
+            btnRemove.Text = "-";
+            btnRemove.UseColumnTextForButtonValue = true;
             if (dgvPembelian.Columns["Kurangi"] == null)
             {
                 dgvPembelian.Columns.Insert(8, btnRemove);

@@ -23,13 +23,20 @@ namespace papicomfeed.Forms.Pembelian
 
         public void displaydata()
         {
-            dt = hbeli.getAll();
+            dt = Hbeli.getAll();
             dgvPembelian.DataSource = dt;
         }
 
         private void dgvPembelian_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dgvPembelian_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int header = int.Parse(dt.Rows[e.RowIndex][0].ToString());
+            DetailPembelian f = new DetailPembelian(header);
+            f.Show();
         }
     }
 }

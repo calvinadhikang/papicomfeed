@@ -34,10 +34,11 @@ namespace papicomfeed.Forms.Master
             this.karyawanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ikanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kolamToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.transaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.penjualanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kolamToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +63,8 @@ namespace papicomfeed.Forms.Master
             this.karyawanToolStripMenuItem,
             this.ikanToolStripMenuItem,
             this.customerToolStripMenuItem,
-            this.kolamToolStripMenuItem1});
+            this.kolamToolStripMenuItem1,
+            this.supplierToolStripMenuItem});
             this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
             this.masterToolStripMenuItem.Size = new System.Drawing.Size(89, 34);
             this.masterToolStripMenuItem.Text = "Master";
@@ -88,6 +90,13 @@ namespace papicomfeed.Forms.Master
             this.customerToolStripMenuItem.Text = "Customer";
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
+            // kolamToolStripMenuItem1
+            // 
+            this.kolamToolStripMenuItem1.Name = "kolamToolStripMenuItem1";
+            this.kolamToolStripMenuItem1.Size = new System.Drawing.Size(180, 34);
+            this.kolamToolStripMenuItem1.Text = "Kolam";
+            this.kolamToolStripMenuItem1.Click += new System.EventHandler(this.kolamToolStripMenuItem1_Click);
+            // 
             // transaksiToolStripMenuItem
             // 
             this.transaksiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -111,12 +120,12 @@ namespace papicomfeed.Forms.Master
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
-            // kolamToolStripMenuItem1
+            // supplierToolStripMenuItem
             // 
-            this.kolamToolStripMenuItem1.Name = "kolamToolStripMenuItem1";
-            this.kolamToolStripMenuItem1.Size = new System.Drawing.Size(180, 34);
-            this.kolamToolStripMenuItem1.Text = "Kolam";
-            this.kolamToolStripMenuItem1.Click += new System.EventHandler(this.kolamToolStripMenuItem1_Click);
+            this.supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
+            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(180, 34);
+            this.supplierToolStripMenuItem.Text = "Supplier";
+            this.supplierToolStripMenuItem.Click += new System.EventHandler(this.supplierToolStripMenuItem_Click);
             // 
             // FormMasterMDI
             // 
@@ -149,5 +158,6 @@ namespace papicomfeed.Forms.Master
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem penjualanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kolamToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem;
     }
 }

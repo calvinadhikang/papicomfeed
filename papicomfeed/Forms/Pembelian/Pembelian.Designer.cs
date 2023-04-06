@@ -39,7 +39,7 @@ namespace papicomfeed.Forms.Pembelian
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(313, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 37);
+            this.label1.Size = new System.Drawing.Size(166, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Lihat Pembelian";
             // 
@@ -52,10 +52,11 @@ namespace papicomfeed.Forms.Pembelian
             this.dgvPembelian.Size = new System.Drawing.Size(760, 478);
             this.dgvPembelian.TabIndex = 2;
             this.dgvPembelian.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPembelian_CellContentClick);
+            this.dgvPembelian.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPembelian_CellDoubleClick);
             // 
             // Pembelian
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.dgvPembelian);

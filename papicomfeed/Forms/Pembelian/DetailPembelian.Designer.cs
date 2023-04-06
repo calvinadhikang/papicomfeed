@@ -37,6 +37,12 @@ namespace papicomfeed.Forms.Pembelian
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lbKode = new System.Windows.Forms.Label();
+            this.lbKaryawan = new System.Windows.Forms.Label();
+            this.lbTotal = new System.Windows.Forms.Label();
+            this.lbNama = new System.Windows.Forms.Label();
+            this.lbAlamat = new System.Windows.Forms.Label();
+            this.lbTanggal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,6 +117,60 @@ namespace papicomfeed.Forms.Pembelian
             this.label7.TabIndex = 5;
             this.label7.Text = "Tanggal :";
             // 
+            // lbKode
+            // 
+            this.lbKode.AutoSize = true;
+            this.lbKode.Location = new System.Drawing.Point(87, 68);
+            this.lbKode.Name = "lbKode";
+            this.lbKode.Size = new System.Drawing.Size(74, 25);
+            this.lbKode.TabIndex = 5;
+            this.lbKode.Text = "Kode :";
+            // 
+            // lbKaryawan
+            // 
+            this.lbKaryawan.AutoSize = true;
+            this.lbKaryawan.Location = new System.Drawing.Point(194, 105);
+            this.lbKaryawan.Name = "lbKaryawan";
+            this.lbKaryawan.Size = new System.Drawing.Size(74, 25);
+            this.lbKaryawan.TabIndex = 5;
+            this.lbKaryawan.Text = "Kode :";
+            // 
+            // lbTotal
+            // 
+            this.lbTotal.AutoSize = true;
+            this.lbTotal.Location = new System.Drawing.Point(118, 143);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(74, 25);
+            this.lbTotal.TabIndex = 5;
+            this.lbTotal.Text = "Kode :";
+            // 
+            // lbNama
+            // 
+            this.lbNama.AutoSize = true;
+            this.lbNama.Location = new System.Drawing.Point(577, 68);
+            this.lbNama.Name = "lbNama";
+            this.lbNama.Size = new System.Drawing.Size(74, 25);
+            this.lbNama.TabIndex = 5;
+            this.lbNama.Text = "Kode :";
+            // 
+            // lbAlamat
+            // 
+            this.lbAlamat.AutoSize = true;
+            this.lbAlamat.Location = new System.Drawing.Point(577, 105);
+            this.lbAlamat.Name = "lbAlamat";
+            this.lbAlamat.Size = new System.Drawing.Size(74, 25);
+            this.lbAlamat.TabIndex = 5;
+            this.lbAlamat.Text = "Kode :";
+            // 
+            // lbTanggal
+            // 
+            this.lbTanggal.AutoSize = true;
+            this.lbTanggal.Location = new System.Drawing.Point(577, 143);
+            this.lbTanggal.Name = "lbTanggal";
+            this.lbTanggal.Size = new System.Drawing.Size(74, 25);
+            this.lbTanggal.TabIndex = 5;
+            this.lbTanggal.Text = "Kode :";
+            // 
             // DetailPembelian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -121,11 +181,17 @@ namespace papicomfeed.Forms.Pembelian
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbTanggal);
+            this.Controls.Add(this.lbAlamat);
+            this.Controls.Add(this.lbNama);
+            this.Controls.Add(this.lbTotal);
+            this.Controls.Add(this.lbKaryawan);
+            this.Controls.Add(this.lbKode);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "DetailPembelian";
             this.Text = "DetailPembelian";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -144,5 +210,11 @@ namespace papicomfeed.Forms.Pembelian
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbKode;
+        private System.Windows.Forms.Label lbKaryawan;
+        private System.Windows.Forms.Label lbTotal;
+        private System.Windows.Forms.Label lbNama;
+        private System.Windows.Forms.Label lbAlamat;
+        private System.Windows.Forms.Label lbTanggal;
     }
 }
