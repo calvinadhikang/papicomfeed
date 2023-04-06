@@ -63,15 +63,6 @@ namespace papicomfeed.Model
             }
 
             return dt;
-
-            //int id_jual = Convert.ToInt32(dt.Rows[0][1]);
-            //int id_ikan = Convert.ToInt32(dt.Rows[0][2]);
-            //int id_djual = Convert.ToInt32(dt.Rows[0][0]);
-            //int qty = Convert.ToInt32(dt.Rows[0][3]);
-            //int harga = Convert.ToInt32(dt.Rows[0][4]);
-            //int subtotal = Convert.ToInt32(dt.Rows[0][5]);
-
-            //return new Djual(id_jual, id_ikan, qty, harga, subtotal);
         }
     }
 }
