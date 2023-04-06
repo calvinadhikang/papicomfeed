@@ -29,9 +29,6 @@ namespace papicomfeed.Forms.Pembelian
         int total = 0;
         string coba = "anjay" ;
 
-
-
-
         public Tambah()
         {
             InitializeComponent();
@@ -42,7 +39,6 @@ namespace papicomfeed.Forms.Pembelian
 
         private void btnSelesai_Click(object sender, EventArgs e)
         {
-
             MySqlTransaction trans = null;
 
             try
@@ -79,16 +75,7 @@ namespace papicomfeed.Forms.Pembelian
                 MessageBox.Show(ex.Message);
                 trans.Rollback();
             }
-
-            //DataRow item = dt.Rows[0];
-
-            //coba = item[5].ToString();
-            //MessageBox.Show(coba);
-
         }
-
-
-        
 
         public void isicmbIkan()
         {
@@ -153,13 +140,56 @@ namespace papicomfeed.Forms.Pembelian
             dt.Columns.Add("idIkan");
             dt.Columns.Add("idKolam");
 
-            dgvPembelian.Columns["idIkan"].Visible = false;
-            dgvPembelian.Columns["idKolam"].Visible = false;
+            //tambah button tambah
+            DataGridViewButtonColumn btnAdd = new DataGridViewButtonColumn();
+            btnAdd.Name = "Tambah";
+            btnAdd.Text = "Tambah";
+            if (dgvPembelian.Columns["Tambah"] == null)
+            {
+                dgvPembelian.Columns.Insert(7, btnAdd);
+                //5 adalah columnIndex
+            }
+            //tambah button kurangi
+            DataGridViewButtonColumn btnRemove = new DataGridViewButtonColumn();
+            btnRemove.Name = "Kurangi";
+            btnRemove.Text = "Kurangi";
+            if (dgvPembelian.Columns["Kurangi"] == null)
+            {
+                dgvPembelian.Columns.Insert(8, btnRemove);
+                //6 adalah columnIndex
+            }
+        }
 
+        private void dgvPembelian_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+            int oldQty = int.Parse(dt.Rows[row][1].ToString());
 
+            if (e.ColumnIndex == 0 && row > -1)
+            {
+                //lakukan tambah qty
+                oldQty += 1;
+            }
+            else
+            {
+                //lakukan pengurangan qty
+                oldQty -= 1;
+                //kalau qty = 0
+                if (oldQty == 0)
+                {
+                    dt.Rows.RemoveAt(row);
+                    countTotal();
+                    return;
+                }
+            }
 
-            
-            
+            int harga = int.Parse(dt.Rows[row][3].ToString());
+            int subtotal = oldQty * harga;
+
+            //set value baru
+            dt.Rows[row][1] = oldQty;
+            dt.Rows[row][4] = subtotal;
+            countTotal();
         }
 
         private void btnTambah_Click(object sender, EventArgs e)
@@ -194,7 +224,7 @@ namespace papicomfeed.Forms.Pembelian
                 dt.Rows.Add(dtR);
 
                 //selectedIkanIndex = -1;
-                hitungtotal();
+                countTotal();
             }
             else
             {
@@ -222,17 +252,14 @@ namespace papicomfeed.Forms.Pembelian
             }
         }
 
-        public void hitungtotal()
+        public void countTotal()
         {
-            
-            
             total = 0;
             foreach (DataRow item in dt.Rows)
             {
                 total += int.Parse(item[4].ToString());
             }
             labeltotal.Text = total.ToString();
-            
         }
     }
 }

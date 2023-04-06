@@ -58,7 +58,7 @@ namespace papicomfeed.Forms.Pembelian
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(258, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(295, 37);
+            this.label1.Size = new System.Drawing.Size(201, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tambah Pembelian";
             // 
@@ -67,7 +67,7 @@ namespace papicomfeed.Forms.Pembelian
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 359);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 37);
+            this.label2.Size = new System.Drawing.Size(105, 26);
             this.label2.TabIndex = 0;
             this.label2.Text = "Total : Rp";
             // 
@@ -88,14 +88,14 @@ namespace papicomfeed.Forms.Pembelian
             // 
             this.txtAlamatSup.Location = new System.Drawing.Point(191, 84);
             this.txtAlamatSup.Name = "txtAlamatSup";
-            this.txtAlamatSup.Size = new System.Drawing.Size(569, 44);
+            this.txtAlamatSup.Size = new System.Drawing.Size(569, 32);
             this.txtAlamatSup.TabIndex = 3;
             // 
             // txtNamaSup
             // 
             this.txtNamaSup.Location = new System.Drawing.Point(191, 46);
             this.txtNamaSup.Name = "txtNamaSup";
-            this.txtNamaSup.Size = new System.Drawing.Size(569, 44);
+            this.txtNamaSup.Size = new System.Drawing.Size(569, 32);
             this.txtNamaSup.TabIndex = 3;
             // 
             // label4
@@ -103,7 +103,7 @@ namespace papicomfeed.Forms.Pembelian
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 87);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(262, 37);
+            this.label4.Size = new System.Drawing.Size(179, 26);
             this.label4.TabIndex = 2;
             this.label4.Text = "Alamat Supplier :";
             // 
@@ -112,7 +112,7 @@ namespace papicomfeed.Forms.Pembelian
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(16, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(248, 37);
+            this.label3.Size = new System.Drawing.Size(169, 26);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nama Supplier :";
             // 
@@ -124,6 +124,7 @@ namespace papicomfeed.Forms.Pembelian
             this.dgvPembelian.RowHeadersWidth = 62;
             this.dgvPembelian.Size = new System.Drawing.Size(760, 314);
             this.dgvPembelian.TabIndex = 2;
+            this.dgvPembelian.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPembelian_CellContentClick);
             // 
             // btnTambah
             // 
@@ -155,7 +156,7 @@ namespace papicomfeed.Forms.Pembelian
             // 
             this.numJumlahIkan.Location = new System.Drawing.Point(468, 38);
             this.numJumlahIkan.Name = "numJumlahIkan";
-            this.numJumlahIkan.Size = new System.Drawing.Size(120, 44);
+            this.numJumlahIkan.Size = new System.Drawing.Size(120, 32);
             this.numJumlahIkan.TabIndex = 5;
             // 
             // cmbKolam
@@ -163,7 +164,7 @@ namespace papicomfeed.Forms.Pembelian
             this.cmbKolam.FormattingEnabled = true;
             this.cmbKolam.Location = new System.Drawing.Point(99, 85);
             this.cmbKolam.Name = "cmbKolam";
-            this.cmbKolam.Size = new System.Drawing.Size(247, 45);
+            this.cmbKolam.Size = new System.Drawing.Size(247, 33);
             this.cmbKolam.TabIndex = 4;
             this.cmbKolam.SelectedIndexChanged += new System.EventHandler(this.cmbKolam_SelectedIndexChanged);
             // 
@@ -172,7 +173,7 @@ namespace papicomfeed.Forms.Pembelian
             this.cmbIkan.FormattingEnabled = true;
             this.cmbIkan.Location = new System.Drawing.Point(99, 37);
             this.cmbIkan.Name = "cmbIkan";
-            this.cmbIkan.Size = new System.Drawing.Size(247, 45);
+            this.cmbIkan.Size = new System.Drawing.Size(247, 33);
             this.cmbIkan.TabIndex = 4;
             this.cmbIkan.SelectedIndexChanged += new System.EventHandler(this.cmbIkan_SelectedIndexChanged);
             // 
@@ -181,7 +182,7 @@ namespace papicomfeed.Forms.Pembelian
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 88);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(126, 37);
+            this.label6.Size = new System.Drawing.Size(87, 26);
             this.label6.TabIndex = 2;
             this.label6.Text = "Kolam :";
             // 
@@ -190,7 +191,7 @@ namespace papicomfeed.Forms.Pembelian
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(367, 40);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(139, 37);
+            this.label7.Size = new System.Drawing.Size(95, 26);
             this.label7.TabIndex = 2;
             this.label7.Text = "Jumlah :";
             // 
@@ -199,7 +200,7 @@ namespace papicomfeed.Forms.Pembelian
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(28, 40);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 37);
+            this.label5.Size = new System.Drawing.Size(65, 26);
             this.label5.TabIndex = 2;
             this.label5.Text = "Ikan :";
             // 
@@ -218,13 +219,13 @@ namespace papicomfeed.Forms.Pembelian
             this.labeltotal.AutoSize = true;
             this.labeltotal.Location = new System.Drawing.Point(174, 359);
             this.labeltotal.Name = "labeltotal";
-            this.labeltotal.Size = new System.Drawing.Size(35, 37);
+            this.labeltotal.Size = new System.Drawing.Size(24, 26);
             this.labeltotal.TabIndex = 6;
             this.labeltotal.Text = "0";
             // 
             // Tambah
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 802);
             this.Controls.Add(this.labeltotal);
