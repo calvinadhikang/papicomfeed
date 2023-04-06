@@ -16,5 +16,26 @@ namespace papicomfeed.Forms.Pembelian
         {
             InitializeComponent();
         }
+
+        private void tambahToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Tambah T = new Tambah();
+            T.MdiParent = this;
+            T.Show();
+        }
+
+        private void lihatDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Pembelian P = new Pembelian();
+            P.MdiParent = this;
+            P.Show();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            f.Show();
+            this.Hide();
+        }
     }
 }
