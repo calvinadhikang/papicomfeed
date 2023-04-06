@@ -10,7 +10,7 @@ using papicomfeed.Database;
 
 namespace papicomfeed.Model
 {
-    public class djual
+    public class Djual
     {
         MySqlCommand cmd;
 
@@ -22,7 +22,7 @@ namespace papicomfeed.Model
         int subtotal;
 
         //membuat class djual yang sudah ada
-        private djual(int id, int hjual_id, int ikan_id, int qty, int harga, int subtotal) 
+        private Djual(int id, int hjual_id, int ikan_id, int qty, int harga, int subtotal) 
         {
             this.id = id;
             this.hjual_id = hjual_id;
@@ -33,7 +33,7 @@ namespace papicomfeed.Model
         }
 
         // constructoor untuk insert data djual
-        public djual(int hjual_id, int ikan_id, int qty, int harga, int subtotal)
+        public Djual(int hjual_id, int ikan_id, int qty, int harga, int subtotal)
         {
             this.hjual_id = hjual_id;
             this.ikan_id = ikan_id;
@@ -49,7 +49,7 @@ namespace papicomfeed.Model
         }
 
         // mendapatkan data djual pada database
-        public static djual get(int hjual_id)
+        public static DataTable get(int hjual_id)
         {
             DataTable dt = new DataTable();
             MySqlCommand cmd = new MySqlCommand($"Select * from djual where hjual_id = {hjual_id}", DB.conn);
@@ -62,14 +62,16 @@ namespace papicomfeed.Model
                 return null;
             }
 
-            int id_jual = Convert.ToInt32(dt.Rows[0][1]);
-            int id_ikan = Convert.ToInt32(dt.Rows[0][2]);
-            int id_djual = Convert.ToInt32(dt.Rows[0][0]);
-            int qty = Convert.ToInt32(dt.Rows[0][3]);
-            int harga = Convert.ToInt32(dt.Rows[0][4]);
-            int subtotal = Convert.ToInt32(dt.Rows[0][5]);
+            return dt;
 
-            return new djual(id_jual, id_ikan, qty, harga, subtotal);
+            //int id_jual = Convert.ToInt32(dt.Rows[0][1]);
+            //int id_ikan = Convert.ToInt32(dt.Rows[0][2]);
+            //int id_djual = Convert.ToInt32(dt.Rows[0][0]);
+            //int qty = Convert.ToInt32(dt.Rows[0][3]);
+            //int harga = Convert.ToInt32(dt.Rows[0][4]);
+            //int subtotal = Convert.ToInt32(dt.Rows[0][5]);
+
+            //return new Djual(id_jual, id_ikan, qty, harga, subtotal);
         }
     }
 }

@@ -60,5 +60,29 @@ namespace papicomfeed.Model
 
             return dt;
         }
+
+        public static Hjual get(int id)
+        {
+            DataTable dt = new DataTable();
+            MySqlCommand cmd = new MySqlCommand($"SELECT * FROM HJUAL WHERE ID = {id}", DB.conn);
+            MySqlDataAdapter adpt = new MySqlDataAdapter();
+            adpt.SelectCommand = cmd;
+            adpt.FillAsync(dt);
+
+            if (dt.Rows.Count <= 0)
+            {
+                return null;
+            }
+
+            int karyawan = int.Parse(dt.Rows[0][1].ToString());
+            int total = int.Parse(dt.Rows[0][2].ToString());
+            int customer = int.Parse(dt.Rows[0][3].ToString());
+            string alamat = dt.Rows[0][4].ToString();
+            string tanggal = dt.Rows[0][5].ToString();
+
+            //Ikan i = new Ikan(idikan, nama, waktu);
+
+            return new Hjual(id, karyawan, total, customer, alamat, tanggal);
+        }
     }
 }

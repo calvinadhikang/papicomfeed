@@ -31,5 +31,14 @@ namespace papicomfeed.Forms.Penjualan
         {
 
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+
+            int id = int.Parse(dt.Rows[row][0].ToString());
+            DetailPenjualan f = new DetailPenjualan(id);
+            f.Show();
+        }
     }
 }

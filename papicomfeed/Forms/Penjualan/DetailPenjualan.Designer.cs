@@ -37,6 +37,12 @@ namespace papicomfeed.Forms.Penjualan
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbKode = new System.Windows.Forms.Label();
+            this.lbKaryawan = new System.Windows.Forms.Label();
+            this.lbTotal = new System.Windows.Forms.Label();
+            this.lbNama = new System.Windows.Forms.Label();
+            this.lbAlamat = new System.Windows.Forms.Label();
+            this.lbTanggal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,6 +117,60 @@ namespace papicomfeed.Forms.Penjualan
             this.label1.TabIndex = 6;
             this.label1.Text = "Detail Penjualan";
             // 
+            // lbKode
+            // 
+            this.lbKode.AutoSize = true;
+            this.lbKode.Location = new System.Drawing.Point(90, 69);
+            this.lbKode.Name = "lbKode";
+            this.lbKode.Size = new System.Drawing.Size(74, 25);
+            this.lbKode.TabIndex = 13;
+            this.lbKode.Text = "Kode :";
+            // 
+            // lbKaryawan
+            // 
+            this.lbKaryawan.AutoSize = true;
+            this.lbKaryawan.Location = new System.Drawing.Point(197, 106);
+            this.lbKaryawan.Name = "lbKaryawan";
+            this.lbKaryawan.Size = new System.Drawing.Size(74, 25);
+            this.lbKaryawan.TabIndex = 13;
+            this.lbKaryawan.Text = "Kode :";
+            // 
+            // lbTotal
+            // 
+            this.lbTotal.AutoSize = true;
+            this.lbTotal.Location = new System.Drawing.Point(121, 144);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(74, 25);
+            this.lbTotal.TabIndex = 13;
+            this.lbTotal.Text = "Kode :";
+            // 
+            // lbNama
+            // 
+            this.lbNama.AutoSize = true;
+            this.lbNama.Location = new System.Drawing.Point(565, 69);
+            this.lbNama.Name = "lbNama";
+            this.lbNama.Size = new System.Drawing.Size(74, 25);
+            this.lbNama.TabIndex = 13;
+            this.lbNama.Text = "Kode :";
+            // 
+            // lbAlamat
+            // 
+            this.lbAlamat.AutoSize = true;
+            this.lbAlamat.Location = new System.Drawing.Point(565, 106);
+            this.lbAlamat.Name = "lbAlamat";
+            this.lbAlamat.Size = new System.Drawing.Size(74, 25);
+            this.lbAlamat.TabIndex = 13;
+            this.lbAlamat.Text = "Kode :";
+            // 
+            // lbTanggal
+            // 
+            this.lbTanggal.AutoSize = true;
+            this.lbTanggal.Location = new System.Drawing.Point(565, 144);
+            this.lbTanggal.Name = "lbTanggal";
+            this.lbTanggal.Size = new System.Drawing.Size(74, 25);
+            this.lbTanggal.TabIndex = 13;
+            this.lbTanggal.Text = "Kode :";
+            // 
             // DetailPenjualan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -121,11 +181,17 @@ namespace papicomfeed.Forms.Penjualan
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbTanggal);
+            this.Controls.Add(this.lbAlamat);
+            this.Controls.Add(this.lbNama);
+            this.Controls.Add(this.lbTotal);
+            this.Controls.Add(this.lbKaryawan);
+            this.Controls.Add(this.lbKode);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "DetailPenjualan";
             this.Text = "DetailPenjualan";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -144,5 +210,11 @@ namespace papicomfeed.Forms.Penjualan
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbKode;
+        private System.Windows.Forms.Label lbKaryawan;
+        private System.Windows.Forms.Label lbTotal;
+        private System.Windows.Forms.Label lbNama;
+        private System.Windows.Forms.Label lbAlamat;
+        private System.Windows.Forms.Label lbTanggal;
     }
 }

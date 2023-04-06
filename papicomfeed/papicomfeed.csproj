@@ -191,7 +191,7 @@
       <DependentUpon>Tambah.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
-    <Compile Include="Model\djual.cs" />
+    <Compile Include="Model\Djual.cs" />
     <Compile Include="Model\hbeli.cs" />
     <Compile Include="Model\Hjual.cs" />
     <Compile Include="Model\Ikan.cs" />
