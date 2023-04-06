@@ -1,4 +1,5 @@
-﻿using System;
+﻿using papicomfeed.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,23 @@ namespace papicomfeed.Forms.Pembelian
 {
     public partial class Pembelian : Form
     {
+
+        DataTable dt;
         public Pembelian()
         {
             InitializeComponent();
+            displaydata();
+        }
+
+        public void displaydata()
+        {
+            dt = hbeli.getAll();
+            dgvPembelian.DataSource = dt;
+        }
+
+        private void dgvPembelian_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
