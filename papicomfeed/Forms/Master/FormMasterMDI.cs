@@ -61,5 +61,12 @@ namespace papicomfeed.Forms.Master
             f.MdiParent = this;
             f.Show();
         }
+
+        private void pembelianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLaporanPembelian f = new FormLaporanPembelian();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

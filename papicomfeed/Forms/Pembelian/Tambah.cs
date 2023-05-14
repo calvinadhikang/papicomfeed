@@ -62,8 +62,10 @@ namespace papicomfeed.Forms.Pembelian
                     int harga = int.Parse(item[3].ToString());
                     int subtotal = int.Parse(item[4].ToString());
                     int kolamid = int.Parse(item[6].ToString());
+                    string namaIkan = item[0].ToString();
+                    
 
-                    cmd.CommandText = $"INSERT INTO DBELI (HBELI_ID, KOLAM_ID, IKAN_ID, HARGA, JUMLAH) VALUES ({headerId},{kolamid}, {ikanId}, {harga}, {qty})";
+                    cmd.CommandText = $"INSERT INTO DBELI (HBELI_ID, KOLAM_ID, IKAN_ID, HARGA, JUMLAH, NAMA_IKAN, SUBTOTAL) VALUES ({headerId},{kolamid}, {ikanId}, {harga}, {qty}, '{namaIkan}', {subtotal})";
                     cmd.ExecuteNonQuery();
                 }
 
