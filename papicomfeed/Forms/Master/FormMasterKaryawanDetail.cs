@@ -99,7 +99,7 @@ namespace papicomfeed.Forms.Master
                 this.ClientRectangle,
                 Color.FromArgb(255, 135, 206, 250), // biru muda
                 Color.FromArgb(255, 25, 25, 112), // biru tua
-                90f);
+                120f);
             e.Graphics.FillRectangle(gradient, this.ClientRectangle);
         }
 

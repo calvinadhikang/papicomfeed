@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using papicomfeed.Model;
+using System.Drawing.Drawing2D;
 
 namespace papicomfeed.Forms.Master
 {
@@ -46,6 +47,52 @@ namespace papicomfeed.Forms.Master
                 parent.displayData();
                 displayData();
             }
+        }
+
+        private void FormMasterKolamDetail_Load(object sender, EventArgs e)
+        {
+            this.Paint += new PaintEventHandler(FormMasterKolamDetail_Paint);
+        }
+
+        private void FormMasterKolamDetail_Paint(object sender, PaintEventArgs e)
+        {
+            // membuat gradient background
+            LinearGradientBrush gradient = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.FromArgb(255, 135, 206, 250), // biru muda
+                Color.FromArgb(255, 20, 20, 105), // biru tua
+                -120f);
+            e.Graphics.FillRectangle(gradient, this.ClientRectangle);
+        }
+
+        private void btnKembali_MouseHover(object sender, EventArgs e)
+        {
+            btnKembali.BackColor = Color.Red;
+        }
+
+        private void btnKembali_MouseLeave(object sender, EventArgs e)
+        {
+            btnKembali.BackColor = Color.GhostWhite;
+        }
+
+        private void btnSimpan_MouseHover(object sender, EventArgs e)
+        {
+            btnSimpan.BackColor = Color.LightGreen;
+        }
+
+        private void btnSimpan_MouseLeave(object sender, EventArgs e)
+        {
+            btnSimpan.BackColor = Color.GhostWhite;
+        }
+
+        private void btnPanen_MouseHover(object sender, EventArgs e)
+        {
+            btnPanen.BackColor = Color.LightGreen;
+        }
+
+        private void btnPanen_MouseLeave(object sender, EventArgs e)
+        {
+            btnPanen.BackColor = Color.GhostWhite;
         }
     }
 }

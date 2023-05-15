@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Drawing.Drawing2D;
 using papicomfeed.Model;
 using MySql.Data.MySqlClient;
 using papicomfeed.Database;
+
 
 namespace papicomfeed.Forms.Penjualan
 {
@@ -275,6 +276,42 @@ namespace papicomfeed.Forms.Penjualan
                 MessageBox.Show(ex.Message);
                 trans.Rollback();
             }
+        }
+
+        private void Tambah_Load(object sender, EventArgs e)
+        {
+            this.Paint += new PaintEventHandler(Tambah_Paint);
+        }
+
+        private void Tambah_Paint(object sender, PaintEventArgs e)
+        {
+            // membuat gradient background
+            LinearGradientBrush gradient = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.FromArgb(255, 25, 25, 112), // biru tua
+                Color.FromArgb(255, 135, 206, 250), // biru muda cerah
+                -120f);
+            e.Graphics.FillRectangle(gradient, this.ClientRectangle);
+        }
+
+        private void btnTambahPenjualanRow_MouseHover(object sender, EventArgs e)
+        {
+            btnTambahPenjualanRow.BackColor = Color.LightGreen;
+        }
+
+        private void btnTambahPenjualanRow_MouseLeave(object sender, EventArgs e)
+        {
+            btnTambahPenjualanRow.BackColor = Color.GhostWhite;
+        }
+
+        private void btnAddPenjualan_MouseHover(object sender, EventArgs e)
+        {
+            btnAddPenjualan.BackColor = Color.LightGreen;
+        }
+
+        private void btnAddPenjualan_MouseLeave(object sender, EventArgs e)
+        {
+            btnAddPenjualan.BackColor = Color.GhostWhite;
         }
     }
 }

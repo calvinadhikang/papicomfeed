@@ -56,6 +56,7 @@ namespace papicomfeed.Forms.Pembelian
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(258, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(201, 26);
@@ -65,6 +66,7 @@ namespace papicomfeed.Forms.Pembelian
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(12, 359);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 26);
@@ -73,6 +75,7 @@ namespace papicomfeed.Forms.Pembelian
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.txtAlamatSup);
             this.groupBox1.Controls.Add(this.txtNamaSup);
             this.groupBox1.Controls.Add(this.label4);
@@ -128,16 +131,20 @@ namespace papicomfeed.Forms.Pembelian
             // 
             // btnTambah
             // 
+            this.btnTambah.BackColor = System.Drawing.Color.GhostWhite;
             this.btnTambah.Location = new System.Drawing.Point(647, 100);
             this.btnTambah.Name = "btnTambah";
             this.btnTambah.Size = new System.Drawing.Size(107, 37);
             this.btnTambah.TabIndex = 3;
             this.btnTambah.Text = "Tambah";
-            this.btnTambah.UseVisualStyleBackColor = true;
+            this.btnTambah.UseVisualStyleBackColor = false;
             this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
+            this.btnTambah.MouseLeave += new System.EventHandler(this.btnTambah_MouseLeave);
+            this.btnTambah.MouseHover += new System.EventHandler(this.btnTambah_MouseHover);
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.numJumlahIkan);
             this.groupBox2.Controls.Add(this.cmbKolam);
             this.groupBox2.Controls.Add(this.cmbIkan);
@@ -206,17 +213,21 @@ namespace papicomfeed.Forms.Pembelian
             // 
             // btnSelesai
             // 
+            this.btnSelesai.BackColor = System.Drawing.Color.GhostWhite;
             this.btnSelesai.Location = new System.Drawing.Point(610, 737);
             this.btnSelesai.Name = "btnSelesai";
             this.btnSelesai.Size = new System.Drawing.Size(156, 43);
             this.btnSelesai.TabIndex = 5;
             this.btnSelesai.Text = "Selesai";
-            this.btnSelesai.UseVisualStyleBackColor = true;
+            this.btnSelesai.UseVisualStyleBackColor = false;
             this.btnSelesai.Click += new System.EventHandler(this.btnSelesai_Click);
+            this.btnSelesai.MouseLeave += new System.EventHandler(this.btnSelesai_MouseLeave);
+            this.btnSelesai.MouseHover += new System.EventHandler(this.btnSelesai_MouseHover);
             // 
             // labeltotal
             // 
             this.labeltotal.AutoSize = true;
+            this.labeltotal.BackColor = System.Drawing.Color.Transparent;
             this.labeltotal.Location = new System.Drawing.Point(174, 359);
             this.labeltotal.Name = "labeltotal";
             this.labeltotal.Size = new System.Drawing.Size(24, 26);
@@ -239,6 +250,7 @@ namespace papicomfeed.Forms.Pembelian
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Tambah";
             this.Text = "Tambah";
+            this.Load += new System.EventHandler(this.Tambah_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPembelian)).EndInit();

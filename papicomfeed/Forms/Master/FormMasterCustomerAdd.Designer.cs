@@ -44,13 +44,16 @@ namespace papicomfeed.Forms.Master
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.GhostWhite;
             this.button2.Location = new System.Drawing.Point(305, 203);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 37);
             this.button2.TabIndex = 12;
             this.button2.Text = "Simpan";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
+            this.button2.MouseHover += new System.EventHandler(this.button2_MouseHover);
             // 
             // txtTelp
             // 
@@ -83,6 +86,7 @@ namespace papicomfeed.Forms.Master
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(35, 169);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 25);
@@ -92,6 +96,7 @@ namespace papicomfeed.Forms.Master
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(11, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 25);
@@ -101,6 +106,7 @@ namespace papicomfeed.Forms.Master
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(21, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 25);
@@ -110,6 +116,7 @@ namespace papicomfeed.Forms.Master
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(57, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 25);
@@ -119,6 +126,7 @@ namespace papicomfeed.Forms.Master
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(102, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(188, 25);
@@ -128,13 +136,16 @@ namespace papicomfeed.Forms.Master
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.GhostWhite;
             this.button1.Location = new System.Drawing.Point(305, 9);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 37);
             this.button1.TabIndex = 13;
             this.button1.Text = "Kembali";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.button1.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
             // FormMasterCustomerAdd
             // 

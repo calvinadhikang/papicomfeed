@@ -57,6 +57,7 @@ namespace papicomfeed.Forms.Pembelian
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(298, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 25);
@@ -66,6 +67,7 @@ namespace papicomfeed.Forms.Pembelian
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(7, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 25);
@@ -75,6 +77,7 @@ namespace papicomfeed.Forms.Pembelian
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(7, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(181, 25);
@@ -84,6 +87,7 @@ namespace papicomfeed.Forms.Pembelian
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(7, 143);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 25);
@@ -93,6 +97,7 @@ namespace papicomfeed.Forms.Pembelian
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(406, 68);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(165, 25);
@@ -102,6 +107,7 @@ namespace papicomfeed.Forms.Pembelian
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(396, 105);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(175, 25);
@@ -111,6 +117,7 @@ namespace papicomfeed.Forms.Pembelian
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Location = new System.Drawing.Point(469, 143);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(102, 25);
@@ -120,6 +127,7 @@ namespace papicomfeed.Forms.Pembelian
             // lbKode
             // 
             this.lbKode.AutoSize = true;
+            this.lbKode.BackColor = System.Drawing.Color.Transparent;
             this.lbKode.Location = new System.Drawing.Point(87, 68);
             this.lbKode.Name = "lbKode";
             this.lbKode.Size = new System.Drawing.Size(74, 25);
@@ -129,6 +137,7 @@ namespace papicomfeed.Forms.Pembelian
             // lbKaryawan
             // 
             this.lbKaryawan.AutoSize = true;
+            this.lbKaryawan.BackColor = System.Drawing.Color.Transparent;
             this.lbKaryawan.Location = new System.Drawing.Point(194, 105);
             this.lbKaryawan.Name = "lbKaryawan";
             this.lbKaryawan.Size = new System.Drawing.Size(74, 25);
@@ -138,6 +147,7 @@ namespace papicomfeed.Forms.Pembelian
             // lbTotal
             // 
             this.lbTotal.AutoSize = true;
+            this.lbTotal.BackColor = System.Drawing.Color.Transparent;
             this.lbTotal.Location = new System.Drawing.Point(118, 143);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(74, 25);
@@ -147,6 +157,7 @@ namespace papicomfeed.Forms.Pembelian
             // lbNama
             // 
             this.lbNama.AutoSize = true;
+            this.lbNama.BackColor = System.Drawing.Color.Transparent;
             this.lbNama.Location = new System.Drawing.Point(577, 68);
             this.lbNama.Name = "lbNama";
             this.lbNama.Size = new System.Drawing.Size(74, 25);
@@ -156,6 +167,7 @@ namespace papicomfeed.Forms.Pembelian
             // lbAlamat
             // 
             this.lbAlamat.AutoSize = true;
+            this.lbAlamat.BackColor = System.Drawing.Color.Transparent;
             this.lbAlamat.Location = new System.Drawing.Point(577, 105);
             this.lbAlamat.Name = "lbAlamat";
             this.lbAlamat.Size = new System.Drawing.Size(74, 25);
@@ -165,6 +177,7 @@ namespace papicomfeed.Forms.Pembelian
             // lbTanggal
             // 
             this.lbTanggal.AutoSize = true;
+            this.lbTanggal.BackColor = System.Drawing.Color.Transparent;
             this.lbTanggal.Location = new System.Drawing.Point(577, 143);
             this.lbTanggal.Name = "lbTanggal";
             this.lbTanggal.Size = new System.Drawing.Size(74, 25);
@@ -194,6 +207,7 @@ namespace papicomfeed.Forms.Pembelian
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "DetailPembelian";
             this.Text = "DetailPembelian";
+            this.Load += new System.EventHandler(this.DetailPembelian_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
