@@ -262,8 +262,9 @@ namespace papicomfeed.Forms.Penjualan
                     int qty = int.Parse(item[2].ToString());
                     int harga = int.Parse(item[3].ToString());
                     int subtotal = int.Parse(item[4].ToString());
+                    string nama_ikan = item[1].ToString();
 
-                    cmd.CommandText = $"INSERT INTO DJUAL (HJUAL_ID, IKAN_ID, QTY, HARGA, SUBTOTAL) VALUES ({headerId}, {ikanId}, {qty}, {harga}, {subtotal})";
+                    cmd.CommandText = $"INSERT INTO DJUAL (HJUAL_ID, IKAN_ID, QTY, HARGA, SUBTOTAL, NAMA_IKAN) VALUES ({headerId}, {ikanId}, {qty}, {harga}, {subtotal}, '{nama_ikan}')";
                     cmd.ExecuteNonQuery();
                 }
 

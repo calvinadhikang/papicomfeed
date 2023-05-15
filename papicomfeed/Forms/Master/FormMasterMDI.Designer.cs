@@ -121,6 +121,7 @@ namespace papicomfeed.Forms.Master
             this.penjualanToolStripMenuItem1.Name = "penjualanToolStripMenuItem1";
             this.penjualanToolStripMenuItem1.Size = new System.Drawing.Size(278, 54);
             this.penjualanToolStripMenuItem1.Text = "Penjualan";
+            this.penjualanToolStripMenuItem1.Click += new System.EventHandler(this.penjualanToolStripMenuItem1_Click);
             // 
             // transaksiToolStripMenuItem
             // 

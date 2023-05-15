@@ -63,6 +63,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetpembelian.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetpenjualan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetpenjualan.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +79,12 @@
     </Compile>
     <Compile Include="Forms\Master\FormLaporanPembelian.Designer.cs">
       <DependentUpon>FormLaporanPembelian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master\FormLaporanPenjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormLaporanPenjualan.Designer.cs">
+      <DependentUpon>FormLaporanPenjualan.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Master\FormMasterCustomer.cs">
       <SubType>Form</SubType>
@@ -159,6 +170,12 @@
       <DependentUpon>reportpembelian.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\Master\ReportPenjualan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportPenjualan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\Pembelian\DetailPembelian.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +246,9 @@
     <EmbeddedResource Include="Forms\Master\FormLaporanPembelian.resx">
       <DependentUpon>FormLaporanPembelian.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormLaporanPenjualan.resx">
+      <DependentUpon>FormLaporanPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master\FormMasterCustomer.resx">
       <DependentUpon>FormMasterCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +292,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>reportpembelian.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\ReportPenjualan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportPenjualan.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pembelian\DetailPembelian.resx">
       <DependentUpon>DetailPembelian.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +328,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="DataSetpenjualan.xsc">
+      <DependentUpon>DataSetpenjualan.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetpenjualan.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetpenjualan.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetpenjualan.xss">
+      <DependentUpon>DataSetpenjualan.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -327,6 +362,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Gambar\LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
