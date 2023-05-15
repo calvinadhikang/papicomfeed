@@ -37,13 +37,16 @@ namespace papicomfeed.Forms.Master
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.GhostWhite;
             this.button1.Location = new System.Drawing.Point(601, 515);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(171, 35);
             this.button1.TabIndex = 5;
             this.button1.Text = "Tambah Data";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.button1.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
             // dataGridView1
             // 
@@ -65,6 +68,7 @@ namespace papicomfeed.Forms.Master
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(305, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 25);

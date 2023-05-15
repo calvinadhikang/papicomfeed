@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using papicomfeed.Model;
+using System.Drawing.Drawing2D;
 
 namespace papicomfeed.Forms.Pembelian
 {
@@ -41,6 +42,22 @@ namespace papicomfeed.Forms.Pembelian
         void showDetail()
         {
             dataGridView1.DataSource = DBeli.get(header.id);
+        }
+
+        private void DetailPembelian_Load(object sender, EventArgs e)
+        {
+            this.Paint += new PaintEventHandler(DetailPembelian_Paint);
+        }
+
+        private void DetailPembelian_Paint(object sender, PaintEventArgs e)
+        {
+            // membuat gradient background
+            LinearGradientBrush gradient = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.FromArgb(255, 25, 25, 112), // biru tua
+                Color.FromArgb(255, 135, 206, 250), // biru muda cerah
+                -120f);
+            e.Graphics.FillRectangle(gradient, this.ClientRectangle);
         }
     }
 }
