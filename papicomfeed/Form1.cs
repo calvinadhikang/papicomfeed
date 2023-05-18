@@ -13,6 +13,7 @@ using papicomfeed.Model;
 using papicomfeed.Forms.Master;
 using papicomfeed.Forms.Penjualan;
 using papicomfeed.Forms.Pembelian;
+using System.Drawing.Drawing2D;
 
 namespace papicomfeed
 {
@@ -77,6 +78,35 @@ namespace papicomfeed
                 f.Show();
                 this.Hide();
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            button1.Text = "";
+            //pictureBox1.BackgroundImage = Image.FromFile(Application.StartupPath + "\\Gambar\\Logo.png");
+            pictureBox2.BackgroundImage = Image.FromFile(Application.StartupPath + "\\Gambar\\MasterTracking.png");
+            button1.BackgroundImage = Image.FromFile(Application.StartupPath + "\\Gambar\\Login.png");
+            this.Paint += new PaintEventHandler(Form1_Paint);
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.LightGreen;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.GhostWhite;
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            LinearGradientBrush gradient = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.FromArgb(255, 135, 206, 250), // biru muda
+                Color.FromArgb(255, 25, 25, 112), // biru tua
+                90f);
+            e.Graphics.FillRectangle(gradient, this.ClientRectangle);
         }
     }
 }

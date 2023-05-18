@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using papicomfeed.Model;
+using System.Drawing.Drawing2D;
 
 namespace papicomfeed.Forms.Master
 {
@@ -38,6 +39,37 @@ namespace papicomfeed.Forms.Master
         {
             FormMasterCustomerAdd fadd = new FormMasterCustomerAdd(this);
             fadd.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormMasterCustomer_Load(object sender, EventArgs e)
+        {
+            this.Paint += new PaintEventHandler(FormMasterCustomer_Paint);
+        }
+
+        private void FormMasterCustomer_Paint(object sender, PaintEventArgs e)
+        {
+            // membuat gradient background
+            LinearGradientBrush gradient = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.FromArgb(255, 135, 206, 250), // biru muda
+                Color.FromArgb(255, 25, 25, 112), // biru tua
+                120f);
+            e.Graphics.FillRectangle(gradient, this.ClientRectangle);
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.LightGreen;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.GhostWhite;
         }
     }
 }

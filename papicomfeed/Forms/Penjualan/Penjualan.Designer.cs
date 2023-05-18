@@ -48,6 +48,7 @@ namespace papicomfeed.Forms.Penjualan
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(297, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 25);
@@ -65,6 +66,7 @@ namespace papicomfeed.Forms.Penjualan
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Penjualan";
             this.Text = "Penjualan";
+            this.Load += new System.EventHandler(this.Penjualan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

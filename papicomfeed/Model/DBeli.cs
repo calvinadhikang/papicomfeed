@@ -20,6 +20,9 @@ namespace papicomfeed.Model
         int ikan_id;
         int harga;
         int jumlah;
+        string nama_ikan;
+        int subtotal;
+        string tanggal;
 
         // mendapatkan data dbeli pada database
         public static DataTable get(int hbeli_id)
@@ -34,6 +37,18 @@ namespace papicomfeed.Model
             {
                 return null;
             }
+
+            return dt;
+        }
+
+
+        public static DataTable getAll()
+        {
+            DataTable dt = new DataTable();
+            MySqlCommand cmd = new MySqlCommand("Select * from DBELI", DB.conn);
+            MySqlDataAdapter adpt = new MySqlDataAdapter();
+            adpt.SelectCommand = cmd;
+            adpt.FillAsync(dt);
 
             return dt;
         }

@@ -49,6 +49,7 @@ namespace papicomfeed.Forms.Master
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(14, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 25);
@@ -58,6 +59,7 @@ namespace papicomfeed.Forms.Master
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(95, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(156, 25);
@@ -67,6 +69,7 @@ namespace papicomfeed.Forms.Master
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(14, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 25);
@@ -82,23 +85,29 @@ namespace papicomfeed.Forms.Master
             // 
             // btnBackTambahIkan
             // 
+            this.btnBackTambahIkan.BackColor = System.Drawing.Color.GhostWhite;
             this.btnBackTambahIkan.Location = new System.Drawing.Point(290, 131);
             this.btnBackTambahIkan.Name = "btnBackTambahIkan";
             this.btnBackTambahIkan.Size = new System.Drawing.Size(108, 35);
             this.btnBackTambahIkan.TabIndex = 19;
             this.btnBackTambahIkan.Text = "Tambah";
-            this.btnBackTambahIkan.UseVisualStyleBackColor = true;
+            this.btnBackTambahIkan.UseVisualStyleBackColor = false;
             this.btnBackTambahIkan.Click += new System.EventHandler(this.btnBackTambahIkan_Click);
+            this.btnBackTambahIkan.MouseLeave += new System.EventHandler(this.btnBackTambahIkan_MouseLeave);
+            this.btnBackTambahIkan.MouseHover += new System.EventHandler(this.btnBackTambahIkan_MouseHover);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.GhostWhite;
             this.button1.Location = new System.Drawing.Point(290, 15);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 35);
             this.button1.TabIndex = 22;
             this.button1.Text = "Kembali";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.button1.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
             // FormMasterKolamAdd
             // 
@@ -116,6 +125,7 @@ namespace papicomfeed.Forms.Master
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormMasterKolamAdd";
             this.Text = "FormMasterKolamAdd";
+            this.Load += new System.EventHandler(this.FormMasterKolamAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numKapasitas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

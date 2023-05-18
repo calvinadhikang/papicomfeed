@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=8.0.32.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector NET 8.0.32\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
@@ -40,6 +44,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlXml" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,11 +58,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\DB.cs" />
+    <Compile Include="DataSetpembelian.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetpembelian.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetpenjualan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetpenjualan.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master\FormLaporanPembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormLaporanPembelian.Designer.cs">
+      <DependentUpon>FormLaporanPembelian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master\FormLaporanPenjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\FormLaporanPenjualan.Designer.cs">
+      <DependentUpon>FormLaporanPenjualan.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Master\FormMasterCustomer.cs">
       <SubType>Form</SubType>
@@ -154,6 +182,18 @@
     <Compile Include="Forms\Master\FormMasterSupplierDetail.Designer.cs">
       <DependentUpon>FormMasterSupplierDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Master\reportpembelian.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reportpembelian.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\ReportPenjualan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportPenjualan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\Pembelian\DetailPembelian.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +262,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormLaporanPembelian.resx">
+      <DependentUpon>FormLaporanPembelian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\FormLaporanPenjualan.resx">
+      <DependentUpon>FormLaporanPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master\FormMasterCustomer.resx">
       <DependentUpon>FormMasterCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,6 +316,14 @@
     <EmbeddedResource Include="Forms\Master\FormMasterSupplierDetail.resx">
       <DependentUpon>FormMasterSupplierDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\reportpembelian.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reportpembelian.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\ReportPenjualan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportPenjualan.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pembelian\DetailPembelian.resx">
       <DependentUpon>DetailPembelian.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,17 +353,29 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <None Include="DataSetpenjualan.xsc">
+      <DependentUpon>DataSetpenjualan.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetpenjualan.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetpenjualan.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetpenjualan.xss">
+      <DependentUpon>DataSetpenjualan.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -319,6 +385,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="bin\Debug\Gambar\LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Gambar\LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

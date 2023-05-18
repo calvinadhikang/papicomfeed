@@ -55,6 +55,7 @@ namespace papicomfeed.Forms.Penjualan
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.nudJumlah);
             this.groupBox2.Controls.Add(this.cmbIkan);
             this.groupBox2.Controls.Add(this.btnTambahPenjualanRow);
@@ -85,13 +86,16 @@ namespace papicomfeed.Forms.Penjualan
             // 
             // btnTambahPenjualanRow
             // 
+            this.btnTambahPenjualanRow.BackColor = System.Drawing.Color.GhostWhite;
             this.btnTambahPenjualanRow.Location = new System.Drawing.Point(647, 37);
             this.btnTambahPenjualanRow.Name = "btnTambahPenjualanRow";
             this.btnTambahPenjualanRow.Size = new System.Drawing.Size(131, 37);
             this.btnTambahPenjualanRow.TabIndex = 3;
             this.btnTambahPenjualanRow.Text = "Tambah";
-            this.btnTambahPenjualanRow.UseVisualStyleBackColor = true;
+            this.btnTambahPenjualanRow.UseVisualStyleBackColor = false;
             this.btnTambahPenjualanRow.Click += new System.EventHandler(this.btnTambah);
+            this.btnTambahPenjualanRow.MouseLeave += new System.EventHandler(this.btnTambahPenjualanRow_MouseLeave);
+            this.btnTambahPenjualanRow.MouseHover += new System.EventHandler(this.btnTambahPenjualanRow_MouseHover);
             // 
             // label7
             // 
@@ -123,6 +127,7 @@ namespace papicomfeed.Forms.Penjualan
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.lblTelp);
             this.groupBox1.Controls.Add(this.lblAlamat);
             this.groupBox1.Controls.Add(this.cmbCustomer);
@@ -192,6 +197,7 @@ namespace papicomfeed.Forms.Penjualan
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(12, 306);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 25);
@@ -201,6 +207,7 @@ namespace papicomfeed.Forms.Penjualan
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(258, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(192, 25);
@@ -210,6 +217,7 @@ namespace papicomfeed.Forms.Penjualan
             // lbTotal
             // 
             this.lbTotal.AutoSize = true;
+            this.lbTotal.BackColor = System.Drawing.Color.Transparent;
             this.lbTotal.Location = new System.Drawing.Point(123, 306);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(24, 25);
@@ -225,6 +233,8 @@ namespace papicomfeed.Forms.Penjualan
             this.btnAddPenjualan.Text = "Buat Penjualan";
             this.btnAddPenjualan.UseVisualStyleBackColor = true;
             this.btnAddPenjualan.Click += new System.EventHandler(this.btnAddPenjualan_Click);
+            this.btnAddPenjualan.MouseLeave += new System.EventHandler(this.btnAddPenjualan_MouseLeave);
+            this.btnAddPenjualan.MouseHover += new System.EventHandler(this.btnAddPenjualan_MouseHover);
             // 
             // Tambah
             // 
@@ -242,6 +252,7 @@ namespace papicomfeed.Forms.Penjualan
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Tambah";
             this.Text = "Tambah";
+            this.Load += new System.EventHandler(this.Tambah_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudJumlah)).EndInit();

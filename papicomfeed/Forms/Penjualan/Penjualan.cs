@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 using papicomfeed.Model;
 
@@ -39,6 +40,22 @@ namespace papicomfeed.Forms.Penjualan
             int id = int.Parse(dt.Rows[row][0].ToString());
             DetailPenjualan f = new DetailPenjualan(id);
             f.Show();
+        }
+
+        private void Penjualan_Load(object sender, EventArgs e)
+        {
+            this.Paint += new PaintEventHandler(Penjualan_Paint);
+        }
+
+        private void Penjualan_Paint(object sender, PaintEventArgs e)
+        {
+            // membuat gradient background
+            LinearGradientBrush gradient = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.FromArgb(255, 25, 25, 112), // biru tua
+                Color.FromArgb(255, 135, 206, 250), // biru muda cerah
+                -120f);
+            e.Graphics.FillRectangle(gradient, this.ClientRectangle);
         }
     }
 }

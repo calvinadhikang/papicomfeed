@@ -47,15 +47,18 @@ namespace papicomfeed.Forms.Master
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(170, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Detail Ikan";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(53, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 25);
@@ -65,6 +68,7 @@ namespace papicomfeed.Forms.Master
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(17, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 25);
@@ -74,6 +78,7 @@ namespace papicomfeed.Forms.Master
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(12, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 25);
@@ -104,27 +109,34 @@ namespace papicomfeed.Forms.Master
             // 
             // btnsaveikan
             // 
+            this.btnsaveikan.BackColor = System.Drawing.Color.GhostWhite;
             this.btnsaveikan.Location = new System.Drawing.Point(302, 197);
             this.btnsaveikan.Name = "btnsaveikan";
             this.btnsaveikan.Size = new System.Drawing.Size(99, 35);
             this.btnsaveikan.TabIndex = 2;
             this.btnsaveikan.Text = "Simpan";
-            this.btnsaveikan.UseVisualStyleBackColor = true;
+            this.btnsaveikan.UseVisualStyleBackColor = false;
             this.btnsaveikan.Click += new System.EventHandler(this.btnsaveikan_Click);
+            this.btnsaveikan.MouseLeave += new System.EventHandler(this.btnsaveikan_MouseLeave);
+            this.btnsaveikan.MouseHover += new System.EventHandler(this.btnsaveikan_MouseHover);
             // 
             // btnbackikan
             // 
+            this.btnbackikan.BackColor = System.Drawing.Color.GhostWhite;
             this.btnbackikan.Location = new System.Drawing.Point(302, 4);
             this.btnbackikan.Name = "btnbackikan";
             this.btnbackikan.Size = new System.Drawing.Size(99, 35);
             this.btnbackikan.TabIndex = 2;
             this.btnbackikan.Text = "Kembali";
-            this.btnbackikan.UseVisualStyleBackColor = true;
+            this.btnbackikan.UseVisualStyleBackColor = false;
             this.btnbackikan.Click += new System.EventHandler(this.btnbackikan_Click);
+            this.btnbackikan.MouseLeave += new System.EventHandler(this.btnbackikan_MouseLeave);
+            this.btnbackikan.MouseHover += new System.EventHandler(this.btnbackikan_MouseHover);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(334, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 25);
@@ -134,6 +146,7 @@ namespace papicomfeed.Forms.Master
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(15, 162);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 25);
@@ -168,6 +181,7 @@ namespace papicomfeed.Forms.Master
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormMasterIkanDetail";
             this.Text = "FormMasterIkanDetail";
+            this.Load += new System.EventHandler(this.FormMasterIkanDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

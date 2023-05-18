@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+
 
 namespace papicomfeed.Forms.Pembelian
 {
@@ -62,8 +64,10 @@ namespace papicomfeed.Forms.Pembelian
                     int harga = int.Parse(item[3].ToString());
                     int subtotal = int.Parse(item[4].ToString());
                     int kolamid = int.Parse(item[6].ToString());
+                    string namaIkan = item[0].ToString();
+                    
 
-                    cmd.CommandText = $"INSERT INTO DBELI (HBELI_ID, KOLAM_ID, IKAN_ID, HARGA, JUMLAH) VALUES ({headerId},{kolamid}, {ikanId}, {harga}, {qty})";
+                    cmd.CommandText = $"INSERT INTO DBELI (HBELI_ID, KOLAM_ID, IKAN_ID, HARGA, JUMLAH, NAMA_IKAN, SUBTOTAL) VALUES ({headerId},{kolamid}, {ikanId}, {harga}, {qty}, '{namaIkan}', {subtotal})";
                     cmd.ExecuteNonQuery();
                 }
 
@@ -262,6 +266,42 @@ namespace papicomfeed.Forms.Pembelian
                 total += int.Parse(item[4].ToString());
             }
             labeltotal.Text = total.ToString();
+        }
+
+        private void Tambah_Load(object sender, EventArgs e)
+        {
+            this.Paint += new PaintEventHandler(Tambah_Paint);
+        }
+
+        private void Tambah_Paint(object sender, PaintEventArgs e)
+        {
+            // membuat gradient background
+            LinearGradientBrush gradient = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.FromArgb(255, 25, 25, 112), // biru tua
+                Color.FromArgb(255, 135, 206, 250), // biru muda cerah
+                -120f);
+            e.Graphics.FillRectangle(gradient, this.ClientRectangle);
+        }
+
+        private void btnTambah_MouseHover(object sender, EventArgs e)
+        {
+            btnTambah.BackColor = Color.LightGreen;
+        }
+
+        private void btnTambah_MouseLeave(object sender, EventArgs e)
+        {
+            btnTambah.BackColor = Color.GhostWhite;
+        }
+
+        private void btnSelesai_MouseHover(object sender, EventArgs e)
+        {
+            btnSelesai.BackColor = Color.LightGreen;
+        }
+
+        private void btnSelesai_MouseLeave(object sender, EventArgs e)
+        {
+            btnSelesai.BackColor = Color.GhostWhite;
         }
     }
 }
