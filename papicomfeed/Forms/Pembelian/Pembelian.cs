@@ -35,10 +35,19 @@ namespace papicomfeed.Forms.Pembelian
 
         private void dgvPembelian_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int header = int.Parse(dt.Rows[e.RowIndex][0].ToString());
-            DetailPembelian f = new DetailPembelian(header);
+            int row = e.RowIndex;
+
+            int id = int.Parse(dt.Rows[row][0].ToString());
+            //int header = int.Parse(dt.Rows[e.RowIndex][0].ToString());
+            DetailPembelian f = new DetailPembelian(id);
             f.Show();
         }
+        //private void dgvPembelian_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    int header = int.Parse(dt.Rows[e.RowIndex][0].ToString());
+        //    DetailPembelian f = new DetailPembelian(header);
+        //    f.Show();
+        //}
 
         private void Pembelian_Load(object sender, EventArgs e)
         {
@@ -56,11 +65,6 @@ namespace papicomfeed.Forms.Pembelian
             e.Graphics.FillRectangle(gradient, this.ClientRectangle);
         }
 
-        private void dgvPembelian_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int header = int.Parse(dt.Rows[e.RowIndex][0].ToString());
-            DetailPembelian f = new DetailPembelian(header);
-            f.Show();
-        }
+        
     }
 }

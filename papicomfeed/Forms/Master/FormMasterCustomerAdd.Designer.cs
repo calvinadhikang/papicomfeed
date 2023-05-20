@@ -106,13 +106,13 @@ namespace papicomfeed.Forms.Master
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(57, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 25);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "ID :";
+            //this.label2.AutoSize = true;
+            //this.label2.BackColor = System.Drawing.Color.Transparent;
+            //this.label2.Location = new System.Drawing.Point(57, 58);
+            //this.label2.Name = "label2";
+            //this.label2.Size = new System.Drawing.Size(44, 25);
+            //this.label2.TabIndex = 6;
+            //this.label2.Text = "ID :";
             // 
             // label1
             // 

@@ -20,6 +20,9 @@ namespace papicomfeed.Model
         public string alamat;
         public string tanggal;
 
+
+        
+
         private Hbeli(int id, int karyawan_id, int total, string penjual, string alamat, string tanggal)
         {
             this.id = id;
@@ -43,7 +46,7 @@ namespace papicomfeed.Model
         public static Hbeli get(int id)
         {
             DataTable dt = new DataTable();
-            MySqlCommand cmd = new MySqlCommand($"SELECT * FROM HJUAL WHERE ID = {id}", DB.conn);
+            MySqlCommand cmd = new MySqlCommand($"SELECT * FROM HBeli WHERE ID = {id}", DB.conn);
             MySqlDataAdapter adpt = new MySqlDataAdapter();
             adpt.SelectCommand = cmd;
             adpt.FillAsync(dt);

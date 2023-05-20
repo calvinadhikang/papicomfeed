@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using papicomfeed.Model;
 using System.Drawing.Drawing2D;
 
@@ -17,7 +16,7 @@ namespace papicomfeed.Forms.Pembelian
     {
         Hbeli header;
         Karyawan karyawan;
-        DBeli detail;
+        
         public DetailPembelian(int id)
         {
             InitializeComponent();
