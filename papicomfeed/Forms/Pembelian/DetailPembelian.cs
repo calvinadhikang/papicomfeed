@@ -32,7 +32,7 @@ namespace papicomfeed.Forms.Pembelian
             lbTotal.Text = header.total.ToString();
             lbTanggal.Text = header.tanggal.ToString();
             lbNama.Text = header.penjual.ToString();
-            lbAlamat.Text = header.penjual.ToString();
+            lbAlamat.Text = header.alamat.ToString();
             lbKaryawan.Text = karyawan.nama.ToString();
 
             showDetail();
@@ -57,6 +57,11 @@ namespace papicomfeed.Forms.Pembelian
                 Color.FromArgb(255, 135, 206, 250), // biru muda cerah
                 -120f);
             e.Graphics.FillRectangle(gradient, this.ClientRectangle);
+        }
+
+        private void lbNama_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

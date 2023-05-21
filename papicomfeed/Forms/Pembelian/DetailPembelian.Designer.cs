@@ -51,6 +51,7 @@ namespace papicomfeed.Forms.Pembelian
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 242);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(760, 308);
             this.dataGridView1.TabIndex = 4;
             // 
@@ -60,7 +61,7 @@ namespace papicomfeed.Forms.Pembelian
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(298, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 25);
+            this.label1.Size = new System.Drawing.Size(257, 37);
             this.label1.TabIndex = 3;
             this.label1.Text = "Detail Pembelian";
             // 
@@ -70,7 +71,7 @@ namespace papicomfeed.Forms.Pembelian
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(7, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 25);
+            this.label2.Size = new System.Drawing.Size(109, 37);
             this.label2.TabIndex = 5;
             this.label2.Text = "Kode :";
             // 
@@ -80,7 +81,7 @@ namespace papicomfeed.Forms.Pembelian
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(7, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 25);
+            this.label3.Size = new System.Drawing.Size(273, 37);
             this.label3.TabIndex = 5;
             this.label3.Text = "Nama Karyawan :";
             // 
@@ -90,7 +91,7 @@ namespace papicomfeed.Forms.Pembelian
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(7, 143);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 25);
+            this.label4.Size = new System.Drawing.Size(156, 37);
             this.label4.TabIndex = 5;
             this.label4.Text = "Total : Rp";
             // 
@@ -100,7 +101,7 @@ namespace papicomfeed.Forms.Pembelian
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(406, 68);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(165, 25);
+            this.label5.Size = new System.Drawing.Size(248, 37);
             this.label5.TabIndex = 5;
             this.label5.Text = "Nama Supplier :";
             // 
@@ -110,7 +111,7 @@ namespace papicomfeed.Forms.Pembelian
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(396, 105);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(175, 25);
+            this.label6.Size = new System.Drawing.Size(262, 37);
             this.label6.TabIndex = 5;
             this.label6.Text = "Alamat Supplier :";
             // 
@@ -120,7 +121,7 @@ namespace papicomfeed.Forms.Pembelian
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Location = new System.Drawing.Point(469, 143);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 25);
+            this.label7.Size = new System.Drawing.Size(152, 37);
             this.label7.TabIndex = 5;
             this.label7.Text = "Tanggal :";
             // 
@@ -130,7 +131,7 @@ namespace papicomfeed.Forms.Pembelian
             this.lbKode.BackColor = System.Drawing.Color.Transparent;
             this.lbKode.Location = new System.Drawing.Point(87, 68);
             this.lbKode.Name = "lbKode";
-            this.lbKode.Size = new System.Drawing.Size(74, 25);
+            this.lbKode.Size = new System.Drawing.Size(109, 37);
             this.lbKode.TabIndex = 5;
             this.lbKode.Text = "Kode :";
             // 
@@ -140,7 +141,7 @@ namespace papicomfeed.Forms.Pembelian
             this.lbKaryawan.BackColor = System.Drawing.Color.Transparent;
             this.lbKaryawan.Location = new System.Drawing.Point(194, 105);
             this.lbKaryawan.Name = "lbKaryawan";
-            this.lbKaryawan.Size = new System.Drawing.Size(74, 25);
+            this.lbKaryawan.Size = new System.Drawing.Size(109, 37);
             this.lbKaryawan.TabIndex = 5;
             this.lbKaryawan.Text = "Kode :";
             // 
@@ -150,7 +151,7 @@ namespace papicomfeed.Forms.Pembelian
             this.lbTotal.BackColor = System.Drawing.Color.Transparent;
             this.lbTotal.Location = new System.Drawing.Point(118, 143);
             this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(74, 25);
+            this.lbTotal.Size = new System.Drawing.Size(109, 37);
             this.lbTotal.TabIndex = 5;
             this.lbTotal.Text = "Kode :";
             // 
@@ -160,9 +161,10 @@ namespace papicomfeed.Forms.Pembelian
             this.lbNama.BackColor = System.Drawing.Color.Transparent;
             this.lbNama.Location = new System.Drawing.Point(577, 68);
             this.lbNama.Name = "lbNama";
-            this.lbNama.Size = new System.Drawing.Size(74, 25);
+            this.lbNama.Size = new System.Drawing.Size(109, 37);
             this.lbNama.TabIndex = 5;
             this.lbNama.Text = "Kode :";
+            this.lbNama.Click += new System.EventHandler(this.lbNama_Click);
             // 
             // lbAlamat
             // 
@@ -170,7 +172,7 @@ namespace papicomfeed.Forms.Pembelian
             this.lbAlamat.BackColor = System.Drawing.Color.Transparent;
             this.lbAlamat.Location = new System.Drawing.Point(577, 105);
             this.lbAlamat.Name = "lbAlamat";
-            this.lbAlamat.Size = new System.Drawing.Size(74, 25);
+            this.lbAlamat.Size = new System.Drawing.Size(109, 37);
             this.lbAlamat.TabIndex = 5;
             this.lbAlamat.Text = "Kode :";
             // 
@@ -180,13 +182,13 @@ namespace papicomfeed.Forms.Pembelian
             this.lbTanggal.BackColor = System.Drawing.Color.Transparent;
             this.lbTanggal.Location = new System.Drawing.Point(577, 143);
             this.lbTanggal.Name = "lbTanggal";
-            this.lbTanggal.Size = new System.Drawing.Size(74, 25);
+            this.lbTanggal.Size = new System.Drawing.Size(109, 37);
             this.lbTanggal.TabIndex = 5;
             this.lbTanggal.Text = "Kode :";
             // 
             // DetailPembelian
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.label4);
