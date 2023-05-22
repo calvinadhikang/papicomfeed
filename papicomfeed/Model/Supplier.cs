@@ -17,6 +17,7 @@ namespace papicomfeed.Model
         public string nama;
         public string telpon;
         public string alamat;
+        public DataTable dtIkan;
 
         public Supplier(string nama, string alamat, string telpon)
         {
@@ -37,6 +38,8 @@ namespace papicomfeed.Model
             this.nama = nama;
             this.alamat = alamat;
             this.telpon = telpon;
+
+            getIkanSupplier(id);
         }
 
         public static bool checkDouble(string nama)
@@ -84,6 +87,50 @@ namespace papicomfeed.Model
             string telpon = dt.Rows[0][3].ToString();
 
             return new Supplier(id, nama, alamat, telpon);
+        }
+
+        public void getIkanSupplier(int idSupplier)
+        {
+            DataTable dt = new DataTable();
+            MySqlCommand cmd = new MySqlCommand($"SELECT * FROM rsupply where supplier_id = {idSupplier}", DB.conn);
+            MySqlDataAdapter adapt = new MySqlDataAdapter();
+            adapt.SelectCommand = cmd;
+            adapt.FillAsync(dt);
+
+            if (dt.Rows.Count <= 0)
+            {
+                return;
+            }
+
+            DataTable dtIkan = new DataTable();
+            foreach (DataRow row in dt.Rows)
+            {
+                Ikan ikan = Ikan.get(int.Parse(row["ikan_id"].ToString()));
+
+                DataRow dtRow = dtIkan.NewRow();
+                dtRow[0] = ikan.id;
+                dtRow[1] = ikan.nama;
+                dtRow[2] = ikan.waktu;
+                dtRow[3] = ikan.harga;
+
+                dtIkan.Rows.Add(dtRow);
+            }
+
+            this.dtIkan = dtIkan;
+        }
+
+        public void addIkanSupplier(int idSupplier, int idIkan)
+        {
+            string query = $"INSERT INTO rsupply (ikan_id, supplier_id) VALUES ({idIkan}, {idSupplier})";
+            cmd = new MySqlCommand(query, DB.conn);
+            cmd.ExecuteNonQuery();
+        }
+
+        public void deleteIkanSupplier(int idSupplier, int idIkan)
+        {
+            string query = $"DELETE rsupply WHERE ikan_id={idIkan} AND supplier_id={idSupplier}";
+            cmd = new MySqlCommand(query, DB.conn);
+            cmd.ExecuteNonQuery();
         }
 
         public void save()
