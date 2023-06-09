@@ -38,7 +38,6 @@ namespace papicomfeed.Forms.Pembelian
             int row = e.RowIndex;
 
             int id = int.Parse(dt.Rows[row][0].ToString());
-            //int header = int.Parse(dt.Rows[e.RowIndex][0].ToString());
             DetailPembelian f = new DetailPembelian(id);
             f.Show();
         }
