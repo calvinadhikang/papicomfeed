@@ -81,10 +81,18 @@ namespace papicomfeed.Model
             return new Ikan(idikan, nama, waktu, harga);
         }
 
-        public static DataTable getAll()
+        public static DataTable getAll(string key = "")
         {
             DataTable dt = new DataTable();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM IKAN", DB.conn);
+            MySqlCommand cmd;
+            if (key == "")
+            {
+                cmd = new MySqlCommand("SELECT * FROM ikan", DB.conn);
+            }
+            else
+            {
+                cmd = new MySqlCommand($"SELECT * FROM ikan WHERE nama LIKE '%{key}%'", DB.conn);
+            }
             MySqlDataAdapter adpt = new MySqlDataAdapter();
             adpt.SelectCommand = cmd;
             adpt.FillAsync(dt);

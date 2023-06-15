@@ -45,9 +45,17 @@ namespace papicomfeed.Model
             return (count > 0) ? true : false;
         }
 
-        public static DataTable getAll() {
+        public static DataTable getAll(string key = "") {
             DataTable dt = new DataTable();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM customer", DB.conn);
+            MySqlCommand cmd;
+            if (key == "")
+            {
+                cmd = new MySqlCommand("SELECT * FROM customer", DB.conn);
+            }
+            else
+            {
+                cmd = new MySqlCommand($"SELECT * FROM customer WHERE nama LIKE '%{key}%'", DB.conn);
+            }
             MySqlDataAdapter adapt = new MySqlDataAdapter();
             adapt.SelectCommand = cmd;
             adapt.FillAsync(dt);

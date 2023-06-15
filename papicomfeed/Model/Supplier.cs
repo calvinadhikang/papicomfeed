@@ -17,7 +17,7 @@ namespace papicomfeed.Model
         public string nama;
         public string telpon;
         public string alamat;
-        public DataTable dtIkan;
+        public DataTable dtIkan = new DataTable();
 
         public Supplier(string nama, string alamat, string telpon)
         {
@@ -39,7 +39,7 @@ namespace papicomfeed.Model
             this.alamat = alamat;
             this.telpon = telpon;
 
-            getIkanSupplier(id);
+            getIkanSupplier();
         }
 
         public static bool checkDouble(string nama)
@@ -89,10 +89,10 @@ namespace papicomfeed.Model
             return new Supplier(id, nama, alamat, telpon);
         }
 
-        public void getIkanSupplier(int idSupplier)
+        public void getIkanSupplier()
         {
             DataTable dt = new DataTable();
-            MySqlCommand cmd = new MySqlCommand($"SELECT * FROM rsupply where supplier_id = {idSupplier}", DB.conn);
+            MySqlCommand cmd = new MySqlCommand($"SELECT * FROM rsupply where supplier_id = {this.id}", DB.conn);
             MySqlDataAdapter adapt = new MySqlDataAdapter();
             adapt.SelectCommand = cmd;
             adapt.FillAsync(dt);
@@ -103,34 +103,62 @@ namespace papicomfeed.Model
             }
 
             DataTable dtIkan = new DataTable();
+            dtIkan.Columns.Add("id", typeof(int));
+            dtIkan.Columns.Add("nama", typeof(string));
+            dtIkan.Columns.Add("waktu", typeof(int));
+            dtIkan.Columns.Add("harga", typeof(int));
             foreach (DataRow row in dt.Rows)
             {
                 Ikan ikan = Ikan.get(int.Parse(row["ikan_id"].ToString()));
 
-                DataRow dtRow = dtIkan.NewRow();
-                dtRow[0] = ikan.id;
-                dtRow[1] = ikan.nama;
-                dtRow[2] = ikan.waktu;
-                dtRow[3] = ikan.harga;
-
-                dtIkan.Rows.Add(dtRow);
+                dtIkan.Rows.Add(new Object[] { ikan.id, ikan.nama, ikan.waktu, ikan.harga });
             }
 
             this.dtIkan = dtIkan;
         }
 
-        public void addIkanSupplier(int idSupplier, int idIkan)
+        public bool addIkanSupplier(int idIkan)
         {
-            string query = $"INSERT INTO rsupply (ikan_id, supplier_id) VALUES ({idIkan}, {idSupplier})";
-            cmd = new MySqlCommand(query, DB.conn);
-            cmd.ExecuteNonQuery();
+            //check Duplicate
+            bool duplicate = false;
+            foreach (DataRow row in this.dtIkan.Rows)
+            {
+                if (row[0].ToString() == idIkan.ToString())
+                {
+                    duplicate = true;
+                }
+            }
+
+            if (!duplicate)
+            {
+                string query = $"INSERT INTO rsupply (ikan_id, supplier_id) VALUES ({idIkan}, {this.id})";
+                cmd = new MySqlCommand(query, DB.conn);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            return false;
         }
 
-        public void deleteIkanSupplier(int idSupplier, int idIkan)
+        public bool deleteIkanSupplier(int idIkan)
         {
-            string query = $"DELETE rsupply WHERE ikan_id={idIkan} AND supplier_id={idSupplier}";
-            cmd = new MySqlCommand(query, DB.conn);
-            cmd.ExecuteNonQuery();
+            //check Duplicate
+            bool duplicate = false;
+            foreach (DataRow row in this.dtIkan.Rows)
+            {
+                if (row[0].ToString() == idIkan.ToString())
+                {
+                    duplicate = true;
+                }
+            }
+
+            if (duplicate)
+            {
+                string query = $"DELETE FROM rsupply WHERE ikan_id={idIkan} AND supplier_id={this.id}";
+                cmd = new MySqlCommand(query, DB.conn);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            return false;
         }
 
         public void save()

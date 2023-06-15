@@ -22,9 +22,9 @@ namespace papicomfeed.Forms.Master
             displayData();
         }
 
-        public void displayData()
+        public void displayData(string key = "")
         {
-            DataTable dtKaryawan = Karyawan.getAll();
+            DataTable dtKaryawan = Karyawan.getAll(key);
 
 
             //untuk kostumisasi isi dari datatable
@@ -120,6 +120,11 @@ namespace papicomfeed.Forms.Master
         private void button1_MouseLeave(object sender, EventArgs e)
         {
             button1.BackColor = Color.GhostWhite;
+        }
+
+        private void tbNamaSearch_TextChanged(object sender, EventArgs e)
+        {
+            displayData(tbNamaSearch.Text);
         }
     }
 }

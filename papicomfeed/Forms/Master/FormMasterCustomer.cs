@@ -21,8 +21,8 @@ namespace papicomfeed.Forms.Master
             displayData();
         }
 
-        public void displayData() {
-            dataGridView1.DataSource = Customer.getAll();
+        public void displayData(string key = "") {
+            dataGridView1.DataSource = Customer.getAll(key);
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -70,6 +70,11 @@ namespace papicomfeed.Forms.Master
         private void button1_MouseLeave(object sender, EventArgs e)
         {
             button1.BackColor = Color.GhostWhite;
+        }
+
+        private void tbNamaSearch_TextChanged(object sender, EventArgs e)
+        {
+            displayData(tbNamaSearch.Text);
         }
     }
 }

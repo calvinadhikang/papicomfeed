@@ -109,6 +109,7 @@ namespace papicomfeed.Forms.Master
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormMasterSupplier";
             this.Text = "FormMasterSupplier";
+            this.Load += new System.EventHandler(this.FormMasterSupplier_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

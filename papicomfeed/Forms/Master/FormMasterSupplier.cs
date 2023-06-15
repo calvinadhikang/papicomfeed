@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +47,22 @@ namespace papicomfeed.Forms.Master
 
             FormMasterSupplierDetail f = new FormMasterSupplierDetail(this, id);
             f.Show();
+        }
+
+        private void FormMasterSupplier_Load(object sender, EventArgs e)
+        {
+            this.Paint += new PaintEventHandler(FormMasterSupplier_Paint);
+        }
+
+        private void FormMasterSupplier_Paint(object sender, PaintEventArgs e)
+        {
+            // membuat gradient background
+            LinearGradientBrush gradient = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.FromArgb(255, 135, 206, 250), // biru muda
+                Color.FromArgb(255, 25, 25, 112), // biru tua
+                120f);
+            e.Graphics.FillRectangle(gradient, this.ClientRectangle);
         }
     }
 }

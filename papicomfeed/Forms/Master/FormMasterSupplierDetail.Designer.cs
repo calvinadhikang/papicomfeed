@@ -39,6 +39,14 @@ namespace papicomfeed.Forms.Master
             this.tbTelp = new System.Windows.Forms.TextBox();
             this.tbAlamat = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbIkan = new System.Windows.Forms.ComboBox();
+            this.btnAddIkan = new System.Windows.Forms.Button();
+            this.dgvIkan = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnRemoveIkan = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIkan)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -126,11 +134,73 @@ namespace papicomfeed.Forms.Master
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnRemoveIkan);
+            this.groupBox1.Controls.Add(this.btnAddIkan);
+            this.groupBox1.Controls.Add(this.cmbIkan);
+            this.groupBox1.Location = new System.Drawing.Point(17, 177);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(755, 77);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Add Ikan";
+            // 
+            // cmbIkan
+            // 
+            this.cmbIkan.FormattingEnabled = true;
+            this.cmbIkan.Location = new System.Drawing.Point(6, 30);
+            this.cmbIkan.Name = "cmbIkan";
+            this.cmbIkan.Size = new System.Drawing.Size(241, 33);
+            this.cmbIkan.TabIndex = 0;
+            // 
+            // btnAddIkan
+            // 
+            this.btnAddIkan.Location = new System.Drawing.Point(253, 30);
+            this.btnAddIkan.Name = "btnAddIkan";
+            this.btnAddIkan.Size = new System.Drawing.Size(60, 33);
+            this.btnAddIkan.TabIndex = 1;
+            this.btnAddIkan.Text = "+";
+            this.btnAddIkan.UseVisualStyleBackColor = true;
+            this.btnAddIkan.Click += new System.EventHandler(this.btnAddIkan_Click);
+            // 
+            // dgvIkan
+            // 
+            this.dgvIkan.AllowUserToAddRows = false;
+            this.dgvIkan.AllowUserToDeleteRows = false;
+            this.dgvIkan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvIkan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvIkan.Location = new System.Drawing.Point(17, 316);
+            this.dgvIkan.Name = "dgvIkan";
+            this.dgvIkan.Size = new System.Drawing.Size(755, 233);
+            this.dgvIkan.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 288);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(258, 25);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Data Ikan Yang Di Supply";
+            // 
+            // btnRemoveIkan
+            // 
+            this.btnRemoveIkan.Location = new System.Drawing.Point(319, 29);
+            this.btnRemoveIkan.Name = "btnRemoveIkan";
+            this.btnRemoveIkan.Size = new System.Drawing.Size(60, 33);
+            this.btnRemoveIkan.TabIndex = 2;
+            this.btnRemoveIkan.Text = "-";
+            this.btnRemoveIkan.UseVisualStyleBackColor = true;
+            this.btnRemoveIkan.Click += new System.EventHandler(this.btnRemoveIkan_Click);
+            // 
             // FormMasterSupplierDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.dgvIkan);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tbTelp);
             this.Controls.Add(this.tbAlamat);
@@ -138,6 +208,7 @@ namespace papicomfeed.Forms.Master
             this.Controls.Add(this.tbId);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbNama);
             this.Controls.Add(this.label1);
@@ -145,6 +216,9 @@ namespace papicomfeed.Forms.Master
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormMasterSupplierDetail";
             this.Text = "FormMasterSupplierDetail";
+            this.Load += new System.EventHandler(this.FormMasterSupplierDetail_Load);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIkan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +236,11 @@ namespace papicomfeed.Forms.Master
         private System.Windows.Forms.TextBox tbTelp;
         private System.Windows.Forms.TextBox tbAlamat;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cmbIkan;
+        private System.Windows.Forms.Button btnAddIkan;
+        private System.Windows.Forms.DataGridView dgvIkan;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnRemoveIkan;
     }
 }

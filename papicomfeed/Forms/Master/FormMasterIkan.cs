@@ -20,9 +20,9 @@ namespace papicomfeed.Forms.Master
             displayData();
         }
 
-        public void displayData()
+        public void displayData(string key = "")
         {
-            dataListIkan.DataSource = Ikan.getAll();
+            dataListIkan.DataSource = Ikan.getAll(key);
         }
 
         private void btnTambahIkan_Click(object sender, EventArgs e)
@@ -71,6 +71,12 @@ namespace papicomfeed.Forms.Master
         private void btnTambahIkan_MouseLeave(object sender, EventArgs e)
         {
             btnTambahIkan.BackColor = Color.GhostWhite;
+        }
+
+        private void tbNamaSearch_TextChanged(object sender, EventArgs e)
+        {
+            string key = tbNamaSearch.Text;
+            displayData(key);
         }
     }
 }

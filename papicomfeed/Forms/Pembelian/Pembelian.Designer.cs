@@ -46,6 +46,8 @@ namespace papicomfeed.Forms.Pembelian
             // 
             // dgvPembelian
             // 
+            this.dgvPembelian.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPembelian.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPembelian.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPembelian.Location = new System.Drawing.Point(12, 71);
             this.dgvPembelian.Name = "dgvPembelian";

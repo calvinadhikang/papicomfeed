@@ -32,6 +32,8 @@ namespace papicomfeed.Forms.Master
             this.btnTambahIkan = new System.Windows.Forms.Button();
             this.dataListIkan = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbNamaSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataListIkan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,10 +56,10 @@ namespace papicomfeed.Forms.Master
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataListIkan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataListIkan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataListIkan.Location = new System.Drawing.Point(12, 63);
+            this.dataListIkan.Location = new System.Drawing.Point(12, 100);
             this.dataListIkan.Name = "dataListIkan";
             this.dataListIkan.RowHeadersWidth = 62;
-            this.dataListIkan.Size = new System.Drawing.Size(760, 446);
+            this.dataListIkan.Size = new System.Drawing.Size(760, 409);
             this.dataListIkan.TabIndex = 7;
             this.dataListIkan.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListIkan_CellDoubleClick);
             // 
@@ -74,11 +76,30 @@ namespace papicomfeed.Forms.Master
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 25);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Nama :";
+            // 
+            // tbNamaSearch
+            // 
+            this.tbNamaSearch.Location = new System.Drawing.Point(98, 63);
+            this.tbNamaSearch.Name = "tbNamaSearch";
+            this.tbNamaSearch.Size = new System.Drawing.Size(674, 31);
+            this.tbNamaSearch.TabIndex = 10;
+            this.tbNamaSearch.TextChanged += new System.EventHandler(this.tbNamaSearch_TextChanged);
+            // 
             // FormMasterIkan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.tbNamaSearch);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnTambahIkan);
             this.Controls.Add(this.dataListIkan);
             this.Controls.Add(this.label1);
@@ -89,6 +110,7 @@ namespace papicomfeed.Forms.Master
             this.Load += new System.EventHandler(this.FormMasterIkan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataListIkan)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -97,5 +119,7 @@ namespace papicomfeed.Forms.Master
         private System.Windows.Forms.Button btnTambahIkan;
         private System.Windows.Forms.DataGridView dataListIkan;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbNamaSearch;
     }
 }
