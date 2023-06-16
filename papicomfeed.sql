@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2023 at 03:26 AM
+-- Generation Time: Jun 16, 2023 at 08:07 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `papicomfeed`
 --
-CREATE DATABASE IF NOT EXISTS `papicomfeed` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `papicomfeed`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +27,6 @@ USE `papicomfeed`;
 -- Table structure for table `customer`
 --
 
-DROP TABLE IF EXISTS `customer`;
 CREATE TABLE `customer` (
   `id` int(20) NOT NULL,
   `nama` varchar(200) NOT NULL,
@@ -52,7 +49,6 @@ INSERT INTO `customer` (`id`, `nama`, `alamat`, `telp`) VALUES
 -- Table structure for table `dbeli`
 --
 
-DROP TABLE IF EXISTS `dbeli`;
 CREATE TABLE `dbeli` (
   `id` int(11) NOT NULL,
   `hbeli_id` int(11) NOT NULL,
@@ -78,7 +74,10 @@ INSERT INTO `dbeli` (`id`, `hbeli_id`, `kolam_id`, `ikan_id`, `harga`, `jumlah`,
 (15, 11, 1, 1, 1000, 5, 'Cupang Hias', '2023-05-14', 5000),
 (16, 12, 2, 2, 2500, 6, 'Lele', '2023-05-15', 15000),
 (17, 12, 2, 3, 5000, 7, 'Gurami', '2023-05-15', 35000),
-(18, 13, 2, 2, 2500, 2, 'Lele', '2023-05-20', 5000);
+(18, 13, 2, 2, 2500, 2, 'Lele', '2023-05-20', 5000),
+(19, 14, 1, 1, 1000, 2, 'Cupang Hias', '2023-06-16', 2000),
+(20, 15, 1, 1, 1000, 3, 'Cupang Hias', '2023-06-16', 3000),
+(21, 16, 1, 1, 1000, 5, 'Cupang Hias', '2023-06-16', 5000);
 
 -- --------------------------------------------------------
 
@@ -86,7 +85,6 @@ INSERT INTO `dbeli` (`id`, `hbeli_id`, `kolam_id`, `ikan_id`, `harga`, `jumlah`,
 -- Table structure for table `djual`
 --
 
-DROP TABLE IF EXISTS `djual`;
 CREATE TABLE `djual` (
   `id` int(11) NOT NULL,
   `hjual_id` int(11) NOT NULL,
@@ -114,7 +112,6 @@ INSERT INTO `djual` (`id`, `hjual_id`, `ikan_id`, `qty`, `harga`, `subtotal`, `n
 -- Table structure for table `hbeli`
 --
 
-DROP TABLE IF EXISTS `hbeli`;
 CREATE TABLE `hbeli` (
   `id` int(11) NOT NULL,
   `karyawan_id` int(11) NOT NULL,
@@ -133,7 +130,10 @@ INSERT INTO `hbeli` (`id`, `karyawan_id`, `total`, `penjual`, `alamat`, `tanggal
 (10, 2, 27500, 'ivander', 'simo', '2023-05-14 06:34:29.723788'),
 (11, 2, 15000, 'wina', 'pokcan', '2023-05-14 06:34:57.040008'),
 (12, 2, 50000, 'ed', 'manyar', '2023-05-15 01:23:09.595639'),
-(13, 2, 5000, 'chiari', 'manyar', '2023-05-20 14:43:28.569241');
+(13, 2, 5000, 'chiari', 'manyar', '2023-05-20 14:43:28.569241'),
+(14, 2, 2000, 'jose', 'stts', '2023-06-16 03:25:45.857720'),
+(15, 2, 3000, 'jose', 'stts', '2023-06-16 03:49:29.763901'),
+(16, 2, 5000, 'jose', 'stts', '2023-06-16 03:51:21.739792');
 
 -- --------------------------------------------------------
 
@@ -141,7 +141,6 @@ INSERT INTO `hbeli` (`id`, `karyawan_id`, `total`, `penjual`, `alamat`, `tanggal
 -- Table structure for table `hjual`
 --
 
-DROP TABLE IF EXISTS `hjual`;
 CREATE TABLE `hjual` (
   `id` int(11) NOT NULL,
   `karyawan_id` int(11) NOT NULL,
@@ -166,22 +165,22 @@ INSERT INTO `hjual` (`id`, `karyawan_id`, `total`, `customer`, `alamat`, `tangga
 -- Table structure for table `ikan`
 --
 
-DROP TABLE IF EXISTS `ikan`;
 CREATE TABLE `ikan` (
   `id` int(10) NOT NULL,
   `nama` varchar(200) NOT NULL,
   `waktu` int(10) NOT NULL,
-  `harga` int(11) NOT NULL
+  `harga` int(11) NOT NULL,
+  `stok` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `ikan`
 --
 
-INSERT INTO `ikan` (`id`, `nama`, `waktu`, `harga`) VALUES
-(1, 'Cupang Hias', 2, 1000),
-(2, 'Lele', 2, 2500),
-(3, 'Gurami', 4, 5000);
+INSERT INTO `ikan` (`id`, `nama`, `waktu`, `harga`, `stok`) VALUES
+(1, 'Cupang Hias', 2, 1000, 15),
+(2, 'Lele', 2, 2500, 0),
+(3, 'Gurami', 4, 5000, 0);
 
 -- --------------------------------------------------------
 
@@ -189,7 +188,6 @@ INSERT INTO `ikan` (`id`, `nama`, `waktu`, `harga`) VALUES
 -- Table structure for table `karyawan`
 --
 
-DROP TABLE IF EXISTS `karyawan`;
 CREATE TABLE `karyawan` (
   `id` int(20) NOT NULL,
   `nama` varchar(200) NOT NULL,
@@ -206,7 +204,8 @@ CREATE TABLE `karyawan` (
 INSERT INTO `karyawan` (`id`, `nama`, `username`, `telp`, `role`, `status`) VALUES
 (1, 'Calvin Adhikang', 'calvin', '123123', 0, 0),
 (2, 'Edward Patrick', 'ed', '456', 2, 1),
-(3, 'Jojo', 'jo', '123', 1, 1);
+(3, 'Jojo', 'jo', '123', 1, 1),
+(4, 'ivander', 'der', '123456', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -214,21 +213,41 @@ INSERT INTO `karyawan` (`id`, `nama`, `username`, `telp`, `role`, `status`) VALU
 -- Table structure for table `kolam`
 --
 
-DROP TABLE IF EXISTS `kolam`;
 CREATE TABLE `kolam` (
   `id` int(10) NOT NULL,
   `nama` varchar(200) NOT NULL,
   `kapasitas` int(10) NOT NULL,
-  `status` int(10) NOT NULL
+  `status` int(10) NOT NULL,
+  `dbeli` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `kolam`
 --
 
-INSERT INTO `kolam` (`id`, `nama`, `kapasitas`, `status`) VALUES
-(1, 'Kolam Utara 1', 100, 0),
-(2, 'kolam selatan', 70, 0);
+INSERT INTO `kolam` (`id`, `nama`, `kapasitas`, `status`, `dbeli`) VALUES
+(1, 'Kolam Utara 100', 100, 0, 0),
+(2, 'kolam selatan', 70, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rsupply`
+--
+
+CREATE TABLE `rsupply` (
+  `id` int(11) NOT NULL,
+  `ikan_id` int(11) NOT NULL,
+  `supplier_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `rsupply`
+--
+
+INSERT INTO `rsupply` (`id`, `ikan_id`, `supplier_id`) VALUES
+(3, 1, 1),
+(4, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -236,7 +255,6 @@ INSERT INTO `kolam` (`id`, `nama`, `kapasitas`, `status`) VALUES
 -- Table structure for table `supplier`
 --
 
-DROP TABLE IF EXISTS `supplier`;
 CREATE TABLE `supplier` (
   `id` int(11) NOT NULL,
   `nama` varchar(200) NOT NULL,
@@ -304,6 +322,12 @@ ALTER TABLE `kolam`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `rsupply`
+--
+ALTER TABLE `rsupply`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -317,7 +341,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `dbeli`
 --
 ALTER TABLE `dbeli`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `djual`
@@ -329,7 +353,7 @@ ALTER TABLE `djual`
 -- AUTO_INCREMENT for table `hbeli`
 --
 ALTER TABLE `hbeli`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `hjual`
@@ -347,13 +371,19 @@ ALTER TABLE `ikan`
 -- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `kolam`
 --
 ALTER TABLE `kolam`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `rsupply`
+--
+ALTER TABLE `rsupply`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
