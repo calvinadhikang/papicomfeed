@@ -48,7 +48,12 @@ namespace papicomfeed.Forms.Master
             this.btnPanen = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.lbStatusKolam = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbTanggalPembelian = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numKapasitas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -134,7 +139,7 @@ namespace papicomfeed.Forms.Master
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(62, 369);
+            this.label5.Location = new System.Drawing.Point(95, 402);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(126, 25);
             this.label5.TabIndex = 1;
@@ -144,7 +149,7 @@ namespace papicomfeed.Forms.Master
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(12, 322);
+            this.label6.Location = new System.Drawing.Point(45, 322);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(176, 25);
             this.label6.TabIndex = 1;
@@ -154,7 +159,7 @@ namespace papicomfeed.Forms.Master
             // 
             this.lbNotaPembelian.AutoSize = true;
             this.lbNotaPembelian.BackColor = System.Drawing.Color.Transparent;
-            this.lbNotaPembelian.Location = new System.Drawing.Point(194, 322);
+            this.lbNotaPembelian.Location = new System.Drawing.Point(233, 322);
             this.lbNotaPembelian.Name = "lbNotaPembelian";
             this.lbNotaPembelian.Size = new System.Drawing.Size(176, 25);
             this.lbNotaPembelian.TabIndex = 1;
@@ -164,7 +169,7 @@ namespace papicomfeed.Forms.Master
             // 
             this.lbNamaIkan.AutoSize = true;
             this.lbNamaIkan.BackColor = System.Drawing.Color.Transparent;
-            this.lbNamaIkan.Location = new System.Drawing.Point(194, 369);
+            this.lbNamaIkan.Location = new System.Drawing.Point(233, 402);
             this.lbNamaIkan.Name = "lbNamaIkan";
             this.lbNamaIkan.Size = new System.Drawing.Size(126, 25);
             this.lbNamaIkan.TabIndex = 1;
@@ -174,7 +179,7 @@ namespace papicomfeed.Forms.Master
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Location = new System.Drawing.Point(57, 413);
+            this.label9.Location = new System.Drawing.Point(90, 446);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(131, 25);
             this.label9.TabIndex = 1;
@@ -184,7 +189,7 @@ namespace papicomfeed.Forms.Master
             // 
             this.lbWaktuIkan.AutoSize = true;
             this.lbWaktuIkan.BackColor = System.Drawing.Color.Transparent;
-            this.lbWaktuIkan.Location = new System.Drawing.Point(194, 413);
+            this.lbWaktuIkan.Location = new System.Drawing.Point(233, 446);
             this.lbWaktuIkan.Name = "lbWaktuIkan";
             this.lbWaktuIkan.Size = new System.Drawing.Size(131, 25);
             this.lbWaktuIkan.TabIndex = 1;
@@ -194,17 +199,18 @@ namespace papicomfeed.Forms.Master
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Location = new System.Drawing.Point(35, 488);
+            this.label11.Location = new System.Drawing.Point(35, 572);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(153, 25);
             this.label11.TabIndex = 1;
             this.label11.Text = "Status Panen :";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // lbStatusPanen
             // 
             this.lbStatusPanen.AutoSize = true;
             this.lbStatusPanen.BackColor = System.Drawing.Color.Transparent;
-            this.lbStatusPanen.Location = new System.Drawing.Point(194, 488);
+            this.lbStatusPanen.Location = new System.Drawing.Point(194, 572);
             this.lbStatusPanen.Name = "lbStatusPanen";
             this.lbStatusPanen.Size = new System.Drawing.Size(445, 25);
             this.lbStatusPanen.TabIndex = 1;
@@ -213,7 +219,7 @@ namespace papicomfeed.Forms.Master
             // btnPanen
             // 
             this.btnPanen.BackColor = System.Drawing.Color.GhostWhite;
-            this.btnPanen.Location = new System.Drawing.Point(674, 479);
+            this.btnPanen.Location = new System.Drawing.Point(632, 608);
             this.btnPanen.Name = "btnPanen";
             this.btnPanen.Size = new System.Drawing.Size(98, 43);
             this.btnPanen.TabIndex = 5;
@@ -243,20 +249,63 @@ namespace papicomfeed.Forms.Master
             this.lbStatusKolam.TabIndex = 1;
             this.lbStatusKolam.Text = "Kapasitas :";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Location = new System.Drawing.Point(12, 360);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(209, 25);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Tanggal Pembelian :";
+            // 
+            // lbTanggalPembelian
+            // 
+            this.lbTanggalPembelian.AutoSize = true;
+            this.lbTanggalPembelian.BackColor = System.Drawing.Color.Transparent;
+            this.lbTanggalPembelian.Location = new System.Drawing.Point(233, 360);
+            this.lbTanggalPembelian.Name = "lbTanggalPembelian";
+            this.lbTanggalPembelian.Size = new System.Drawing.Size(209, 25);
+            this.lbTanggalPembelian.TabIndex = 1;
+            this.lbTanggalPembelian.Text = "Tanggal Pembelian :";
+            this.lbTanggalPembelian.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Location = new System.Drawing.Point(35, 617);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(241, 25);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Jumlah Bisa Di Panen : ";
+            this.label10.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(282, 615);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(344, 31);
+            this.numericUpDown1.TabIndex = 6;
+            // 
             // FormMasterKolamDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 538);
+            this.ClientSize = new System.Drawing.Size(784, 682);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.btnPanen);
             this.Controls.Add(this.btnSimpan);
             this.Controls.Add(this.btnKembali);
             this.Controls.Add(this.numKapasitas);
             this.Controls.Add(this.tbNama);
+            this.Controls.Add(this.lbTanggalPembelian);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.lbNotaPembelian);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbStatusPanen);
             this.Controls.Add(this.lbWaktuIkan);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lbNamaIkan);
@@ -273,6 +322,7 @@ namespace papicomfeed.Forms.Master
             this.Text = "FormMasterKolamDetail";
             this.Load += new System.EventHandler(this.FormMasterKolamDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numKapasitas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,5 +349,9 @@ namespace papicomfeed.Forms.Master
         private System.Windows.Forms.Button btnPanen;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbStatusKolam;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbTanggalPembelian;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

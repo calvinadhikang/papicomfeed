@@ -23,6 +23,7 @@ namespace papicomfeed.Forms.Master
         Ikan ikan;
         int jumlahIkanDiBeli;
         int hargaPerIkan;
+        double bulanPanen;
 
         public FormMasterKolamDetail(int id, FormMasterKolam parent)
         {
@@ -62,7 +63,15 @@ namespace papicomfeed.Forms.Master
                 lbNotaPembelian.Text = dbeli.Rows[0][0].ToString();
                 lbNamaIkan.Text = ikan.nama;
                 lbWaktuIkan.Text = ikan.waktu.ToString() + " Bulan";
-                lbStatusPanen.Text = ikan.waktu.ToString() + " Bulan hingga panen";
+
+                DateTime date1 = DateTime.Parse(dbeli.Rows[0][7].ToString());
+                lbTanggalPembelian.Text = date1.ToString();
+                DateTime datenow = DateTime.Now;
+                bulanPanen = date1.Subtract(datenow).Days / (365.25 / 12);
+                lbStatusPanen.Text = bulanPanen.ToString() + " Bulan hingga panen";
+
+                //setjumlah bisa dipanen
+                numericUpDown1.Value = jumlahIkanDiBeli;
             }
         }
 
@@ -130,15 +139,35 @@ namespace papicomfeed.Forms.Master
         {
             if (ikan != null)
             {
-                if (ikan.waktu != 0)
+                if (bulanPanen > 0)
                 {
                     MessageBox.Show("Tidak Dapat Panen");
                 }
                 else
                 {
-                    MessageBox.Show("Berhasil Panen");
+                    int jumlahPanen = int.Parse(numericUpDown1.Value.ToString());
+                    if (jumlahPanen <= 0 || jumlahPanen > jumlahIkanDiBeli)
+                    {
+                        MessageBox.Show("Jumlah Panen tidak sesuai");
+                    }
+                    else
+                    {
+                        ikan.stok += jumlahPanen;
+                        ikan.save();
+                        k.dbeli = 0;
+                        k.status = 0;
+                        k.save();
+                        parent.displayData();
+                        MessageBox.Show($"Berhasil Panen {jumlahPanen} Ikan");
+                        this.Hide();
+                    }
                 }
             }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

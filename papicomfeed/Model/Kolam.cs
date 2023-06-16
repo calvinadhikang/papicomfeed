@@ -52,7 +52,7 @@ namespace papicomfeed.Model
             string query = $"UPDATE KOLAM SET " +
                 $"NAMA='{this.nama}', " +
                 $"KAPASITAS={this.kapasitas}, " +
-                $"STATUS={this.status} " +
+                $"STATUS={this.status}, " +
                 $"DBELI={this.dbeli} " +
                 $"WHERE ID={this.id}";
             cmd = new MySqlCommand(query, DB.conn);

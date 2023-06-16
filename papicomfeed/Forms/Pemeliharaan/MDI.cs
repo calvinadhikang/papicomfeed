@@ -31,5 +31,13 @@ namespace papicomfeed.Forms.Pemeliharaan
             f.MdiParent = this;
             f.Show();
         }
+
+        private void lihatGudangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //ViewGudang f = new ViewGudang();
+            FormMasterIkan f = new FormMasterIkan();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

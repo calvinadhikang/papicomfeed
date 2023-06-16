@@ -218,23 +218,17 @@
     <Compile Include="Forms\Pembelian\Tambah.Designer.cs">
       <DependentUpon>Tambah.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pemeliharaan\DetailKolam.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Pemeliharaan\DetailKolam.Designer.cs">
-      <DependentUpon>DetailKolam.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Pemeliharaan\MDI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Pemeliharaan\MDI.Designer.cs">
       <DependentUpon>MDI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pemeliharaan\ViewKolam.cs">
+    <Compile Include="Forms\Pemeliharaan\ViewGudang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Pemeliharaan\ViewKolam.Designer.cs">
-      <DependentUpon>ViewKolam.cs</DependentUpon>
+    <Compile Include="Forms\Pemeliharaan\ViewGudang.Designer.cs">
+      <DependentUpon>ViewGudang.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Penjualan\DetailPenjualan.cs">
       <SubType>Form</SubType>
@@ -348,14 +342,11 @@
     <EmbeddedResource Include="Forms\Pembelian\Tambah.resx">
       <DependentUpon>Tambah.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pemeliharaan\DetailKolam.resx">
-      <DependentUpon>DetailKolam.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pemeliharaan\MDI.resx">
       <DependentUpon>MDI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pemeliharaan\ViewKolam.resx">
-      <DependentUpon>ViewKolam.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Pemeliharaan\ViewGudang.resx">
+      <DependentUpon>ViewGudang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Penjualan\DetailPenjualan.resx">
       <DependentUpon>DetailPenjualan.cs</DependentUpon>

@@ -31,8 +31,8 @@ namespace papicomfeed.Forms.Pemeliharaan
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.lihatKolamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lihatGudangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lihatGudangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,18 +56,19 @@ namespace papicomfeed.Forms.Pemeliharaan
             this.lihatKolamToolStripMenuItem.Text = "Lihat Kolam";
             this.lihatKolamToolStripMenuItem.Click += new System.EventHandler(this.lihatKolamToolStripMenuItem_Click);
             // 
-            // lihatGudangToolStripMenuItem
-            // 
-            this.lihatGudangToolStripMenuItem.Name = "lihatGudangToolStripMenuItem";
-            this.lihatGudangToolStripMenuItem.Size = new System.Drawing.Size(149, 34);
-            this.lihatGudangToolStripMenuItem.Text = "Lihat Gudang";
-            // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(90, 34);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
+            // lihatGudangToolStripMenuItem
+            // 
+            this.lihatGudangToolStripMenuItem.Name = "lihatGudangToolStripMenuItem";
+            this.lihatGudangToolStripMenuItem.Size = new System.Drawing.Size(149, 34);
+            this.lihatGudangToolStripMenuItem.Text = "Lihat Gudang";
+            this.lihatGudangToolStripMenuItem.Click += new System.EventHandler(this.lihatGudangToolStripMenuItem_Click);
             // 
             // MDI
             // 
@@ -93,7 +94,7 @@ namespace papicomfeed.Forms.Pemeliharaan
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem lihatKolamToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lihatGudangToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lihatGudangToolStripMenuItem;
     }
 }

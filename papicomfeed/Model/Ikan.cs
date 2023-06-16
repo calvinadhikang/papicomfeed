@@ -20,14 +20,16 @@ namespace papicomfeed.Model
         public string nama;
         public int waktu;
         public int harga;
+        public int stok;
 
-        public Ikan(string nama, int waktu, int harga)
+        public Ikan(string nama, int waktu, int harga, int stok = 0)
         {
             this.nama = nama;
             this.waktu = waktu;
             this.harga = harga;
+            this.stok = stok;
 
-            string query = $"INSERT INTO IKAN (NAMA, WAKTU, HARGA)VALUES ('{nama}', {waktu}, {harga})";
+            string query = $"INSERT INTO IKAN (NAMA, WAKTU, HARGA, STOK)VALUES ('{nama}', {waktu}, {harga}, {stok})";
             cmd = new MySqlCommand(query, DB.conn);
             cmd.ExecuteNonQuery();
 
@@ -35,17 +37,18 @@ namespace papicomfeed.Model
         }
 
 
-        public Ikan(int id , string nama , int waktu, int harga)
+        public Ikan(int id , string nama , int waktu, int harga, int stok = 0)
         {
             this.id = id;
             this.nama = nama;
             this.waktu = waktu;
             this.harga = harga;
+            this.stok = stok;
         }
 
         public void save()
         {
-            string query = $"UPDATE IKAN SET NAMA='{nama}', WAKTU={waktu}, HARGA={harga} WHERE ID={id}";
+            string query = $"UPDATE IKAN SET NAMA='{nama}', WAKTU={waktu}, HARGA={harga}, STOK={stok} WHERE ID={id}";
             cmd = new MySqlCommand(query, DB.conn);
             cmd.ExecuteNonQuery();
         }
@@ -74,11 +77,12 @@ namespace papicomfeed.Model
             string nama = dt.Rows[0][1].ToString();
             int waktu = int.Parse(dt.Rows[0][2].ToString());
             int harga = int.Parse(dt.Rows[0][3].ToString());
+            int stok = int.Parse(dt.Rows[0][4].ToString());
             int idikan = id;
 
             //Ikan i = new Ikan(idikan, nama, waktu);
 
-            return new Ikan(idikan, nama, waktu, harga);
+            return new Ikan(idikan, nama, waktu, harga, stok);
         }
 
         public static DataTable getAll(string key = "")
