@@ -24,6 +24,7 @@ namespace papicomfeed.Forms.Master
         {
             DataTable dt = Ikan.getAll(key);
             dataListIkan.DataSource = dt;
+            dataListIkan.Columns["harga"].DefaultCellStyle.Format = "N2";
         }
 
         private void btnTambahIkan_Click(object sender, EventArgs e)
