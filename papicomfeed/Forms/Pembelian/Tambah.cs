@@ -79,6 +79,11 @@ namespace papicomfeed.Forms.Pembelian
 
                     cmd.CommandText = $"INSERT INTO DBELI (HBELI_ID, KOLAM_ID, IKAN_ID, HARGA, JUMLAH, NAMA_IKAN, SUBTOTAL) VALUES ({headerId},{kolamid}, {ikanId}, {harga}, {qty}, '{namaIkan}', {subtotal})";
                     cmd.ExecuteNonQuery();
+                    int dbeliId = Convert.ToInt32(cmd.LastInsertedId);
+
+                    //set kolam status
+                    cmd.CommandText = $"UPDATE KOLAM SET STATUS=1, DBELI={dbeliId} WHERE ID={kolamid}";
+                    cmd.ExecuteNonQuery();
                 }
 
                 trans.Commit();
@@ -96,8 +101,8 @@ namespace papicomfeed.Forms.Pembelian
             cmbIkan.Items.Clear();
             try
             {
-                dtIkan = selectedSupplier.dtIkan;
-                //dtIkan = Ikan.getAll();
+                //dtIkan = selectedSupplier.dtIkan;
+                dtIkan = Ikan.getAll();
                 Dictionary<int, string> cmbIkanSource = new Dictionary<int, string>();
 
                 int i = 0;

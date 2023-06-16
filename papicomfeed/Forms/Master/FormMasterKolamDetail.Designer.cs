@@ -46,6 +46,8 @@ namespace papicomfeed.Forms.Master
             this.label11 = new System.Windows.Forms.Label();
             this.lbStatusPanen = new System.Windows.Forms.Label();
             this.btnPanen = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbStatusKolam = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numKapasitas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,8 +219,29 @@ namespace papicomfeed.Forms.Master
             this.btnPanen.TabIndex = 5;
             this.btnPanen.Text = "Panen";
             this.btnPanen.UseVisualStyleBackColor = false;
+            this.btnPanen.Click += new System.EventHandler(this.btnPanen_Click);
             this.btnPanen.MouseLeave += new System.EventHandler(this.btnPanen_MouseLeave);
             this.btnPanen.MouseHover += new System.EventHandler(this.btnPanen_MouseHover);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Location = new System.Drawing.Point(39, 167);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(119, 25);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Kapasitas :";
+            // 
+            // lbStatusKolam
+            // 
+            this.lbStatusKolam.AutoSize = true;
+            this.lbStatusKolam.BackColor = System.Drawing.Color.Transparent;
+            this.lbStatusKolam.Location = new System.Drawing.Point(159, 167);
+            this.lbStatusKolam.Name = "lbStatusKolam";
+            this.lbStatusKolam.Size = new System.Drawing.Size(119, 25);
+            this.lbStatusKolam.TabIndex = 1;
+            this.lbStatusKolam.Text = "Kapasitas :";
             // 
             // FormMasterKolamDetail
             // 
@@ -239,6 +262,8 @@ namespace papicomfeed.Forms.Master
             this.Controls.Add(this.lbNamaIkan);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbStatusKolam);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -272,5 +297,7 @@ namespace papicomfeed.Forms.Master
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbStatusPanen;
         private System.Windows.Forms.Button btnPanen;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbStatusKolam;
     }
 }

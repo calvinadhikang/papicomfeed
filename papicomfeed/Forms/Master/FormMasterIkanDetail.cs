@@ -31,6 +31,7 @@ namespace papicomfeed.Forms.Master
             txtDetailNamaIkan.Text = i.nama.ToString();
             txtDetailWaktuIkan.Text = i.waktu.ToString();
             // onk error nde kene !
+            numericUpDown1.Maximum = 99999;
             numericUpDown1.Value = i.harga;
         }
 

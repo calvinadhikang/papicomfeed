@@ -28,10 +28,11 @@ namespace papicomfeed.Forms.Master
             this.Paint += new PaintEventHandler(FormMasterKolam_Paint);
         }
 
-        public void displayData()
+        public void displayData(string key = "")
         {
-            dt = Kolam.getAll();
+            dt = Kolam.getAll(key);
             dataGridView1.DataSource = dt;
+            dataGridView1.Columns[4].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,6 +70,11 @@ namespace papicomfeed.Forms.Master
         private void button1_MouseLeave(object sender, EventArgs e)
         {
             button1.BackColor = Color.GhostWhite;
+        }
+
+        private void tbNamaSearch_TextChanged(object sender, EventArgs e)
+        {
+            displayData(tbNamaSearch.Text);
         }
     }
 }

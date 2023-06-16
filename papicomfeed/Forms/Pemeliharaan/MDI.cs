@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using papicomfeed.Forms.Master;
 
 namespace papicomfeed.Forms.Pemeliharaan
 {
@@ -15,6 +16,20 @@ namespace papicomfeed.Forms.Pemeliharaan
         public MDI()
         {
             InitializeComponent();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f = new Form1();
+            f.Show();
+        }
+
+        private void lihatKolamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormMasterKolam f = new FormMasterKolam();
+            f.MdiParent = this;
+            f.Show();
         }
     }
 }

@@ -18,28 +18,31 @@ namespace papicomfeed.Model
         public string nama;
         public int kapasitas;
         public int status;
+        public int dbeli;
 
         //constructor 1
         //untuk menginsert data karyawan baru ke Database
-        public Kolam(string nama, int kapasitas, int status)
+        public Kolam(string nama, int kapasitas, int status, int dbeli = 0)
         {
             this.nama = nama;
             this.kapasitas = kapasitas;
             this.status = status;
+            this.dbeli = dbeli;
 
-            string query = $"INSERT INTO KOLAM (NAMA, KAPASITAS, STATUS)VALUES ('{nama}', {kapasitas}, {status})";
+            string query = $"INSERT INTO KOLAM (NAMA, KAPASITAS, STATUS, DBELI)VALUES ('{nama}', {kapasitas}, {status}, {dbeli})";
             cmd = new MySqlCommand(query, DB.conn);
             cmd.ExecuteNonQuery();
 
             this.id = Convert.ToInt32(cmd.LastInsertedId);
         }
 
-        public Kolam(int id, string nama, int kapasitas, int status)
+        public Kolam(int id, string nama, int kapasitas, int status, int dbeli)
         {
             this.id = id;
             this.nama = nama;
             this.kapasitas = kapasitas;
             this.status = status;
+            this.dbeli = dbeli;
         }
 
         //untuk update karyawan sesuai dengan
@@ -50,6 +53,7 @@ namespace papicomfeed.Model
                 $"NAMA='{this.nama}', " +
                 $"KAPASITAS={this.kapasitas}, " +
                 $"STATUS={this.status} " +
+                $"DBELI={this.dbeli} " +
                 $"WHERE ID={this.id}";
             cmd = new MySqlCommand(query, DB.conn);
             return cmd.ExecuteNonQuery();
@@ -71,14 +75,23 @@ namespace papicomfeed.Model
             string nama = dt.Rows[0][1].ToString();
             int kapasitas = int.Parse(dt.Rows[0][2].ToString());
             int status = int.Parse(dt.Rows[0][3].ToString());
+            int dbeli = int.Parse(dt.Rows[0][4].ToString());
 
-            return new Kolam(id, nama, kapasitas, status);
+            return new Kolam(id, nama, kapasitas, status, dbeli);
         }
 
-        public static DataTable getAll()
+        public static DataTable getAll(string key = "")
         {
             DataTable dt = new DataTable();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM KOLAM", DB.conn);
+            MySqlCommand cmd;
+            if (key == "")
+            {
+                cmd = new MySqlCommand("SELECT * FROM kolam", DB.conn);
+            }
+            else
+            {
+                cmd = new MySqlCommand($"SELECT * FROM kolam WHERE nama LIKE '%{key}%'", DB.conn);
+            }
             MySqlDataAdapter adpt = new MySqlDataAdapter();
             adpt.SelectCommand = cmd;
             adpt.FillAsync(dt);

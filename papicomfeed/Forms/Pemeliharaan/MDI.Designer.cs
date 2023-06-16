@@ -54,6 +54,7 @@ namespace papicomfeed.Forms.Pemeliharaan
             this.lihatKolamToolStripMenuItem.Name = "lihatKolamToolStripMenuItem";
             this.lihatKolamToolStripMenuItem.Size = new System.Drawing.Size(133, 34);
             this.lihatKolamToolStripMenuItem.Text = "Lihat Kolam";
+            this.lihatKolamToolStripMenuItem.Click += new System.EventHandler(this.lihatKolamToolStripMenuItem_Click);
             // 
             // lihatGudangToolStripMenuItem
             // 
@@ -66,6 +67,7 @@ namespace papicomfeed.Forms.Pemeliharaan
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(90, 34);
             this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // MDI
             // 
@@ -76,9 +78,10 @@ namespace papicomfeed.Forms.Pemeliharaan
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "MDI";
             this.Text = "MDI";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

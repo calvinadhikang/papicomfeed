@@ -22,7 +22,8 @@ namespace papicomfeed.Forms.Master
 
         public void displayData(string key = "")
         {
-            dataListIkan.DataSource = Ikan.getAll(key);
+            DataTable dt = Ikan.getAll(key);
+            dataListIkan.DataSource = dt;
         }
 
         private void btnTambahIkan_Click(object sender, EventArgs e)

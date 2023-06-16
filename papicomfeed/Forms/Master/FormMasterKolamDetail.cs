@@ -18,6 +18,12 @@ namespace papicomfeed.Forms.Master
         Kolam k;
         FormMasterKolam parent;
         int idKolam;
+
+        DataTable dbeli;
+        Ikan ikan;
+        int jumlahIkanDiBeli;
+        int hargaPerIkan;
+
         public FormMasterKolamDetail(int id, FormMasterKolam parent)
         {
             InitializeComponent();
@@ -31,8 +37,33 @@ namespace papicomfeed.Forms.Master
         {
             k = Kolam.get(idKolam);
 
+            //kolam data
             tbNama.Text = k.nama;
             numKapasitas.Value = k.kapasitas;
+            string status = "Kosong";
+            if (k.status == 1)
+            {
+                status = "Terisi";
+            }
+            else if (k.status == 2)
+            {
+                status = "Maintenance";
+            }
+            lbStatusKolam.Text = status;
+
+            //ikan data
+            if (k.dbeli != 0)
+            {
+                dbeli = DBeli.getByDBeliId(k.dbeli);
+                ikan = Ikan.get(int.Parse(dbeli.Rows[0][3].ToString()));
+                hargaPerIkan = int.Parse(dbeli.Rows[0][4].ToString());
+                jumlahIkanDiBeli = int.Parse(dbeli.Rows[0][5].ToString());
+            
+                lbNotaPembelian.Text = dbeli.Rows[0][0].ToString();
+                lbNamaIkan.Text = ikan.nama;
+                lbWaktuIkan.Text = ikan.waktu.ToString() + " Bulan";
+                lbStatusPanen.Text = ikan.waktu.ToString() + " Bulan hingga panen";
+            }
         }
 
         private void btnSimpan_Click(object sender, EventArgs e)
@@ -93,6 +124,21 @@ namespace papicomfeed.Forms.Master
         private void btnPanen_MouseLeave(object sender, EventArgs e)
         {
             btnPanen.BackColor = Color.GhostWhite;
+        }
+
+        private void btnPanen_Click(object sender, EventArgs e)
+        {
+            if (ikan != null)
+            {
+                if (ikan.waktu != 0)
+                {
+                    MessageBox.Show("Tidak Dapat Panen");
+                }
+                else
+                {
+                    MessageBox.Show("Berhasil Panen");
+                }
+            }
         }
     }
 }

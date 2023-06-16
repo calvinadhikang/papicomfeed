@@ -41,6 +41,22 @@ namespace papicomfeed.Model
             return dt;
         }
 
+        public static DataTable getByDBeliId(int id)
+        {
+            DataTable dt = new DataTable();
+            MySqlCommand cmd = new MySqlCommand($"Select * from DBELI where id = {id}", DB.conn);
+            MySqlDataAdapter adpt = new MySqlDataAdapter();
+            adpt.SelectCommand = cmd;
+            adpt.FillAsync(dt);
+
+            if (dt.Rows.Count <= 0)
+            {
+                return null;
+            }
+
+            return dt;
+        }
+
 
         public static DataTable getAll()
         {

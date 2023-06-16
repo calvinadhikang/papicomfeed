@@ -78,6 +78,12 @@ namespace papicomfeed
                 f.Show();
                 this.Hide();
             }
+            else if (k.role == 3)
+            {
+                papicomfeed.Forms.Pemeliharaan.MDI f = new Forms.Pemeliharaan.MDI();
+                f.Show();
+                this.Hide();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
