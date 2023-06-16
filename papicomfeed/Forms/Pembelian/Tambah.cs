@@ -155,10 +155,13 @@ namespace papicomfeed.Forms.Pembelian
             dt.Columns.Add("Ikan");
             dt.Columns.Add("Quantity");
             dt.Columns.Add("Kolam");
-            dt.Columns.Add("Harga");
-            dt.Columns.Add("SubTotal");
+            dt.Columns.Add("Harga", typeof(decimal));
+            dt.Columns.Add("SubTotal", typeof(decimal));
             dt.Columns.Add("idIkan");
             dt.Columns.Add("idKolam");
+
+            dgvPembelian.Columns["SubTotal"].DefaultCellStyle.Format = "N0";
+            dgvPembelian.Columns["Harga"].DefaultCellStyle.Format = "N0";
 
             //tambah button tambah
             DataGridViewButtonColumn btnAdd = new DataGridViewButtonColumn();
