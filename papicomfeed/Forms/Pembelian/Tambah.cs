@@ -17,26 +17,36 @@ namespace papicomfeed.Forms.Pembelian
 {
     public partial class Tambah : Form
     {
-
         MySqlCommand cmd;
         MySqlDataReader reader;
 
         DataTable dt;
         DataTable dtIkan;
         DataTable dtKolam;
+        DataTable dtSupplier;
 
         int selectedIkanIndex = -1;
         int selectedKolamIndex = -1;
 
         int total = 0;
         string coba = "anjay" ;
+        Supplier selectedSupplier = null;
 
         public Tambah()
         {
             InitializeComponent();
+            loadSupplier();
             isicmbIkan();
             isicmbKolam();
             siap2();
+        }
+
+        void loadSupplier()
+        {
+            dtSupplier = Supplier.getAll();
+            cmbSupplier.DataSource = dtSupplier;
+            cmbSupplier.ValueMember = "id";
+            cmbSupplier.DisplayMember = "nama";
         }
 
         private void btnSelesai_Click(object sender, EventArgs e)
@@ -52,7 +62,7 @@ namespace papicomfeed.Forms.Pembelian
                 cmd.Transaction = trans;
 
                 //insert header
-                cmd.CommandText = $"INSERT INTO HBELI (KARYAWAN_ID, TOTAL, PENJUAL, ALAMAT) VALUES ({Form1.idKaryawan}, {total}, '{txtNamaSup.Text}', '{txtAlamatSup.Text}')";
+                cmd.CommandText = $"INSERT INTO HBELI (KARYAWAN_ID, TOTAL, PENJUAL, ALAMAT) VALUES ({Form1.idKaryawan}, {total}, '{selectedSupplier.nama}', '{txtAlamatSup.Text}')";
                 cmd.ExecuteNonQuery();
                 int headerId = Convert.ToInt32(cmd.LastInsertedId);
 
@@ -72,7 +82,7 @@ namespace papicomfeed.Forms.Pembelian
                 }
 
                 trans.Commit();
-                MessageBox.Show($"Berhasil Insert Penmbelian di supplier {txtNamaSup.Text}");
+                MessageBox.Show($"Berhasil Insert Penmbelian di supplier {selectedSupplier.nama}");
             }
             catch (MySqlException ex)
             {
@@ -86,7 +96,8 @@ namespace papicomfeed.Forms.Pembelian
             cmbIkan.Items.Clear();
             try
             {
-                dtIkan = Ikan.getAll();
+                dtIkan = selectedSupplier.dtIkan;
+                //dtIkan = Ikan.getAll();
                 Dictionary<int, string> cmbIkanSource = new Dictionary<int, string>();
 
                 int i = 0;
@@ -240,11 +251,14 @@ namespace papicomfeed.Forms.Pembelian
 
         private void cmbIkan_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbIkan.SelectedIndex > -1)
+            if (dtIkan != null)
             {
-                int key = ((KeyValuePair<int, string>)cmbIkan.SelectedItem).Key;
-                string value = ((KeyValuePair<int, string>)cmbIkan.SelectedItem).Value;
-                selectedIkanIndex = key;
+                if (cmbIkan.SelectedIndex > -1)
+                {
+                    int key = ((KeyValuePair<int, string>)cmbIkan.SelectedItem).Key;
+                    string value = ((KeyValuePair<int, string>)cmbIkan.SelectedItem).Value;
+                    selectedIkanIndex = key;
+                }
             }
         }
 
@@ -302,6 +316,18 @@ namespace papicomfeed.Forms.Pembelian
         private void btnSelesai_MouseLeave(object sender, EventArgs e)
         {
             btnSelesai.BackColor = Color.GhostWhite;
+        }
+
+        private void cmbSupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbSupplier.DataSource != null)
+            {
+                int idx = cmbSupplier.SelectedIndex;
+                int id = int.Parse(dtSupplier.Rows[idx][0].ToString());
+
+                selectedSupplier = Supplier.get(id);
+                txtAlamatSup.Text = selectedSupplier.alamat;
+            }
         }
     }
 }

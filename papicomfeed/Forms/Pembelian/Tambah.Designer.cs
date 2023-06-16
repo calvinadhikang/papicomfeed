@@ -32,8 +32,8 @@ namespace papicomfeed.Forms.Pembelian
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbSupplier = new System.Windows.Forms.ComboBox();
             this.txtAlamatSup = new System.Windows.Forms.TextBox();
-            this.txtNamaSup = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvPembelian = new System.Windows.Forms.DataGridView();
@@ -76,8 +76,8 @@ namespace papicomfeed.Forms.Pembelian
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.cmbSupplier);
             this.groupBox1.Controls.Add(this.txtAlamatSup);
-            this.groupBox1.Controls.Add(this.txtNamaSup);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 47);
@@ -87,19 +87,23 @@ namespace papicomfeed.Forms.Pembelian
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Header Pembelian";
             // 
+            // cmbSupplier
+            // 
+            this.cmbSupplier.Enabled = false;
+            this.cmbSupplier.FormattingEnabled = true;
+            this.cmbSupplier.Location = new System.Drawing.Point(191, 46);
+            this.cmbSupplier.Name = "cmbSupplier";
+            this.cmbSupplier.Size = new System.Drawing.Size(563, 33);
+            this.cmbSupplier.TabIndex = 4;
+            this.cmbSupplier.SelectedIndexChanged += new System.EventHandler(this.cmbSupplier_SelectedIndexChanged);
+            // 
             // txtAlamatSup
             // 
+            this.txtAlamatSup.Enabled = false;
             this.txtAlamatSup.Location = new System.Drawing.Point(191, 84);
             this.txtAlamatSup.Name = "txtAlamatSup";
-            this.txtAlamatSup.Size = new System.Drawing.Size(569, 32);
+            this.txtAlamatSup.Size = new System.Drawing.Size(563, 32);
             this.txtAlamatSup.TabIndex = 3;
-            // 
-            // txtNamaSup
-            // 
-            this.txtNamaSup.Location = new System.Drawing.Point(191, 46);
-            this.txtNamaSup.Name = "txtNamaSup";
-            this.txtNamaSup.Size = new System.Drawing.Size(569, 32);
-            this.txtNamaSup.TabIndex = 3;
             // 
             // label4
             // 
@@ -268,7 +272,6 @@ namespace papicomfeed.Forms.Pembelian
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtAlamatSup;
-        private System.Windows.Forms.TextBox txtNamaSup;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvPembelian;
@@ -282,5 +285,6 @@ namespace papicomfeed.Forms.Pembelian
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSelesai;
         private System.Windows.Forms.Label labeltotal;
+        private System.Windows.Forms.ComboBox cmbSupplier;
     }
 }

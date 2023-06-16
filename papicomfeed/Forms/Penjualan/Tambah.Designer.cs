@@ -117,6 +117,8 @@ namespace papicomfeed.Forms.Penjualan
             // 
             // dgvTambahJual
             // 
+            this.dgvTambahJual.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTambahJual.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvTambahJual.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTambahJual.Location = new System.Drawing.Point(12, 344);
             this.dgvTambahJual.Name = "dgvTambahJual";
