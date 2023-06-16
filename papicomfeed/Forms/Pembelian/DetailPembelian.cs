@@ -41,6 +41,9 @@ namespace papicomfeed.Forms.Pembelian
         void showDetail()
         {
             dataGridView1.DataSource = DBeli.get(header.id);
+
+            dataGridView1.Columns["harga"].DefaultCellStyle.Format = "N2";
+            dataGridView1.Columns["subtotal"].DefaultCellStyle.Format = "N2";
         }
 
         private void DetailPembelian_Load(object sender, EventArgs e)

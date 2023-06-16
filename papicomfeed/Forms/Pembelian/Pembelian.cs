@@ -25,7 +25,12 @@ namespace papicomfeed.Forms.Pembelian
         public void displaydata()
         {
             dt = Hbeli.getAll();
+            
             dgvPembelian.DataSource = dt;
+
+            dgvPembelian.Columns["total"].DefaultCellStyle.Format = "N2";
+
+
         }
 
         private void dgvPembelian_CellContentClick(object sender, DataGridViewCellEventArgs e)
