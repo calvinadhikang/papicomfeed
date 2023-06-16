@@ -26,6 +26,7 @@ namespace papicomfeed.Forms.Penjualan
         {
             dt = Hjual.getAll();
             dataGridView1.DataSource = dt;
+            dataGridView1.Columns["total"].DefaultCellStyle.Format = "N2";
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

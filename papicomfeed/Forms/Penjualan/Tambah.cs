@@ -47,8 +47,11 @@ namespace papicomfeed.Forms.Penjualan
             dt.Columns.Add("ID Ikan");
             dt.Columns.Add("Jenis Ikan");
             dt.Columns.Add("Quantity");
-            dt.Columns.Add("Harga");
-            dt.Columns.Add("SubTotal");
+            dt.Columns.Add("Harga", typeof(decimal));
+            dt.Columns.Add("SubTotal", typeof(decimal));
+
+            dgvTambahJual.Columns["SubTotal"].DefaultCellStyle.Format = "N0";
+            dgvTambahJual.Columns["Harga"].DefaultCellStyle.Format = "N0";
 
             //tambah button tambah
             DataGridViewButtonColumn btnAdd = new DataGridViewButtonColumn();

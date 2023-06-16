@@ -45,6 +45,8 @@ namespace papicomfeed.Forms.Penjualan
         {
             DataTable dt = Djual.get(header.id);
             dataGridView1.DataSource = dt;
+            dataGridView1.Columns["harga"].DefaultCellStyle.Format = "N2";
+            dataGridView1.Columns["subtotal"].DefaultCellStyle.Format = "N2";
         }
 
         private void DetailPenjualan_Load(object sender, EventArgs e)
