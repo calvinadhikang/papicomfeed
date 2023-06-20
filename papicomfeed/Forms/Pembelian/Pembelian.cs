@@ -28,7 +28,11 @@ namespace papicomfeed.Forms.Pembelian
             
             dgvPembelian.DataSource = dt;
 
-            dgvPembelian.Columns["total"].DefaultCellStyle.Format = "N2";
+            dgvPembelian.Columns["total"].DefaultCellStyle.Format = "C";
+            dgvPembelian.Columns["id"].HeaderText = "Nota";
+            dgvPembelian.Columns["karyawan_id"].Visible = false;
+
+
 
 
         }

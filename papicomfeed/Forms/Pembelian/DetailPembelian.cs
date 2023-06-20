@@ -28,12 +28,14 @@ namespace papicomfeed.Forms.Pembelian
 
         void showHeader()
         {
-            lbKode.Text = header.id.ToString();
+            
             lbTotal.Text = header.total.ToString();
             lbTanggal.Text = header.tanggal.ToString();
             lbNama.Text = header.penjual.ToString();
             lbAlamat.Text = header.alamat.ToString();
             lbKaryawan.Text = karyawan.nama.ToString();
+
+            labeldetailpembelian.Text = "Detail Pembelian  "+ header.id.ToString();
 
             showDetail();
         }
@@ -42,8 +44,18 @@ namespace papicomfeed.Forms.Pembelian
         {
             dataGridView1.DataSource = DBeli.get(header.id);
 
-            dataGridView1.Columns["harga"].DefaultCellStyle.Format = "N2";
-            dataGridView1.Columns["subtotal"].DefaultCellStyle.Format = "N2";
+            dataGridView1.Columns["nama_ikan"].DisplayIndex = 0;
+            dataGridView1.Columns["nama_ikan"].HeaderText = "Ikan";
+
+            dataGridView1.Columns["id"].Visible = false;
+            dataGridView1.Columns["hbeli_id"].Visible = false;
+            dataGridView1.Columns["kolam_id"].Visible = false;
+            dataGridView1.Columns["ikan_id"].Visible = false;
+            
+            
+
+            dataGridView1.Columns["harga"].DefaultCellStyle.Format = "C";
+            dataGridView1.Columns["subtotal"].DefaultCellStyle.Format = "C";
         }
 
         private void DetailPembelian_Load(object sender, EventArgs e)

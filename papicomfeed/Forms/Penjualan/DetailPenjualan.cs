@@ -31,12 +31,13 @@ namespace papicomfeed.Forms.Penjualan
 
         void showHeader()
         {
-            lbKode.Text = header.id.ToString();
+            
             lbTanggal.Text = header.tanggal;
             lbAlamat.Text = header.alamat;
             lbTotal.Text = header.total.ToString();
             lbKaryawan.Text = karyawan.nama;
             lbNama.Text = customer.nama;
+            labeldetailpenjualan.Text = "Detail Penjualan  " + header.id.ToString();
 
             showDetail();
         }
@@ -45,8 +46,18 @@ namespace papicomfeed.Forms.Penjualan
         {
             DataTable dt = Djual.get(header.id);
             dataGridView1.DataSource = dt;
-            dataGridView1.Columns["harga"].DefaultCellStyle.Format = "N2";
-            dataGridView1.Columns["subtotal"].DefaultCellStyle.Format = "N2";
+
+            dataGridView1.Columns["nama_ikan"].DisplayIndex = 0;
+
+            dataGridView1.Columns["id"].Visible = false;
+            dataGridView1.Columns["hjual_id"].Visible = false;
+            dataGridView1.Columns["ikan_id"].Visible = false;
+            dataGridView1.Columns["qty"].HeaderText = "jumlah";
+            dataGridView1.Columns["nama_ikan"].HeaderText = "Ikan";
+
+
+            dataGridView1.Columns["harga"].DefaultCellStyle.Format = "C";
+            dataGridView1.Columns["subtotal"].DefaultCellStyle.Format = "C";
         }
 
         private void DetailPenjualan_Load(object sender, EventArgs e)

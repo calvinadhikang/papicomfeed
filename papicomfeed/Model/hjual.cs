@@ -53,7 +53,14 @@ namespace papicomfeed.Model
         public static DataTable getAll() 
         {
             DataTable dt = new DataTable();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM HJUAL", DB.conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT HJ.ID AS id," +
+                "K.nama AS nama," +
+                " HJ.total as total," +
+                " C.nama As customer," +
+                " HJ.alamat as alamat," +
+                " HJ.tanggal as tanggal" +
+                " FROM HJUAL HJ " +
+                "JOIN KARYAWAN K ON K.ID=HJ.KARYAWAN_ID JOIN CUSTOMER C ON C.ID=HJ.customer", DB.conn);
             MySqlDataAdapter adpt = new MySqlDataAdapter();
             adpt.SelectCommand = cmd;
             adpt.FillAsync(dt);

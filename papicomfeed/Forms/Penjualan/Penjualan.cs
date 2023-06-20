@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
-
+using System.Globalization;
 using papicomfeed.Model;
 
 namespace papicomfeed.Forms.Penjualan
@@ -26,7 +26,9 @@ namespace papicomfeed.Forms.Penjualan
         {
             dt = Hjual.getAll();
             dataGridView1.DataSource = dt;
-            dataGridView1.Columns["total"].DefaultCellStyle.Format = "N2";
+            dataGridView1.Columns["total"].DefaultCellStyle.Format = "C";
+            
+            dataGridView1.Columns["id"].Visible= false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
